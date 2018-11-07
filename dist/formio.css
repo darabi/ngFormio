@@ -1,4 +1,3 @@
-/*! ng-formio v3.7.0 | https://unpkg.com/ngFormio@3.7.0/LICENSE.txt */
 @charset "UTF-8";
 .flatpickr-calendar {
   background: 0 0;
@@ -627,6 +626,21 @@ span.flatpickr-weekday {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0); } }
+
+.treeview .list-group-item {
+  cursor: pointer; }
+
+.treeview span.indent {
+  margin-left: 10px;
+  margin-right: 10px; }
+
+.treeview span.icon {
+  width: 12px;
+  margin-right: 5px; }
+
+.treeview .node-disabled {
+  color: silver;
+  cursor: not-allowed; }
 
 .choices {
   position: relative;
