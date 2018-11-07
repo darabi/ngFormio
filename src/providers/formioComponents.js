@@ -1,5 +1,5 @@
 const app = angular.module('formio');
-const Components = require('formiojs/components').default;
+const Components = require('formiojs/lib/components').default;
 export default app.provider('formioComponents', function() {
   var components = Components;
   var groups = {

@@ -1,4 +1,4 @@
-import utils from 'formiojs/utils';
+import utils from 'formiojs/lib/utils';
 
 const app = angular.module('formio');
 export default app.factory('FormioUtils', function() {
