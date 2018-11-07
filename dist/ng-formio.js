@@ -110,7 +110,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/index.js");
+var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/lib/index.js");
 
 exports.default = angular.module('formio').directive('formBuilder', function () {
   return {
@@ -182,7 +182,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/index.js");
+var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/lib/index.js");
 
 var app = angular.module('formio');
 exports.default = app.directive('formio', function () {
@@ -378,7 +378,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/index.js");
+var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/lib/index.js");
 
 var app = angular.module('formio');
 exports.default = app.directive('formioDelete', function () {
@@ -491,7 +491,7 @@ var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol
   return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
 };
 
-var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/index.js");
+var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/lib/index.js");
 
 var app = angular.module('formio');
 exports.default = app.factory('FormioScope', function () {
@@ -542,7 +542,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _Components = __webpack_require__(/*! formiojs/components/Components */ "./node_modules/formiojs/components/Components.js");
+var _Components = __webpack_require__(/*! formiojs/lib/components/Components */ "./node_modules/formiojs/lib/components/Components.js");
 
 var _Components2 = _interopRequireDefault(_Components);
 
@@ -623,7 +623,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/index.js");
+var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/lib/index.js");
 
 var app = angular.module('formio');
 exports.default = app.filter('formioTranslate', ['$filter', '$injector', function ($filter, $injector) {
@@ -729,7 +729,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/index.js");
+var _formiojs = __webpack_require__(/*! formiojs */ "./node_modules/formiojs/lib/index.js");
 
 var app = angular.module('formio');
 
@@ -825,7 +825,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _utils = __webpack_require__(/*! formiojs/utils */ "./node_modules/formiojs/utils/index.js");
+var _utils = __webpack_require__(/*! formiojs/lib/utils */ "./node_modules/formiojs/lib/utils/index.js");
 
 var _utils2 = _interopRequireDefault(_utils);
 
@@ -883,7 +883,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var app = angular.module('formio');
-var Components = __webpack_require__(/*! formiojs/components */ "./node_modules/formiojs/components/index.js").default;
+var Components = __webpack_require__(/*! formiojs/lib/components */ "./node_modules/formiojs/lib/components/index.js").default;
 exports.default = app.provider('formioComponents', function () {
   var components = Components;
   var groups = {
@@ -1000,6 +1000,2065 @@ __webpack_require__(/*! ./FormioUtils */ "./lib/providers/FormioUtils.js");
 /***/ (function(module, exports) {
 
 module.exports = function atoa (a, n) { return Array.prototype.slice.call(a, n); }
+
+
+/***/ }),
+
+/***/ "./node_modules/bootstrap-treeview/src/js/bootstrap-treeview.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/bootstrap-treeview/src/js/bootstrap-treeview.js ***!
+  \**********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+/* WEBPACK VAR INJECTION */(function(jQuery) {/* =========================================================
+ * bootstrap-treeview.js v1.2.0
+ * =========================================================
+ * Copyright 2013 Jonathan Miles
+ * Project URL : http://www.jondmiles.com/bootstrap-treeview
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * ========================================================= */
+
+;(function ($, window, document, undefined) {
+
+	/*global jQuery, console*/
+
+	'use strict';
+
+	var pluginName = 'treeview';
+
+	var _default = {};
+
+	_default.settings = {
+
+		injectStyle: true,
+
+		levels: 2,
+
+		expandIcon: 'glyphicon glyphicon-plus',
+		collapseIcon: 'glyphicon glyphicon-minus',
+		emptyIcon: 'glyphicon',
+		nodeIcon: '',
+		selectedIcon: '',
+		checkedIcon: 'glyphicon glyphicon-check',
+		uncheckedIcon: 'glyphicon glyphicon-unchecked',
+
+		color: undefined, // '#000000',
+		backColor: undefined, // '#FFFFFF',
+		borderColor: undefined, // '#dddddd',
+		onhoverColor: '#F5F5F5',
+		selectedColor: '#FFFFFF',
+		selectedBackColor: '#428bca',
+		searchResultColor: '#D9534F',
+		searchResultBackColor: undefined, //'#FFFFFF',
+
+		enableLinks: false,
+		highlightSelected: true,
+		highlightSearchResults: true,
+		showBorder: true,
+		showIcon: true,
+		showCheckbox: false,
+		showTags: false,
+		multiSelect: false,
+
+		// Event handlers
+		onNodeChecked: undefined,
+		onNodeCollapsed: undefined,
+		onNodeDisabled: undefined,
+		onNodeEnabled: undefined,
+		onNodeExpanded: undefined,
+		onNodeSelected: undefined,
+		onNodeUnchecked: undefined,
+		onNodeUnselected: undefined,
+		onSearchComplete: undefined,
+		onSearchCleared: undefined
+	};
+
+	_default.options = {
+		silent: false,
+		ignoreChildren: false
+	};
+
+	_default.searchOptions = {
+		ignoreCase: true,
+		exactMatch: false,
+		revealResults: true
+	};
+
+	var Tree = function (element, options) {
+
+		this.$element = $(element);
+		this.elementId = element.id;
+		this.styleId = this.elementId + '-style';
+
+		this.init(options);
+
+		return {
+
+			// Options (public access)
+			options: this.options,
+
+			// Initialize / destroy methods
+			init: $.proxy(this.init, this),
+			remove: $.proxy(this.remove, this),
+
+			// Get methods
+			getNode: $.proxy(this.getNode, this),
+			getParent: $.proxy(this.getParent, this),
+			getSiblings: $.proxy(this.getSiblings, this),
+			getSelected: $.proxy(this.getSelected, this),
+			getUnselected: $.proxy(this.getUnselected, this),
+			getExpanded: $.proxy(this.getExpanded, this),
+			getCollapsed: $.proxy(this.getCollapsed, this),
+			getChecked: $.proxy(this.getChecked, this),
+			getUnchecked: $.proxy(this.getUnchecked, this),
+			getDisabled: $.proxy(this.getDisabled, this),
+			getEnabled: $.proxy(this.getEnabled, this),
+
+			// Select methods
+			selectNode: $.proxy(this.selectNode, this),
+			unselectNode: $.proxy(this.unselectNode, this),
+			toggleNodeSelected: $.proxy(this.toggleNodeSelected, this),
+
+			// Expand / collapse methods
+			collapseAll: $.proxy(this.collapseAll, this),
+			collapseNode: $.proxy(this.collapseNode, this),
+			expandAll: $.proxy(this.expandAll, this),
+			expandNode: $.proxy(this.expandNode, this),
+			toggleNodeExpanded: $.proxy(this.toggleNodeExpanded, this),
+			revealNode: $.proxy(this.revealNode, this),
+
+			// Expand / collapse methods
+			checkAll: $.proxy(this.checkAll, this),
+			checkNode: $.proxy(this.checkNode, this),
+			uncheckAll: $.proxy(this.uncheckAll, this),
+			uncheckNode: $.proxy(this.uncheckNode, this),
+			toggleNodeChecked: $.proxy(this.toggleNodeChecked, this),
+
+			// Disable / enable methods
+			disableAll: $.proxy(this.disableAll, this),
+			disableNode: $.proxy(this.disableNode, this),
+			enableAll: $.proxy(this.enableAll, this),
+			enableNode: $.proxy(this.enableNode, this),
+			toggleNodeDisabled: $.proxy(this.toggleNodeDisabled, this),
+
+			// Search methods
+			search: $.proxy(this.search, this),
+			clearSearch: $.proxy(this.clearSearch, this)
+		};
+	};
+
+	Tree.prototype.init = function (options) {
+
+		this.tree = [];
+		this.nodes = [];
+
+		if (options.data) {
+			if (typeof options.data === 'string') {
+				options.data = $.parseJSON(options.data);
+			}
+			this.tree = $.extend(true, [], options.data);
+			delete options.data;
+		}
+		this.options = $.extend({}, _default.settings, options);
+
+		this.destroy();
+		this.subscribeEvents();
+		this.setInitialStates({ nodes: this.tree }, 0);
+		this.render();
+	};
+
+	Tree.prototype.remove = function () {
+		this.destroy();
+		$.removeData(this, pluginName);
+		$('#' + this.styleId).remove();
+	};
+
+	Tree.prototype.destroy = function () {
+
+		if (!this.initialized) return;
+
+		this.$wrapper.remove();
+		this.$wrapper = null;
+
+		// Switch off events
+		this.unsubscribeEvents();
+
+		// Reset this.initialized flag
+		this.initialized = false;
+	};
+
+	Tree.prototype.unsubscribeEvents = function () {
+
+		this.$element.off('click');
+		this.$element.off('nodeChecked');
+		this.$element.off('nodeCollapsed');
+		this.$element.off('nodeDisabled');
+		this.$element.off('nodeEnabled');
+		this.$element.off('nodeExpanded');
+		this.$element.off('nodeSelected');
+		this.$element.off('nodeUnchecked');
+		this.$element.off('nodeUnselected');
+		this.$element.off('searchComplete');
+		this.$element.off('searchCleared');
+	};
+
+	Tree.prototype.subscribeEvents = function () {
+
+		this.unsubscribeEvents();
+
+		this.$element.on('click', $.proxy(this.clickHandler, this));
+
+		if (typeof (this.options.onNodeChecked) === 'function') {
+			this.$element.on('nodeChecked', this.options.onNodeChecked);
+		}
+
+		if (typeof (this.options.onNodeCollapsed) === 'function') {
+			this.$element.on('nodeCollapsed', this.options.onNodeCollapsed);
+		}
+
+		if (typeof (this.options.onNodeDisabled) === 'function') {
+			this.$element.on('nodeDisabled', this.options.onNodeDisabled);
+		}
+
+		if (typeof (this.options.onNodeEnabled) === 'function') {
+			this.$element.on('nodeEnabled', this.options.onNodeEnabled);
+		}
+
+		if (typeof (this.options.onNodeExpanded) === 'function') {
+			this.$element.on('nodeExpanded', this.options.onNodeExpanded);
+		}
+
+		if (typeof (this.options.onNodeSelected) === 'function') {
+			this.$element.on('nodeSelected', this.options.onNodeSelected);
+		}
+
+		if (typeof (this.options.onNodeUnchecked) === 'function') {
+			this.$element.on('nodeUnchecked', this.options.onNodeUnchecked);
+		}
+
+		if (typeof (this.options.onNodeUnselected) === 'function') {
+			this.$element.on('nodeUnselected', this.options.onNodeUnselected);
+		}
+
+		if (typeof (this.options.onSearchComplete) === 'function') {
+			this.$element.on('searchComplete', this.options.onSearchComplete);
+		}
+
+		if (typeof (this.options.onSearchCleared) === 'function') {
+			this.$element.on('searchCleared', this.options.onSearchCleared);
+		}
+	};
+
+	/*
+		Recurse the tree structure and ensure all nodes have
+		valid initial states.  User defined states will be preserved.
+		For performance we also take this opportunity to
+		index nodes in a flattened structure
+	*/
+	Tree.prototype.setInitialStates = function (node, level) {
+
+		if (!node.nodes) return;
+		level += 1;
+
+		var parent = node;
+		var _this = this;
+		$.each(node.nodes, function checkStates(index, node) {
+
+			// nodeId : unique, incremental identifier
+			node.nodeId = _this.nodes.length;
+
+			// parentId : transversing up the tree
+			node.parentId = parent.nodeId;
+
+			// if not provided set selectable default value
+			if (!node.hasOwnProperty('selectable')) {
+				node.selectable = true;
+			}
+
+			// where provided we should preserve states
+			node.state = node.state || {};
+
+			// set checked state; unless set always false
+			if (!node.state.hasOwnProperty('checked')) {
+				node.state.checked = false;
+			}
+
+			// set enabled state; unless set always false
+			if (!node.state.hasOwnProperty('disabled')) {
+				node.state.disabled = false;
+			}
+
+			// set expanded state; if not provided based on levels
+			if (!node.state.hasOwnProperty('expanded')) {
+				if (!node.state.disabled &&
+						(level < _this.options.levels) &&
+						(node.nodes && node.nodes.length > 0)) {
+					node.state.expanded = true;
+				}
+				else {
+					node.state.expanded = false;
+				}
+			}
+
+			// set selected state; unless set always false
+			if (!node.state.hasOwnProperty('selected')) {
+				node.state.selected = false;
+			}
+
+			// index nodes in a flattened structure for use later
+			_this.nodes.push(node);
+
+			// recurse child nodes and transverse the tree
+			if (node.nodes) {
+				_this.setInitialStates(node, level);
+			}
+		});
+	};
+
+	Tree.prototype.clickHandler = function (event) {
+
+		if (!this.options.enableLinks) event.preventDefault();
+
+		var target = $(event.target);
+		var node = this.findNode(target);
+		if (!node || node.state.disabled) return;
+		
+		var classList = target.attr('class') ? target.attr('class').split(' ') : [];
+		if ((classList.indexOf('expand-icon') !== -1)) {
+
+			this.toggleExpandedState(node, _default.options);
+			this.render();
+		}
+		else if ((classList.indexOf('check-icon') !== -1)) {
+			
+			this.toggleCheckedState(node, _default.options);
+			this.render();
+		}
+		else {
+			
+			if (node.selectable) {
+				this.toggleSelectedState(node, _default.options);
+			} else {
+				this.toggleExpandedState(node, _default.options);
+			}
+
+			this.render();
+		}
+	};
+
+	// Looks up the DOM for the closest parent list item to retrieve the
+	// data attribute nodeid, which is used to lookup the node in the flattened structure.
+	Tree.prototype.findNode = function (target) {
+
+		var nodeId = target.closest('li.list-group-item').attr('data-nodeid');
+		var node = this.nodes[nodeId];
+
+		if (!node) {
+			console.log('Error: node does not exist');
+		}
+		return node;
+	};
+
+	Tree.prototype.toggleExpandedState = function (node, options) {
+		if (!node) return;
+		this.setExpandedState(node, !node.state.expanded, options);
+	};
+
+	Tree.prototype.setExpandedState = function (node, state, options) {
+
+		if (state === node.state.expanded) return;
+
+		if (state && node.nodes) {
+
+			// Expand a node
+			node.state.expanded = true;
+			if (!options.silent) {
+				this.$element.trigger('nodeExpanded', $.extend(true, {}, node));
+			}
+		}
+		else if (!state) {
+
+			// Collapse a node
+			node.state.expanded = false;
+			if (!options.silent) {
+				this.$element.trigger('nodeCollapsed', $.extend(true, {}, node));
+			}
+
+			// Collapse child nodes
+			if (node.nodes && !options.ignoreChildren) {
+				$.each(node.nodes, $.proxy(function (index, node) {
+					this.setExpandedState(node, false, options);
+				}, this));
+			}
+		}
+	};
+
+	Tree.prototype.toggleSelectedState = function (node, options) {
+		if (!node) return;
+		this.setSelectedState(node, !node.state.selected, options);
+	};
+
+	Tree.prototype.setSelectedState = function (node, state, options) {
+
+		if (state === node.state.selected) return;
+
+		if (state) {
+
+			// If multiSelect false, unselect previously selected
+			if (!this.options.multiSelect) {
+				$.each(this.findNodes('true', 'g', 'state.selected'), $.proxy(function (index, node) {
+					this.setSelectedState(node, false, options);
+				}, this));
+			}
+
+			// Continue selecting node
+			node.state.selected = true;
+			if (!options.silent) {
+				this.$element.trigger('nodeSelected', $.extend(true, {}, node));
+			}
+		}
+		else {
+
+			// Unselect node
+			node.state.selected = false;
+			if (!options.silent) {
+				this.$element.trigger('nodeUnselected', $.extend(true, {}, node));
+			}
+		}
+	};
+
+	Tree.prototype.toggleCheckedState = function (node, options) {
+		if (!node) return;
+		this.setCheckedState(node, !node.state.checked, options);
+	};
+
+	Tree.prototype.setCheckedState = function (node, state, options) {
+
+		if (state === node.state.checked) return;
+
+		if (state) {
+
+			// Check node
+			node.state.checked = true;
+
+			if (!options.silent) {
+				this.$element.trigger('nodeChecked', $.extend(true, {}, node));
+			}
+		}
+		else {
+
+			// Uncheck node
+			node.state.checked = false;
+			if (!options.silent) {
+				this.$element.trigger('nodeUnchecked', $.extend(true, {}, node));
+			}
+		}
+	};
+
+	Tree.prototype.setDisabledState = function (node, state, options) {
+
+		if (state === node.state.disabled) return;
+
+		if (state) {
+
+			// Disable node
+			node.state.disabled = true;
+
+			// Disable all other states
+			this.setExpandedState(node, false, options);
+			this.setSelectedState(node, false, options);
+			this.setCheckedState(node, false, options);
+
+			if (!options.silent) {
+				this.$element.trigger('nodeDisabled', $.extend(true, {}, node));
+			}
+		}
+		else {
+
+			// Enabled node
+			node.state.disabled = false;
+			if (!options.silent) {
+				this.$element.trigger('nodeEnabled', $.extend(true, {}, node));
+			}
+		}
+	};
+
+	Tree.prototype.render = function () {
+
+		if (!this.initialized) {
+
+			// Setup first time only components
+			this.$element.addClass(pluginName);
+			this.$wrapper = $(this.template.list);
+
+			this.injectStyle();
+
+			this.initialized = true;
+		}
+
+		this.$element.empty().append(this.$wrapper.empty());
+
+		// Build tree
+		this.buildTree(this.tree, 0);
+	};
+
+	// Starting from the root node, and recursing down the
+	// structure we build the tree one node at a time
+	Tree.prototype.buildTree = function (nodes, level) {
+
+		if (!nodes) return;
+		level += 1;
+
+		var _this = this;
+		$.each(nodes, function addNodes(id, node) {
+
+			var treeItem = $(_this.template.item)
+				.addClass('node-' + _this.elementId)
+				.addClass(node.state.checked ? 'node-checked' : '')
+				.addClass(node.state.disabled ? 'node-disabled': '')
+				.addClass(node.state.selected ? 'node-selected' : '')
+				.addClass(node.searchResult ? 'search-result' : '') 
+				.attr('data-nodeid', node.nodeId)
+				.attr('style', _this.buildStyleOverride(node));
+
+			// Add indent/spacer to mimic tree structure
+			for (var i = 0; i < (level - 1); i++) {
+				treeItem.append(_this.template.indent);
+			}
+
+			// Add expand, collapse or empty spacer icons
+			var classList = [];
+			if (node.nodes) {
+				classList.push('expand-icon');
+				if (node.state.expanded) {
+					classList.push(_this.options.collapseIcon);
+				}
+				else {
+					classList.push(_this.options.expandIcon);
+				}
+			}
+			else {
+				classList.push(_this.options.emptyIcon);
+			}
+
+			treeItem
+				.append($(_this.template.icon)
+					.addClass(classList.join(' '))
+				);
+
+
+			// Add node icon
+			if (_this.options.showIcon) {
+				
+				var classList = ['node-icon'];
+
+				classList.push(node.icon || _this.options.nodeIcon);
+				if (node.state.selected) {
+					classList.pop();
+					classList.push(node.selectedIcon || _this.options.selectedIcon || 
+									node.icon || _this.options.nodeIcon);
+				}
+
+				treeItem
+					.append($(_this.template.icon)
+						.addClass(classList.join(' '))
+					);
+			}
+
+			// Add check / unchecked icon
+			if (_this.options.showCheckbox) {
+
+				var classList = ['check-icon'];
+				if (node.state.checked) {
+					classList.push(_this.options.checkedIcon); 
+				}
+				else {
+					classList.push(_this.options.uncheckedIcon);
+				}
+
+				treeItem
+					.append($(_this.template.icon)
+						.addClass(classList.join(' '))
+					);
+			}
+
+			// Add text
+			if (_this.options.enableLinks) {
+				// Add hyperlink
+				treeItem
+					.append($(_this.template.link)
+						.attr('href', node.href)
+						.append(node.text)
+					);
+			}
+			else {
+				// otherwise just text
+				treeItem
+					.append(node.text);
+			}
+
+			// Add tags as badges
+			if (_this.options.showTags && node.tags) {
+				$.each(node.tags, function addTag(id, tag) {
+					treeItem
+						.append($(_this.template.badge)
+							.append(tag)
+						);
+				});
+			}
+
+			// Add item to the tree
+			_this.$wrapper.append(treeItem);
+
+			// Recursively add child ndoes
+			if (node.nodes && node.state.expanded && !node.state.disabled) {
+				return _this.buildTree(node.nodes, level);
+			}
+		});
+	};
+
+	// Define any node level style override for
+	// 1. selectedNode
+	// 2. node|data assigned color overrides
+	Tree.prototype.buildStyleOverride = function (node) {
+
+		if (node.state.disabled) return '';
+
+		var color = node.color;
+		var backColor = node.backColor;
+
+		if (this.options.highlightSelected && node.state.selected) {
+			if (this.options.selectedColor) {
+				color = this.options.selectedColor;
+			}
+			if (this.options.selectedBackColor) {
+				backColor = this.options.selectedBackColor;
+			}
+		}
+
+		if (this.options.highlightSearchResults && node.searchResult && !node.state.disabled) {
+			if (this.options.searchResultColor) {
+				color = this.options.searchResultColor;
+			}
+			if (this.options.searchResultBackColor) {
+				backColor = this.options.searchResultBackColor;
+			}
+		}
+
+		return 'color:' + color +
+			';background-color:' + backColor + ';';
+	};
+
+	// Add inline style into head
+	Tree.prototype.injectStyle = function () {
+
+		if (this.options.injectStyle && !document.getElementById(this.styleId)) {
+			$('<style type="text/css" id="' + this.styleId + '"> ' + this.buildStyle() + ' </style>').appendTo('head');
+		}
+	};
+
+	// Construct trees style based on user options
+	Tree.prototype.buildStyle = function () {
+
+		var style = '.node-' + this.elementId + '{';
+
+		if (this.options.color) {
+			style += 'color:' + this.options.color + ';';
+		}
+
+		if (this.options.backColor) {
+			style += 'background-color:' + this.options.backColor + ';';
+		}
+
+		if (!this.options.showBorder) {
+			style += 'border:none;';
+		}
+		else if (this.options.borderColor) {
+			style += 'border:1px solid ' + this.options.borderColor + ';';
+		}
+		style += '}';
+
+		if (this.options.onhoverColor) {
+			style += '.node-' + this.elementId + ':not(.node-disabled):hover{' +
+				'background-color:' + this.options.onhoverColor + ';' +
+			'}';
+		}
+
+		return this.css + style;
+	};
+
+	Tree.prototype.template = {
+		list: '<ul class="list-group"></ul>',
+		item: '<li class="list-group-item"></li>',
+		indent: '<span class="indent"></span>',
+		icon: '<span class="icon"></span>',
+		link: '<a href="#" style="color:inherit;"></a>',
+		badge: '<span class="badge"></span>'
+	};
+
+	Tree.prototype.css = '.treeview .list-group-item{cursor:pointer}.treeview span.indent{margin-left:10px;margin-right:10px}.treeview span.icon{width:12px;margin-right:5px}.treeview .node-disabled{color:silver;cursor:not-allowed}'
+
+
+	/**
+		Returns a single node object that matches the given node id.
+		@param {Number} nodeId - A node's unique identifier
+		@return {Object} node - Matching node
+	*/
+	Tree.prototype.getNode = function (nodeId) {
+		return this.nodes[nodeId];
+	};
+
+	/**
+		Returns the parent node of a given node, if valid otherwise returns undefined.
+		@param {Object|Number} identifier - A valid node or node id
+		@returns {Object} node - The parent node
+	*/
+	Tree.prototype.getParent = function (identifier) {
+		var node = this.identifyNode(identifier);
+		return this.nodes[node.parentId];
+	};
+
+	/**
+		Returns an array of sibling nodes for a given node, if valid otherwise returns undefined.
+		@param {Object|Number} identifier - A valid node or node id
+		@returns {Array} nodes - Sibling nodes
+	*/
+	Tree.prototype.getSiblings = function (identifier) {
+		var node = this.identifyNode(identifier);
+		var parent = this.getParent(node);
+		var nodes = parent ? parent.nodes : this.tree;
+		return nodes.filter(function (obj) {
+				return obj.nodeId !== node.nodeId;
+			});
+	};
+
+	/**
+		Returns an array of selected nodes.
+		@returns {Array} nodes - Selected nodes
+	*/
+	Tree.prototype.getSelected = function () {
+		return this.findNodes('true', 'g', 'state.selected');
+	};
+
+	/**
+		Returns an array of unselected nodes.
+		@returns {Array} nodes - Unselected nodes
+	*/
+	Tree.prototype.getUnselected = function () {
+		return this.findNodes('false', 'g', 'state.selected');
+	};
+
+	/**
+		Returns an array of expanded nodes.
+		@returns {Array} nodes - Expanded nodes
+	*/
+	Tree.prototype.getExpanded = function () {
+		return this.findNodes('true', 'g', 'state.expanded');
+	};
+
+	/**
+		Returns an array of collapsed nodes.
+		@returns {Array} nodes - Collapsed nodes
+	*/
+	Tree.prototype.getCollapsed = function () {
+		return this.findNodes('false', 'g', 'state.expanded');
+	};
+
+	/**
+		Returns an array of checked nodes.
+		@returns {Array} nodes - Checked nodes
+	*/
+	Tree.prototype.getChecked = function () {
+		return this.findNodes('true', 'g', 'state.checked');
+	};
+
+	/**
+		Returns an array of unchecked nodes.
+		@returns {Array} nodes - Unchecked nodes
+	*/
+	Tree.prototype.getUnchecked = function () {
+		return this.findNodes('false', 'g', 'state.checked');
+	};
+
+	/**
+		Returns an array of disabled nodes.
+		@returns {Array} nodes - Disabled nodes
+	*/
+	Tree.prototype.getDisabled = function () {
+		return this.findNodes('true', 'g', 'state.disabled');
+	};
+
+	/**
+		Returns an array of enabled nodes.
+		@returns {Array} nodes - Enabled nodes
+	*/
+	Tree.prototype.getEnabled = function () {
+		return this.findNodes('false', 'g', 'state.disabled');
+	};
+
+
+	/**
+		Set a node state to selected
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.selectNode = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setSelectedState(node, true, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Set a node state to unselected
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.unselectNode = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setSelectedState(node, false, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Toggles a node selected state; selecting if unselected, unselecting if selected.
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.toggleNodeSelected = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.toggleSelectedState(node, options);
+		}, this));
+
+		this.render();
+	};
+
+
+	/**
+		Collapse all tree nodes
+		@param {optional Object} options
+	*/
+	Tree.prototype.collapseAll = function (options) {
+		var identifiers = this.findNodes('true', 'g', 'state.expanded');
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setExpandedState(node, false, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Collapse a given tree node
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.collapseNode = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setExpandedState(node, false, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Expand all tree nodes
+		@param {optional Object} options
+	*/
+	Tree.prototype.expandAll = function (options) {
+		options = $.extend({}, _default.options, options);
+
+		if (options && options.levels) {
+			this.expandLevels(this.tree, options.levels, options);
+		}
+		else {
+			var identifiers = this.findNodes('false', 'g', 'state.expanded');
+			this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+				this.setExpandedState(node, true, options);
+			}, this));
+		}
+
+		this.render();
+	};
+
+	/**
+		Expand a given tree node
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.expandNode = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setExpandedState(node, true, options);
+			if (node.nodes && (options && options.levels)) {
+				this.expandLevels(node.nodes, options.levels-1, options);
+			}
+		}, this));
+
+		this.render();
+	};
+
+	Tree.prototype.expandLevels = function (nodes, level, options) {
+		options = $.extend({}, _default.options, options);
+
+		$.each(nodes, $.proxy(function (index, node) {
+			this.setExpandedState(node, (level > 0) ? true : false, options);
+			if (node.nodes) {
+				this.expandLevels(node.nodes, level-1, options);
+			}
+		}, this));
+	};
+
+	/**
+		Reveals a given tree node, expanding the tree from node to root.
+		@param {Object|Number|Array} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.revealNode = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			var parentNode = this.getParent(node);
+			while (parentNode) {
+				this.setExpandedState(parentNode, true, options);
+				parentNode = this.getParent(parentNode);
+			};
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Toggles a nodes expanded state; collapsing if expanded, expanding if collapsed.
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.toggleNodeExpanded = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.toggleExpandedState(node, options);
+		}, this));
+		
+		this.render();
+	};
+
+
+	/**
+		Check all tree nodes
+		@param {optional Object} options
+	*/
+	Tree.prototype.checkAll = function (options) {
+		var identifiers = this.findNodes('false', 'g', 'state.checked');
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setCheckedState(node, true, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Check a given tree node
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.checkNode = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setCheckedState(node, true, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Uncheck all tree nodes
+		@param {optional Object} options
+	*/
+	Tree.prototype.uncheckAll = function (options) {
+		var identifiers = this.findNodes('true', 'g', 'state.checked');
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setCheckedState(node, false, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Uncheck a given tree node
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.uncheckNode = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setCheckedState(node, false, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Toggles a nodes checked state; checking if unchecked, unchecking if checked.
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.toggleNodeChecked = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.toggleCheckedState(node, options);
+		}, this));
+
+		this.render();
+	};
+
+
+	/**
+		Disable all tree nodes
+		@param {optional Object} options
+	*/
+	Tree.prototype.disableAll = function (options) {
+		var identifiers = this.findNodes('false', 'g', 'state.disabled');
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setDisabledState(node, true, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Disable a given tree node
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.disableNode = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setDisabledState(node, true, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Enable all tree nodes
+		@param {optional Object} options
+	*/
+	Tree.prototype.enableAll = function (options) {
+		var identifiers = this.findNodes('true', 'g', 'state.disabled');
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setDisabledState(node, false, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Enable a given tree node
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.enableNode = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setDisabledState(node, false, options);
+		}, this));
+
+		this.render();
+	};
+
+	/**
+		Toggles a nodes disabled state; disabling is enabled, enabling if disabled.
+		@param {Object|Number} identifiers - A valid node, node id or array of node identifiers
+		@param {optional Object} options
+	*/
+	Tree.prototype.toggleNodeDisabled = function (identifiers, options) {
+		this.forEachIdentifier(identifiers, options, $.proxy(function (node, options) {
+			this.setDisabledState(node, !node.state.disabled, options);
+		}, this));
+
+		this.render();
+	};
+
+
+	/**
+		Common code for processing multiple identifiers
+	*/
+	Tree.prototype.forEachIdentifier = function (identifiers, options, callback) {
+
+		options = $.extend({}, _default.options, options);
+
+		if (!(identifiers instanceof Array)) {
+			identifiers = [identifiers];
+		}
+
+		$.each(identifiers, $.proxy(function (index, identifier) {
+			callback(this.identifyNode(identifier), options);
+		}, this));	
+	};
+
+	/*
+		Identifies a node from either a node id or object
+	*/
+	Tree.prototype.identifyNode = function (identifier) {
+		return ((typeof identifier) === 'number') ?
+						this.nodes[identifier] :
+						identifier;
+	};
+
+	/**
+		Searches the tree for nodes (text) that match given criteria
+		@param {String} pattern - A given string to match against
+		@param {optional Object} options - Search criteria options
+		@return {Array} nodes - Matching nodes
+	*/
+	Tree.prototype.search = function (pattern, options) {
+		options = $.extend({}, _default.searchOptions, options);
+
+		this.clearSearch({ render: false });
+
+		var results = [];
+		if (pattern && pattern.length > 0) {
+
+			if (options.exactMatch) {
+				pattern = '^' + pattern + '$';
+			}
+
+			var modifier = 'g';
+			if (options.ignoreCase) {
+				modifier += 'i';
+			}
+
+			results = this.findNodes(pattern, modifier);
+
+			// Add searchResult property to all matching nodes
+			// This will be used to apply custom styles
+			// and when identifying result to be cleared
+			$.each(results, function (index, node) {
+				node.searchResult = true;
+			})
+		}
+
+		// If revealResults, then render is triggered from revealNode
+		// otherwise we just call render.
+		if (options.revealResults) {
+			this.revealNode(results);
+		}
+		else {
+			this.render();
+		}
+
+		this.$element.trigger('searchComplete', $.extend(true, {}, results));
+
+		return results;
+	};
+
+	/**
+		Clears previous search results
+	*/
+	Tree.prototype.clearSearch = function (options) {
+
+		options = $.extend({}, { render: true }, options);
+
+		var results = $.each(this.findNodes('true', 'g', 'searchResult'), function (index, node) {
+			node.searchResult = false;
+		});
+
+		if (options.render) {
+			this.render();	
+		}
+		
+		this.$element.trigger('searchCleared', $.extend(true, {}, results));
+	};
+
+	/**
+		Find nodes that match a given criteria
+		@param {String} pattern - A given string to match against
+		@param {optional String} modifier - Valid RegEx modifiers
+		@param {optional String} attribute - Attribute to compare pattern against
+		@return {Array} nodes - Nodes that match your criteria
+	*/
+	Tree.prototype.findNodes = function (pattern, modifier, attribute) {
+
+		modifier = modifier || 'g';
+		attribute = attribute || 'text';
+
+		var _this = this;
+		return $.grep(this.nodes, function (node) {
+			var val = _this.getNodeValue(node, attribute);
+			if (typeof val === 'string') {
+				return val.match(new RegExp(pattern, modifier));
+			}
+		});
+	};
+
+	/**
+		Recursive find for retrieving nested attributes values
+		All values are return as strings, unless invalid
+		@param {Object} obj - Typically a node, could be any object
+		@param {String} attr - Identifies an object property using dot notation
+		@return {String} value - Matching attributes string representation
+	*/
+	Tree.prototype.getNodeValue = function (obj, attr) {
+		var index = attr.indexOf('.');
+		if (index > 0) {
+			var _obj = obj[attr.substring(0, index)];
+			var _attr = attr.substring(index + 1, attr.length);
+			return this.getNodeValue(_obj, _attr);
+		}
+		else {
+			if (obj.hasOwnProperty(attr)) {
+				return obj[attr].toString();
+			}
+			else {
+				return undefined;
+			}
+		}
+	};
+
+	var logError = function (message) {
+		if (window.console) {
+			window.console.error(message);
+		}
+	};
+
+	// Prevent against multiple instantiations,
+	// handle updates and method calls
+	$.fn[pluginName] = function (options, args) {
+
+		var result;
+
+		this.each(function () {
+			var _this = $.data(this, pluginName);
+			if (typeof options === 'string') {
+				if (!_this) {
+					logError('Not initialized, can not call method : ' + options);
+				}
+				else if (!$.isFunction(_this[options]) || options.charAt(0) === '_') {
+					logError('No such method : ' + options);
+				}
+				else {
+					if (!(args instanceof Array)) {
+						args = [ args ];
+					}
+					result = _this[options].apply(_this, args);
+				}
+			}
+			else if (typeof options === 'boolean') {
+				result = _this;
+			}
+			else {
+				$.data(this, pluginName, new Tree(this, $.extend(true, {}, options)));
+			}
+		});
+
+		return result || this;
+	};
+
+})(jQuery, window, document);
+
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
+/***/ "./node_modules/bootstrap/js/dist/modal.js":
+/*!*************************************************!*\
+  !*** ./node_modules/bootstrap/js/dist/modal.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+   true ? module.exports = factory(__webpack_require__(/*! jquery */ "jquery"), __webpack_require__(/*! ./util.js */ "./node_modules/bootstrap/js/dist/util.js")) :
+  undefined;
+}(this, (function ($,Util) { 'use strict';
+
+  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
+  Util = Util && Util.hasOwnProperty('default') ? Util['default'] : Util;
+
+  function _defineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+      var descriptor = props[i];
+      descriptor.enumerable = descriptor.enumerable || false;
+      descriptor.configurable = true;
+      if ("value" in descriptor) descriptor.writable = true;
+      Object.defineProperty(target, descriptor.key, descriptor);
+    }
+  }
+
+  function _createClass(Constructor, protoProps, staticProps) {
+    if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+    if (staticProps) _defineProperties(Constructor, staticProps);
+    return Constructor;
+  }
+
+  function _defineProperty(obj, key, value) {
+    if (key in obj) {
+      Object.defineProperty(obj, key, {
+        value: value,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      obj[key] = value;
+    }
+
+    return obj;
+  }
+
+  function _objectSpread(target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i] != null ? arguments[i] : {};
+      var ownKeys = Object.keys(source);
+
+      if (typeof Object.getOwnPropertySymbols === 'function') {
+        ownKeys = ownKeys.concat(Object.getOwnPropertySymbols(source).filter(function (sym) {
+          return Object.getOwnPropertyDescriptor(source, sym).enumerable;
+        }));
+      }
+
+      ownKeys.forEach(function (key) {
+        _defineProperty(target, key, source[key]);
+      });
+    }
+
+    return target;
+  }
+
+  /**
+   * --------------------------------------------------------------------------
+   * Bootstrap (v4.1.3): modal.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+  var Modal = function ($$$1) {
+    /**
+     * ------------------------------------------------------------------------
+     * Constants
+     * ------------------------------------------------------------------------
+     */
+    var NAME = 'modal';
+    var VERSION = '4.1.3';
+    var DATA_KEY = 'bs.modal';
+    var EVENT_KEY = "." + DATA_KEY;
+    var DATA_API_KEY = '.data-api';
+    var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
+    var ESCAPE_KEYCODE = 27; // KeyboardEvent.which value for Escape (Esc) key
+
+    var Default = {
+      backdrop: true,
+      keyboard: true,
+      focus: true,
+      show: true
+    };
+    var DefaultType = {
+      backdrop: '(boolean|string)',
+      keyboard: 'boolean',
+      focus: 'boolean',
+      show: 'boolean'
+    };
+    var Event = {
+      HIDE: "hide" + EVENT_KEY,
+      HIDDEN: "hidden" + EVENT_KEY,
+      SHOW: "show" + EVENT_KEY,
+      SHOWN: "shown" + EVENT_KEY,
+      FOCUSIN: "focusin" + EVENT_KEY,
+      RESIZE: "resize" + EVENT_KEY,
+      CLICK_DISMISS: "click.dismiss" + EVENT_KEY,
+      KEYDOWN_DISMISS: "keydown.dismiss" + EVENT_KEY,
+      MOUSEUP_DISMISS: "mouseup.dismiss" + EVENT_KEY,
+      MOUSEDOWN_DISMISS: "mousedown.dismiss" + EVENT_KEY,
+      CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
+    };
+    var ClassName = {
+      SCROLLBAR_MEASURER: 'modal-scrollbar-measure',
+      BACKDROP: 'modal-backdrop',
+      OPEN: 'modal-open',
+      FADE: 'fade',
+      SHOW: 'show'
+    };
+    var Selector = {
+      DIALOG: '.modal-dialog',
+      DATA_TOGGLE: '[data-toggle="modal"]',
+      DATA_DISMISS: '[data-dismiss="modal"]',
+      FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
+      STICKY_CONTENT: '.sticky-top'
+      /**
+       * ------------------------------------------------------------------------
+       * Class Definition
+       * ------------------------------------------------------------------------
+       */
+
+    };
+
+    var Modal =
+    /*#__PURE__*/
+    function () {
+      function Modal(element, config) {
+        this._config = this._getConfig(config);
+        this._element = element;
+        this._dialog = element.querySelector(Selector.DIALOG);
+        this._backdrop = null;
+        this._isShown = false;
+        this._isBodyOverflowing = false;
+        this._ignoreBackdropClick = false;
+        this._scrollbarWidth = 0;
+      } // Getters
+
+
+      var _proto = Modal.prototype;
+
+      // Public
+      _proto.toggle = function toggle(relatedTarget) {
+        return this._isShown ? this.hide() : this.show(relatedTarget);
+      };
+
+      _proto.show = function show(relatedTarget) {
+        var _this = this;
+
+        if (this._isTransitioning || this._isShown) {
+          return;
+        }
+
+        if ($$$1(this._element).hasClass(ClassName.FADE)) {
+          this._isTransitioning = true;
+        }
+
+        var showEvent = $$$1.Event(Event.SHOW, {
+          relatedTarget: relatedTarget
+        });
+        $$$1(this._element).trigger(showEvent);
+
+        if (this._isShown || showEvent.isDefaultPrevented()) {
+          return;
+        }
+
+        this._isShown = true;
+
+        this._checkScrollbar();
+
+        this._setScrollbar();
+
+        this._adjustDialog();
+
+        $$$1(document.body).addClass(ClassName.OPEN);
+
+        this._setEscapeEvent();
+
+        this._setResizeEvent();
+
+        $$$1(this._element).on(Event.CLICK_DISMISS, Selector.DATA_DISMISS, function (event) {
+          return _this.hide(event);
+        });
+        $$$1(this._dialog).on(Event.MOUSEDOWN_DISMISS, function () {
+          $$$1(_this._element).one(Event.MOUSEUP_DISMISS, function (event) {
+            if ($$$1(event.target).is(_this._element)) {
+              _this._ignoreBackdropClick = true;
+            }
+          });
+        });
+
+        this._showBackdrop(function () {
+          return _this._showElement(relatedTarget);
+        });
+      };
+
+      _proto.hide = function hide(event) {
+        var _this2 = this;
+
+        if (event) {
+          event.preventDefault();
+        }
+
+        if (this._isTransitioning || !this._isShown) {
+          return;
+        }
+
+        var hideEvent = $$$1.Event(Event.HIDE);
+        $$$1(this._element).trigger(hideEvent);
+
+        if (!this._isShown || hideEvent.isDefaultPrevented()) {
+          return;
+        }
+
+        this._isShown = false;
+        var transition = $$$1(this._element).hasClass(ClassName.FADE);
+
+        if (transition) {
+          this._isTransitioning = true;
+        }
+
+        this._setEscapeEvent();
+
+        this._setResizeEvent();
+
+        $$$1(document).off(Event.FOCUSIN);
+        $$$1(this._element).removeClass(ClassName.SHOW);
+        $$$1(this._element).off(Event.CLICK_DISMISS);
+        $$$1(this._dialog).off(Event.MOUSEDOWN_DISMISS);
+
+        if (transition) {
+          var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+          $$$1(this._element).one(Util.TRANSITION_END, function (event) {
+            return _this2._hideModal(event);
+          }).emulateTransitionEnd(transitionDuration);
+        } else {
+          this._hideModal();
+        }
+      };
+
+      _proto.dispose = function dispose() {
+        $$$1.removeData(this._element, DATA_KEY);
+        $$$1(window, document, this._element, this._backdrop).off(EVENT_KEY);
+        this._config = null;
+        this._element = null;
+        this._dialog = null;
+        this._backdrop = null;
+        this._isShown = null;
+        this._isBodyOverflowing = null;
+        this._ignoreBackdropClick = null;
+        this._scrollbarWidth = null;
+      };
+
+      _proto.handleUpdate = function handleUpdate() {
+        this._adjustDialog();
+      }; // Private
+
+
+      _proto._getConfig = function _getConfig(config) {
+        config = _objectSpread({}, Default, config);
+        Util.typeCheckConfig(NAME, config, DefaultType);
+        return config;
+      };
+
+      _proto._showElement = function _showElement(relatedTarget) {
+        var _this3 = this;
+
+        var transition = $$$1(this._element).hasClass(ClassName.FADE);
+
+        if (!this._element.parentNode || this._element.parentNode.nodeType !== Node.ELEMENT_NODE) {
+          // Don't move modal's DOM position
+          document.body.appendChild(this._element);
+        }
+
+        this._element.style.display = 'block';
+
+        this._element.removeAttribute('aria-hidden');
+
+        this._element.scrollTop = 0;
+
+        if (transition) {
+          Util.reflow(this._element);
+        }
+
+        $$$1(this._element).addClass(ClassName.SHOW);
+
+        if (this._config.focus) {
+          this._enforceFocus();
+        }
+
+        var shownEvent = $$$1.Event(Event.SHOWN, {
+          relatedTarget: relatedTarget
+        });
+
+        var transitionComplete = function transitionComplete() {
+          if (_this3._config.focus) {
+            _this3._element.focus();
+          }
+
+          _this3._isTransitioning = false;
+          $$$1(_this3._element).trigger(shownEvent);
+        };
+
+        if (transition) {
+          var transitionDuration = Util.getTransitionDurationFromElement(this._element);
+          $$$1(this._dialog).one(Util.TRANSITION_END, transitionComplete).emulateTransitionEnd(transitionDuration);
+        } else {
+          transitionComplete();
+        }
+      };
+
+      _proto._enforceFocus = function _enforceFocus() {
+        var _this4 = this;
+
+        $$$1(document).off(Event.FOCUSIN) // Guard against infinite focus loop
+        .on(Event.FOCUSIN, function (event) {
+          if (document !== event.target && _this4._element !== event.target && $$$1(_this4._element).has(event.target).length === 0) {
+            _this4._element.focus();
+          }
+        });
+      };
+
+      _proto._setEscapeEvent = function _setEscapeEvent() {
+        var _this5 = this;
+
+        if (this._isShown && this._config.keyboard) {
+          $$$1(this._element).on(Event.KEYDOWN_DISMISS, function (event) {
+            if (event.which === ESCAPE_KEYCODE) {
+              event.preventDefault();
+
+              _this5.hide();
+            }
+          });
+        } else if (!this._isShown) {
+          $$$1(this._element).off(Event.KEYDOWN_DISMISS);
+        }
+      };
+
+      _proto._setResizeEvent = function _setResizeEvent() {
+        var _this6 = this;
+
+        if (this._isShown) {
+          $$$1(window).on(Event.RESIZE, function (event) {
+            return _this6.handleUpdate(event);
+          });
+        } else {
+          $$$1(window).off(Event.RESIZE);
+        }
+      };
+
+      _proto._hideModal = function _hideModal() {
+        var _this7 = this;
+
+        this._element.style.display = 'none';
+
+        this._element.setAttribute('aria-hidden', true);
+
+        this._isTransitioning = false;
+
+        this._showBackdrop(function () {
+          $$$1(document.body).removeClass(ClassName.OPEN);
+
+          _this7._resetAdjustments();
+
+          _this7._resetScrollbar();
+
+          $$$1(_this7._element).trigger(Event.HIDDEN);
+        });
+      };
+
+      _proto._removeBackdrop = function _removeBackdrop() {
+        if (this._backdrop) {
+          $$$1(this._backdrop).remove();
+          this._backdrop = null;
+        }
+      };
+
+      _proto._showBackdrop = function _showBackdrop(callback) {
+        var _this8 = this;
+
+        var animate = $$$1(this._element).hasClass(ClassName.FADE) ? ClassName.FADE : '';
+
+        if (this._isShown && this._config.backdrop) {
+          this._backdrop = document.createElement('div');
+          this._backdrop.className = ClassName.BACKDROP;
+
+          if (animate) {
+            this._backdrop.classList.add(animate);
+          }
+
+          $$$1(this._backdrop).appendTo(document.body);
+          $$$1(this._element).on(Event.CLICK_DISMISS, function (event) {
+            if (_this8._ignoreBackdropClick) {
+              _this8._ignoreBackdropClick = false;
+              return;
+            }
+
+            if (event.target !== event.currentTarget) {
+              return;
+            }
+
+            if (_this8._config.backdrop === 'static') {
+              _this8._element.focus();
+            } else {
+              _this8.hide();
+            }
+          });
+
+          if (animate) {
+            Util.reflow(this._backdrop);
+          }
+
+          $$$1(this._backdrop).addClass(ClassName.SHOW);
+
+          if (!callback) {
+            return;
+          }
+
+          if (!animate) {
+            callback();
+            return;
+          }
+
+          var backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
+          $$$1(this._backdrop).one(Util.TRANSITION_END, callback).emulateTransitionEnd(backdropTransitionDuration);
+        } else if (!this._isShown && this._backdrop) {
+          $$$1(this._backdrop).removeClass(ClassName.SHOW);
+
+          var callbackRemove = function callbackRemove() {
+            _this8._removeBackdrop();
+
+            if (callback) {
+              callback();
+            }
+          };
+
+          if ($$$1(this._element).hasClass(ClassName.FADE)) {
+            var _backdropTransitionDuration = Util.getTransitionDurationFromElement(this._backdrop);
+
+            $$$1(this._backdrop).one(Util.TRANSITION_END, callbackRemove).emulateTransitionEnd(_backdropTransitionDuration);
+          } else {
+            callbackRemove();
+          }
+        } else if (callback) {
+          callback();
+        }
+      }; // ----------------------------------------------------------------------
+      // the following methods are used to handle overflowing modals
+      // todo (fat): these should probably be refactored out of modal.js
+      // ----------------------------------------------------------------------
+
+
+      _proto._adjustDialog = function _adjustDialog() {
+        var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
+
+        if (!this._isBodyOverflowing && isModalOverflowing) {
+          this._element.style.paddingLeft = this._scrollbarWidth + "px";
+        }
+
+        if (this._isBodyOverflowing && !isModalOverflowing) {
+          this._element.style.paddingRight = this._scrollbarWidth + "px";
+        }
+      };
+
+      _proto._resetAdjustments = function _resetAdjustments() {
+        this._element.style.paddingLeft = '';
+        this._element.style.paddingRight = '';
+      };
+
+      _proto._checkScrollbar = function _checkScrollbar() {
+        var rect = document.body.getBoundingClientRect();
+        this._isBodyOverflowing = rect.left + rect.right < window.innerWidth;
+        this._scrollbarWidth = this._getScrollbarWidth();
+      };
+
+      _proto._setScrollbar = function _setScrollbar() {
+        var _this9 = this;
+
+        if (this._isBodyOverflowing) {
+          // Note: DOMNode.style.paddingRight returns the actual value or '' if not set
+          //   while $(DOMNode).css('padding-right') returns the calculated value or 0 if not set
+          var fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
+          var stickyContent = [].slice.call(document.querySelectorAll(Selector.STICKY_CONTENT)); // Adjust fixed content padding
+
+          $$$1(fixedContent).each(function (index, element) {
+            var actualPadding = element.style.paddingRight;
+            var calculatedPadding = $$$1(element).css('padding-right');
+            $$$1(element).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + _this9._scrollbarWidth + "px");
+          }); // Adjust sticky content margin
+
+          $$$1(stickyContent).each(function (index, element) {
+            var actualMargin = element.style.marginRight;
+            var calculatedMargin = $$$1(element).css('margin-right');
+            $$$1(element).data('margin-right', actualMargin).css('margin-right', parseFloat(calculatedMargin) - _this9._scrollbarWidth + "px");
+          }); // Adjust body padding
+
+          var actualPadding = document.body.style.paddingRight;
+          var calculatedPadding = $$$1(document.body).css('padding-right');
+          $$$1(document.body).data('padding-right', actualPadding).css('padding-right', parseFloat(calculatedPadding) + this._scrollbarWidth + "px");
+        }
+      };
+
+      _proto._resetScrollbar = function _resetScrollbar() {
+        // Restore fixed content padding
+        var fixedContent = [].slice.call(document.querySelectorAll(Selector.FIXED_CONTENT));
+        $$$1(fixedContent).each(function (index, element) {
+          var padding = $$$1(element).data('padding-right');
+          $$$1(element).removeData('padding-right');
+          element.style.paddingRight = padding ? padding : '';
+        }); // Restore sticky content
+
+        var elements = [].slice.call(document.querySelectorAll("" + Selector.STICKY_CONTENT));
+        $$$1(elements).each(function (index, element) {
+          var margin = $$$1(element).data('margin-right');
+
+          if (typeof margin !== 'undefined') {
+            $$$1(element).css('margin-right', margin).removeData('margin-right');
+          }
+        }); // Restore body padding
+
+        var padding = $$$1(document.body).data('padding-right');
+        $$$1(document.body).removeData('padding-right');
+        document.body.style.paddingRight = padding ? padding : '';
+      };
+
+      _proto._getScrollbarWidth = function _getScrollbarWidth() {
+        // thx d.walsh
+        var scrollDiv = document.createElement('div');
+        scrollDiv.className = ClassName.SCROLLBAR_MEASURER;
+        document.body.appendChild(scrollDiv);
+        var scrollbarWidth = scrollDiv.getBoundingClientRect().width - scrollDiv.clientWidth;
+        document.body.removeChild(scrollDiv);
+        return scrollbarWidth;
+      }; // Static
+
+
+      Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
+        return this.each(function () {
+          var data = $$$1(this).data(DATA_KEY);
+
+          var _config = _objectSpread({}, Default, $$$1(this).data(), typeof config === 'object' && config ? config : {});
+
+          if (!data) {
+            data = new Modal(this, _config);
+            $$$1(this).data(DATA_KEY, data);
+          }
+
+          if (typeof config === 'string') {
+            if (typeof data[config] === 'undefined') {
+              throw new TypeError("No method named \"" + config + "\"");
+            }
+
+            data[config](relatedTarget);
+          } else if (_config.show) {
+            data.show(relatedTarget);
+          }
+        });
+      };
+
+      _createClass(Modal, null, [{
+        key: "VERSION",
+        get: function get() {
+          return VERSION;
+        }
+      }, {
+        key: "Default",
+        get: function get() {
+          return Default;
+        }
+      }]);
+
+      return Modal;
+    }();
+    /**
+     * ------------------------------------------------------------------------
+     * Data Api implementation
+     * ------------------------------------------------------------------------
+     */
+
+
+    $$$1(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
+      var _this10 = this;
+
+      var target;
+      var selector = Util.getSelectorFromElement(this);
+
+      if (selector) {
+        target = document.querySelector(selector);
+      }
+
+      var config = $$$1(target).data(DATA_KEY) ? 'toggle' : _objectSpread({}, $$$1(target).data(), $$$1(this).data());
+
+      if (this.tagName === 'A' || this.tagName === 'AREA') {
+        event.preventDefault();
+      }
+
+      var $target = $$$1(target).one(Event.SHOW, function (showEvent) {
+        if (showEvent.isDefaultPrevented()) {
+          // Only register focus restorer if modal will actually get shown
+          return;
+        }
+
+        $target.one(Event.HIDDEN, function () {
+          if ($$$1(_this10).is(':visible')) {
+            _this10.focus();
+          }
+        });
+      });
+
+      Modal._jQueryInterface.call($$$1(target), config, this);
+    });
+    /**
+     * ------------------------------------------------------------------------
+     * jQuery
+     * ------------------------------------------------------------------------
+     */
+
+    $$$1.fn[NAME] = Modal._jQueryInterface;
+    $$$1.fn[NAME].Constructor = Modal;
+
+    $$$1.fn[NAME].noConflict = function () {
+      $$$1.fn[NAME] = JQUERY_NO_CONFLICT;
+      return Modal._jQueryInterface;
+    };
+
+    return Modal;
+  }($);
+
+  return Modal;
+
+})));
+//# sourceMappingURL=modal.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/bootstrap/js/dist/util.js":
+/*!************************************************!*\
+  !*** ./node_modules/bootstrap/js/dist/util.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+(function (global, factory) {
+   true ? module.exports = factory(__webpack_require__(/*! jquery */ "jquery")) :
+  undefined;
+}(this, (function ($) { 'use strict';
+
+  $ = $ && $.hasOwnProperty('default') ? $['default'] : $;
+
+  /**
+   * --------------------------------------------------------------------------
+   * Bootstrap (v4.1.3): util.js
+   * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+   * --------------------------------------------------------------------------
+   */
+
+  var Util = function ($$$1) {
+    /**
+     * ------------------------------------------------------------------------
+     * Private TransitionEnd Helpers
+     * ------------------------------------------------------------------------
+     */
+    var TRANSITION_END = 'transitionend';
+    var MAX_UID = 1000000;
+    var MILLISECONDS_MULTIPLIER = 1000; // Shoutout AngusCroll (https://goo.gl/pxwQGp)
+
+    function toType(obj) {
+      return {}.toString.call(obj).match(/\s([a-z]+)/i)[1].toLowerCase();
+    }
+
+    function getSpecialTransitionEndEvent() {
+      return {
+        bindType: TRANSITION_END,
+        delegateType: TRANSITION_END,
+        handle: function handle(event) {
+          if ($$$1(event.target).is(this)) {
+            return event.handleObj.handler.apply(this, arguments); // eslint-disable-line prefer-rest-params
+          }
+
+          return undefined; // eslint-disable-line no-undefined
+        }
+      };
+    }
+
+    function transitionEndEmulator(duration) {
+      var _this = this;
+
+      var called = false;
+      $$$1(this).one(Util.TRANSITION_END, function () {
+        called = true;
+      });
+      setTimeout(function () {
+        if (!called) {
+          Util.triggerTransitionEnd(_this);
+        }
+      }, duration);
+      return this;
+    }
+
+    function setTransitionEndSupport() {
+      $$$1.fn.emulateTransitionEnd = transitionEndEmulator;
+      $$$1.event.special[Util.TRANSITION_END] = getSpecialTransitionEndEvent();
+    }
+    /**
+     * --------------------------------------------------------------------------
+     * Public Util Api
+     * --------------------------------------------------------------------------
+     */
+
+
+    var Util = {
+      TRANSITION_END: 'bsTransitionEnd',
+      getUID: function getUID(prefix) {
+        do {
+          // eslint-disable-next-line no-bitwise
+          prefix += ~~(Math.random() * MAX_UID); // "~~" acts like a faster Math.floor() here
+        } while (document.getElementById(prefix));
+
+        return prefix;
+      },
+      getSelectorFromElement: function getSelectorFromElement(element) {
+        var selector = element.getAttribute('data-target');
+
+        if (!selector || selector === '#') {
+          selector = element.getAttribute('href') || '';
+        }
+
+        try {
+          return document.querySelector(selector) ? selector : null;
+        } catch (err) {
+          return null;
+        }
+      },
+      getTransitionDurationFromElement: function getTransitionDurationFromElement(element) {
+        if (!element) {
+          return 0;
+        } // Get transition-duration of the element
+
+
+        var transitionDuration = $$$1(element).css('transition-duration');
+        var floatTransitionDuration = parseFloat(transitionDuration); // Return 0 if element or transition duration is not found
+
+        if (!floatTransitionDuration) {
+          return 0;
+        } // If multiple durations are defined, take the first
+
+
+        transitionDuration = transitionDuration.split(',')[0];
+        return parseFloat(transitionDuration) * MILLISECONDS_MULTIPLIER;
+      },
+      reflow: function reflow(element) {
+        return element.offsetHeight;
+      },
+      triggerTransitionEnd: function triggerTransitionEnd(element) {
+        $$$1(element).trigger(TRANSITION_END);
+      },
+      // TODO: Remove in v5
+      supportsTransitionEnd: function supportsTransitionEnd() {
+        return Boolean(TRANSITION_END);
+      },
+      isElement: function isElement(obj) {
+        return (obj[0] || obj).nodeType;
+      },
+      typeCheckConfig: function typeCheckConfig(componentName, config, configTypes) {
+        for (var property in configTypes) {
+          if (Object.prototype.hasOwnProperty.call(configTypes, property)) {
+            var expectedTypes = configTypes[property];
+            var value = config[property];
+            var valueType = value && Util.isElement(value) ? 'element' : toType(value);
+
+            if (!new RegExp(expectedTypes).test(valueType)) {
+              throw new Error(componentName.toUpperCase() + ": " + ("Option \"" + property + "\" provided type \"" + valueType + "\" ") + ("but expected type \"" + expectedTypes + "\"."));
+            }
+          }
+        }
+      }
+    };
+    setTransitionEndSupport();
+    return Util;
+  }($);
+
+  return Util;
+
+})));
+//# sourceMappingURL=util.js.map
 
 
 /***/ }),
@@ -15977,10 +18036,21 @@ module.exports = dragula;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/Component.js":
-/*!********************************************!*\
-  !*** ./node_modules/formiojs/Component.js ***!
-  \********************************************/
+/***/ "./node_modules/formiojs/dist/formio.full.min.css":
+/*!********************************************************!*\
+  !*** ./node_modules/formiojs/dist/formio.full.min.css ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/Component.js":
+/*!************************************************!*\
+  !*** ./node_modules/formiojs/lib/Component.js ***!
+  \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -15996,10 +18066,6 @@ __webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/cor
 
 __webpack_require__(/*! core-js/modules/es6.object.assign */ "./node_modules/core-js/modules/es6.object.assign.js");
 
-__webpack_require__(/*! core-js/modules/es7.array.includes */ "./node_modules/core-js/modules/es7.array.includes.js");
-
-__webpack_require__(/*! core-js/modules/es6.string.includes */ "./node_modules/core-js/modules/es6.string.includes.js");
-
 __webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/core-js/modules/es6.regexp.replace.js");
 
 __webpack_require__(/*! core-js/modules/es6.regexp.constructor */ "./node_modules/core-js/modules/es6.regexp.constructor.js");
@@ -16010,7 +18076,7 @@ __webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core
 
 var _eventemitter = _interopRequireDefault(__webpack_require__(/*! eventemitter2 */ "./node_modules/eventemitter2/lib/eventemitter2.js"));
 
-var FormioUtils = _interopRequireWildcard(__webpack_require__(/*! ./utils/utils */ "./node_modules/formiojs/utils/utils.js"));
+var FormioUtils = _interopRequireWildcard(__webpack_require__(/*! ./utils/utils */ "./node_modules/formiojs/lib/utils/utils.js"));
 
 var _i18next = _interopRequireDefault(__webpack_require__(/*! i18next */ "./node_modules/i18next/dist/es/index.js"));
 
@@ -16186,8 +18252,6 @@ function () {
       } else if ('attachEvent' in obj) {
         obj.attachEvent("on".concat(type), func);
       }
-
-      return this;
     }
     /**
      * Remove an event listener from the object.
@@ -16213,8 +18277,6 @@ function () {
       if (indexes.length) {
         _lodash.default.pullAt(this.eventHandlers, indexes);
       }
-
-      return this;
     }
     /**
      * Removes all event listeners attached to this component.
@@ -16255,8 +18317,9 @@ function () {
   }, {
     key: "appendTo",
     value: function appendTo(element, container) {
-      container === null || container === void 0 ? void 0 : container.appendChild(element);
-      return this;
+      if (container) {
+        container.appendChild(element);
+      }
     }
     /**
      * Prepend an HTML DOM element to a container.
@@ -16280,8 +18343,6 @@ function () {
           container.appendChild(element);
         }
       }
-
-      return this;
     }
     /**
      * Removes an HTML DOM element from its bounding container.
@@ -16300,8 +18361,6 @@ function () {
           console.warn(err);
         }
       }
-
-      return this;
     }
     /**
      * Alias for document.createElement.
@@ -16341,15 +18400,13 @@ function () {
 
       if (Array.isArray(child)) {
         child.forEach(function (oneChild) {
-          return _this4.appendChild(element, oneChild);
+          _this4.appendChild(element, oneChild);
         });
       } else if (child instanceof HTMLElement || child instanceof Text) {
         element.appendChild(child);
       } else if (child) {
         element.appendChild(this.text(child.toString()));
       }
-
-      return this;
     }
     /**
      * Creates a new input mask placeholder.
@@ -16489,16 +18546,14 @@ function () {
     key: "addClass",
     value: function addClass(element, className) {
       if (!element) {
-        return this;
+        return;
       }
 
       var classes = element.getAttribute('class');
 
-      if (!(classes === null || classes === void 0 ? void 0 : classes.includes(className))) {
+      if (!classes || classes.indexOf(className) === -1) {
         element.setAttribute('class', "".concat(classes, " ").concat(className));
       }
-
-      return this;
     }
     /**
      * Remove a class from a DOM element.
@@ -16513,16 +18568,15 @@ function () {
     key: "removeClass",
     value: function removeClass(element, className) {
       if (!element) {
-        return this;
+        return;
       }
 
-      var classes = element.getAttribute('class');
+      var cls = element.getAttribute('class');
 
-      if (classes) {
-        element.setAttribute('class', classes.replace(new RegExp(" ".concat(className), 'g'), ''));
+      if (cls) {
+        cls = cls.replace(new RegExp(" ".concat(className), 'g'), '');
+        element.setAttribute('class', cls);
       }
-
-      return this;
     }
     /**
      * Empty's an HTML DOM element.
@@ -16669,10 +18723,10 @@ exports.default = Component;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/Form.js":
-/*!***************************************!*\
-  !*** ./node_modules/formiojs/Form.js ***!
-  \***************************************/
+/***/ "./node_modules/formiojs/lib/Form.js":
+/*!*******************************************!*\
+  !*** ./node_modules/formiojs/lib/Form.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16686,13 +18740,13 @@ exports.default = void 0;
 
 __webpack_require__(/*! core-js/modules/es6.regexp.to-string */ "./node_modules/core-js/modules/es6.regexp.to-string.js");
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
-var _Wizard = _interopRequireDefault(__webpack_require__(/*! ./Wizard */ "./node_modules/formiojs/Wizard.js"));
+var _Wizard = _interopRequireDefault(__webpack_require__(/*! ./Wizard */ "./node_modules/formiojs/lib/Wizard.js"));
 
-var _PDF = _interopRequireDefault(__webpack_require__(/*! ./PDF */ "./node_modules/formiojs/PDF.js"));
+var _PDF = _interopRequireDefault(__webpack_require__(/*! ./PDF */ "./node_modules/formiojs/lib/PDF.js"));
 
-var _Webform = _interopRequireDefault(__webpack_require__(/*! ./Webform */ "./node_modules/formiojs/Webform.js"));
+var _Webform = _interopRequireDefault(__webpack_require__(/*! ./Webform */ "./node_modules/formiojs/lib/Webform.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -16844,10 +18898,10 @@ _Formio.default.Form = Form;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/FormBuilder.js":
-/*!**********************************************!*\
-  !*** ./node_modules/formiojs/FormBuilder.js ***!
-  \**********************************************/
+/***/ "./node_modules/formiojs/lib/FormBuilder.js":
+/*!**************************************************!*\
+  !*** ./node_modules/formiojs/lib/FormBuilder.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -16863,15 +18917,15 @@ __webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_mod
 
 __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
-var _WebformBuilder = _interopRequireDefault(__webpack_require__(/*! ./WebformBuilder */ "./node_modules/formiojs/WebformBuilder.js"));
+var _WebformBuilder = _interopRequireDefault(__webpack_require__(/*! ./WebformBuilder */ "./node_modules/formiojs/lib/WebformBuilder.js"));
 
-var _WizardBuilder = _interopRequireDefault(__webpack_require__(/*! ./WizardBuilder */ "./node_modules/formiojs/WizardBuilder.js"));
+var _WizardBuilder = _interopRequireDefault(__webpack_require__(/*! ./WizardBuilder */ "./node_modules/formiojs/lib/WizardBuilder.js"));
 
-var _PDFBuilder = _interopRequireDefault(__webpack_require__(/*! ./PDFBuilder */ "./node_modules/formiojs/PDFBuilder.js"));
+var _PDFBuilder = _interopRequireDefault(__webpack_require__(/*! ./PDFBuilder */ "./node_modules/formiojs/lib/PDFBuilder.js"));
 
-var _Form2 = _interopRequireDefault(__webpack_require__(/*! ./Form */ "./node_modules/formiojs/Form.js"));
+var _Form2 = _interopRequireDefault(__webpack_require__(/*! ./Form */ "./node_modules/formiojs/lib/Form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -16968,10 +19022,10 @@ _Formio.default.FormBuilder = FormBuilder;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/Formio.js":
-/*!*****************************************!*\
-  !*** ./node_modules/formiojs/Formio.js ***!
-  \*****************************************/
+/***/ "./node_modules/formiojs/lib/Formio.js":
+/*!*********************************************!*\
+  !*** ./node_modules/formiojs/lib/Formio.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -17023,7 +19077,7 @@ var _browserCookies = _interopRequireDefault(__webpack_require__(/*! browser-coo
 
 var _shallowCopy = _interopRequireDefault(__webpack_require__(/*! shallow-copy */ "./node_modules/shallow-copy/index.js"));
 
-var providers = _interopRequireWildcard(__webpack_require__(/*! ./providers */ "./node_modules/formiojs/providers/index.js"));
+var providers = _interopRequireWildcard(__webpack_require__(/*! ./providers */ "./node_modules/formiojs/lib/providers/index.js"));
 
 var _get2 = _interopRequireDefault(__webpack_require__(/*! lodash/get */ "./node_modules/formiojs/node_modules/lodash/get.js"));
 
@@ -18478,7 +20532,7 @@ exports.default = Formio;
 Formio.libraries = {};
 Formio.Promise = _nativePromiseOnly.default;
 Formio.Headers = Headers;
-Formio.baseUrl = 'https://api.form.io';
+Formio.baseUrl = 'http://localhost:8080/api';
 Formio.projectUrl = Formio.baseUrl;
 Formio.projectUrlSet = false;
 Formio.plugins = [];
@@ -18492,14 +20546,14 @@ Formio.events = new _eventemitter.EventEmitter2({
 if ((typeof global === "undefined" ? "undefined" : _typeof(global)) === 'object' && !global.Formio) {
   global.Formio = Formio;
 }
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/PDF.js":
-/*!**************************************!*\
-  !*** ./node_modules/formiojs/PDF.js ***!
-  \**************************************/
+/***/ "./node_modules/formiojs/lib/PDF.js":
+/*!******************************************!*\
+  !*** ./node_modules/formiojs/lib/PDF.js ***!
+  \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18521,9 +20575,9 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
-var _Webform2 = _interopRequireDefault(__webpack_require__(/*! ./Webform */ "./node_modules/formiojs/Webform.js"));
+var _Webform2 = _interopRequireDefault(__webpack_require__(/*! ./Webform */ "./node_modules/formiojs/lib/Webform.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18668,7 +20722,7 @@ function (_Webform) {
                 target: '_blank',
                 style: 'position:absolute;right:10px;top:110px;cursor:pointer;'
               }, _this4.ce('img', {
-                src: __webpack_require__(/*! ./pdf.image */ "./node_modules/formiojs/pdf.image.js"),
+                src: __webpack_require__(/*! ./pdf.image */ "./node_modules/formiojs/lib/pdf.image.js"),
                 style: 'width:3em;'
               }));
 
@@ -18785,10 +20839,10 @@ window.addEventListener('message', function (event) {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/PDFBuilder.js":
-/*!*********************************************!*\
-  !*** ./node_modules/formiojs/PDFBuilder.js ***!
-  \*********************************************/
+/***/ "./node_modules/formiojs/lib/PDFBuilder.js":
+/*!*************************************************!*\
+  !*** ./node_modules/formiojs/lib/PDFBuilder.js ***!
+  \*************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -18808,11 +20862,11 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _WebformBuilder2 = _interopRequireDefault(__webpack_require__(/*! ./WebformBuilder */ "./node_modules/formiojs/WebformBuilder.js"));
+var _WebformBuilder2 = _interopRequireDefault(__webpack_require__(/*! ./WebformBuilder */ "./node_modules/formiojs/lib/WebformBuilder.js"));
 
-var _utils = __webpack_require__(/*! ./utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ./utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
-var _PDF = _interopRequireDefault(__webpack_require__(/*! ./PDF */ "./node_modules/formiojs/PDF.js"));
+var _PDF = _interopRequireDefault(__webpack_require__(/*! ./PDF */ "./node_modules/formiojs/lib/PDF.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19158,10 +21212,10 @@ exports.default = PDFBuilder;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/Webform.js":
-/*!******************************************!*\
-  !*** ./node_modules/formiojs/Webform.js ***!
-  \******************************************/
+/***/ "./node_modules/formiojs/lib/Webform.js":
+/*!**********************************************!*\
+  !*** ./node_modules/formiojs/lib/Webform.js ***!
+  \**********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -19191,15 +21245,15 @@ var _eventemitter = _interopRequireDefault(__webpack_require__(/*! eventemitter2
 
 var _i18next = _interopRequireDefault(__webpack_require__(/*! i18next */ "./node_modules/i18next/dist/es/index.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
 var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
 
-var _Components = _interopRequireDefault(__webpack_require__(/*! ./components/Components */ "./node_modules/formiojs/components/Components.js"));
+var _Components = _interopRequireDefault(__webpack_require__(/*! ./components/Components */ "./node_modules/formiojs/lib/components/Components.js"));
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ./components/nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ./components/nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
-var _utils = __webpack_require__(/*! ./utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ./utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -19285,7 +21339,7 @@ function (_NestedComponent) {
      */
 
 
-    var i18n = __webpack_require__(/*! ./i18n */ "./node_modules/formiojs/i18n.js").default;
+    var i18n = __webpack_require__(/*! ./i18n */ "./node_modules/formiojs/lib/i18n.js").default;
 
     if (options && options.i18n && !options.i18nReady) {
       // Support legacy way of doing translations.
@@ -20421,8 +22475,6 @@ function (_NestedComponent) {
 
             _this17.redraw();
 
-            _this17.emit('languageChanged');
-
             resolve();
           });
         } catch (err) {
@@ -20581,10 +22633,10 @@ Webform.setAppUrl = _Formio.default.setAppUrl;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/WebformBuilder.js":
-/*!*************************************************!*\
-  !*** ./node_modules/formiojs/WebformBuilder.js ***!
-  \*************************************************/
+/***/ "./node_modules/formiojs/lib/WebformBuilder.js":
+/*!*****************************************************!*\
+  !*** ./node_modules/formiojs/lib/WebformBuilder.js ***!
+  \*****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -20606,17 +22658,17 @@ __webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/co
 
 __webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/core-js/modules/es6.function.name.js");
 
-var _Webform2 = _interopRequireDefault(__webpack_require__(/*! ./Webform */ "./node_modules/formiojs/Webform.js"));
+var _Webform2 = _interopRequireDefault(__webpack_require__(/*! ./Webform */ "./node_modules/formiojs/lib/Webform.js"));
 
 var _dragula = _interopRequireDefault(__webpack_require__(/*! dragula */ "./node_modules/dragula/dragula.js"));
 
 var _tooltip = _interopRequireDefault(__webpack_require__(/*! tooltip.js */ "./node_modules/tooltip.js/dist/esm/tooltip.js"));
 
-var _Components = _interopRequireDefault(__webpack_require__(/*! ./components/Components */ "./node_modules/formiojs/components/Components.js"));
+var _Components = _interopRequireDefault(__webpack_require__(/*! ./components/Components */ "./node_modules/formiojs/lib/components/Components.js"));
 
-var _builder = _interopRequireDefault(__webpack_require__(/*! ./utils/builder */ "./node_modules/formiojs/utils/builder.js"));
+var _builder = _interopRequireDefault(__webpack_require__(/*! ./utils/builder */ "./node_modules/formiojs/lib/utils/builder.js"));
 
-var _utils = __webpack_require__(/*! ./utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ./utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 var _eventemitter = _interopRequireDefault(__webpack_require__(/*! eventemitter2 */ "./node_modules/eventemitter2/lib/eventemitter2.js"));
 
@@ -20648,7 +22700,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
-__webpack_require__(/*! ./components/builder */ "./node_modules/formiojs/components/builder.js");
+__webpack_require__(/*! ./components/builder */ "./node_modules/formiojs/lib/components/builder.js");
 
 var WebformBuilder =
 /*#__PURE__*/
@@ -21621,10 +23673,10 @@ exports.default = WebformBuilder;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/Wizard.js":
-/*!*****************************************!*\
-  !*** ./node_modules/formiojs/Wizard.js ***!
-  \*****************************************/
+/***/ "./node_modules/formiojs/lib/Wizard.js":
+/*!*********************************************!*\
+  !*** ./node_modules/formiojs/lib/Wizard.js ***!
+  \*********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -21660,11 +23712,11 @@ var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-p
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Webform2 = _interopRequireDefault(__webpack_require__(/*! ./Webform */ "./node_modules/formiojs/Webform.js"));
+var _Webform2 = _interopRequireDefault(__webpack_require__(/*! ./Webform */ "./node_modules/formiojs/lib/Webform.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
-var _utils = __webpack_require__(/*! ./utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ./utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -22247,10 +24299,10 @@ Wizard.setAppUrl = _Formio.default.setAppUrl;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/WizardBuilder.js":
-/*!************************************************!*\
-  !*** ./node_modules/formiojs/WizardBuilder.js ***!
-  \************************************************/
+/***/ "./node_modules/formiojs/lib/WizardBuilder.js":
+/*!****************************************************!*\
+  !*** ./node_modules/formiojs/lib/WizardBuilder.js ***!
+  \****************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22272,7 +24324,7 @@ __webpack_require__(/*! core-js/modules/es7.array.includes */ "./node_modules/co
 
 __webpack_require__(/*! core-js/modules/es6.string.includes */ "./node_modules/core-js/modules/es6.string.includes.js");
 
-var _WebformBuilder2 = _interopRequireDefault(__webpack_require__(/*! ./WebformBuilder */ "./node_modules/formiojs/WebformBuilder.js"));
+var _WebformBuilder2 = _interopRequireDefault(__webpack_require__(/*! ./WebformBuilder */ "./node_modules/formiojs/lib/WebformBuilder.js"));
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
@@ -22482,10 +24534,10 @@ exports.default = WizardBuilder;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/Components.js":
-/*!********************************************************!*\
-  !*** ./node_modules/formiojs/components/Components.js ***!
-  \********************************************************/
+/***/ "./node_modules/formiojs/lib/components/Components.js":
+/*!************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/Components.js ***!
+  \************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22497,7 +24549,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _Unknown = _interopRequireDefault(__webpack_require__(/*! ./unknown/Unknown */ "./node_modules/formiojs/components/unknown/Unknown.js"));
+var _Unknown = _interopRequireDefault(__webpack_require__(/*! ./unknown/Unknown */ "./node_modules/formiojs/lib/components/unknown/Unknown.js"));
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
@@ -22576,10 +24628,10 @@ exports.default = Components;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/Validator.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/formiojs/components/Validator.js ***!
-  \*******************************************************/
+/***/ "./node_modules/formiojs/lib/components/Validator.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/Validator.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -22603,7 +24655,7 @@ __webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/cor
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _utils = __webpack_require__(/*! ../utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 var _moment = _interopRequireDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 
@@ -23003,10 +25055,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/address/Address.form.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/formiojs/components/address/Address.form.js ***!
-  \******************************************************************/
+/***/ "./node_modules/formiojs/lib/components/address/Address.form.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/address/Address.form.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23018,9 +25070,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _AddressEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Address.edit.display */ "./node_modules/formiojs/components/address/editForm/Address.edit.display.js"));
+var _AddressEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Address.edit.display */ "./node_modules/formiojs/lib/components/address/editForm/Address.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23037,10 +25089,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/address/Address.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/formiojs/components/address/Address.js ***!
-  \*************************************************************/
+/***/ "./node_modules/formiojs/lib/components/address/Address.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/address/Address.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23064,9 +25116,9 @@ __webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/components/textfield/TextField.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/lib/components/textfield/TextField.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23725,10 +25777,10 @@ exports.default = AddressComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/address/editForm/Address.edit.display.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/address/editForm/Address.edit.display.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/address/editForm/Address.edit.display.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/address/editForm/Address.edit.display.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23764,10 +25816,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/base/Base.form.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/components/base/Base.form.js ***!
-  \************************************************************/
+/***/ "./node_modules/formiojs/lib/components/base/Base.form.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/base/Base.form.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23781,19 +25833,19 @@ exports.default = _default;
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _BaseEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.conditional */ "./node_modules/formiojs/components/base/editForm/Base.edit.conditional.js"));
+var _BaseEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.conditional */ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.conditional.js"));
 
-var _BaseEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.data */ "./node_modules/formiojs/components/base/editForm/Base.edit.data.js"));
+var _BaseEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.data */ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.data.js"));
 
-var _BaseEdit3 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.api */ "./node_modules/formiojs/components/base/editForm/Base.edit.api.js"));
+var _BaseEdit3 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.api */ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.api.js"));
 
-var _BaseEdit4 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.display */ "./node_modules/formiojs/components/base/editForm/Base.edit.display.js"));
+var _BaseEdit4 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.display */ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.display.js"));
 
-var _BaseEdit5 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.logic */ "./node_modules/formiojs/components/base/editForm/Base.edit.logic.js"));
+var _BaseEdit5 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.logic */ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.logic.js"));
 
-var _BaseEdit6 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.validation */ "./node_modules/formiojs/components/base/editForm/Base.edit.validation.js"));
+var _BaseEdit6 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Base.edit.validation */ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.validation.js"));
 
-var _utils = _interopRequireDefault(__webpack_require__(/*! ./editForm/utils */ "./node_modules/formiojs/components/base/editForm/utils.js"));
+var _utils = _interopRequireDefault(__webpack_require__(/*! ./editForm/utils */ "./node_modules/formiojs/lib/components/base/editForm/utils.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -23854,10 +25906,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/base/Base.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/formiojs/components/base/Base.js ***!
-  \*******************************************************/
+/***/ "./node_modules/formiojs/lib/components/base/Base.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/base/Base.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -23903,15 +25955,15 @@ var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_m
 
 var _tooltip = _interopRequireDefault(__webpack_require__(/*! tooltip.js */ "./node_modules/tooltip.js/dist/esm/tooltip.js"));
 
-var FormioUtils = _interopRequireWildcard(__webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/utils/utils.js"));
+var FormioUtils = _interopRequireWildcard(__webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
-var _Validator = _interopRequireDefault(__webpack_require__(/*! ../Validator */ "./node_modules/formiojs/components/Validator.js"));
+var _Validator = _interopRequireDefault(__webpack_require__(/*! ../Validator */ "./node_modules/formiojs/lib/components/Validator.js"));
 
-var _widgets = _interopRequireDefault(__webpack_require__(/*! ../../widgets */ "./node_modules/formiojs/widgets/index.js"));
+var _widgets = _interopRequireDefault(__webpack_require__(/*! ../../widgets */ "./node_modules/formiojs/lib/widgets/index.js"));
 
-var _Component2 = _interopRequireDefault(__webpack_require__(/*! ../../Component */ "./node_modules/formiojs/Component.js"));
+var _Component2 = _interopRequireDefault(__webpack_require__(/*! ../../Component */ "./node_modules/formiojs/lib/Component.js"));
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
 
@@ -26880,10 +28932,10 @@ exports.default = BaseComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/base/editForm/Base.edit.api.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/formiojs/components/base/editForm/Base.edit.api.js ***!
-  \*************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.api.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/base/editForm/Base.edit.api.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26931,10 +28983,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/base/editForm/Base.edit.conditional.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/base/editForm/Base.edit.conditional.js ***!
-  \*********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.conditional.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/base/editForm/Base.edit.conditional.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -26946,7 +28998,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _utils = _interopRequireDefault(__webpack_require__(/*! ./utils */ "./node_modules/formiojs/components/base/editForm/utils.js"));
+var _utils = _interopRequireDefault(__webpack_require__(/*! ./utils */ "./node_modules/formiojs/lib/components/base/editForm/utils.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -26994,10 +29046,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/base/editForm/Base.edit.data.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/formiojs/components/base/editForm/Base.edit.data.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.data.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/base/editForm/Base.edit.data.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27009,7 +29061,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _utils = _interopRequireDefault(__webpack_require__(/*! ./utils */ "./node_modules/formiojs/components/base/editForm/utils.js"));
+var _utils = _interopRequireDefault(__webpack_require__(/*! ./utils */ "./node_modules/formiojs/lib/components/base/editForm/utils.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27069,10 +29121,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/base/editForm/Base.edit.display.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/formiojs/components/base/editForm/Base.edit.display.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.display.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/base/editForm/Base.edit.display.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27313,10 +29365,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/base/editForm/Base.edit.logic.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/formiojs/components/base/editForm/Base.edit.logic.js ***!
-  \***************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.logic.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/base/editForm/Base.edit.logic.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27596,10 +29648,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/base/editForm/Base.edit.validation.js":
-/*!********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/base/editForm/Base.edit.validation.js ***!
-  \********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/base/editForm/Base.edit.validation.js":
+/*!************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/base/editForm/Base.edit.validation.js ***!
+  \************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27611,7 +29663,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _utils = _interopRequireDefault(__webpack_require__(/*! ./utils */ "./node_modules/formiojs/components/base/editForm/utils.js"));
+var _utils = _interopRequireDefault(__webpack_require__(/*! ./utils */ "./node_modules/formiojs/lib/components/base/editForm/utils.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27726,10 +29778,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/base/editForm/utils.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/formiojs/components/base/editForm/utils.js ***!
-  \*****************************************************************/
+/***/ "./node_modules/formiojs/lib/components/base/editForm/utils.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/base/editForm/utils.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27853,10 +29905,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/builder.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/formiojs/components/builder.js ***!
-  \*****************************************************/
+/***/ "./node_modules/formiojs/lib/components/builder.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/builder.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -27868,79 +29920,81 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _ = _interopRequireDefault(__webpack_require__(/*! . */ "./node_modules/formiojs/components/index.js"));
+var _ = _interopRequireDefault(__webpack_require__(/*! . */ "./node_modules/formiojs/lib/components/index.js"));
 
-var _Address = _interopRequireDefault(__webpack_require__(/*! ./address/Address.form */ "./node_modules/formiojs/components/address/Address.form.js"));
+var _Address = _interopRequireDefault(__webpack_require__(/*! ./address/Address.form */ "./node_modules/formiojs/lib/components/address/Address.form.js"));
 
-var _Button = _interopRequireDefault(__webpack_require__(/*! ./button/Button.form */ "./node_modules/formiojs/components/button/Button.form.js"));
+var _Button = _interopRequireDefault(__webpack_require__(/*! ./button/Button.form */ "./node_modules/formiojs/lib/components/button/Button.form.js"));
 
-var _Checkbox = _interopRequireDefault(__webpack_require__(/*! ./checkbox/Checkbox.form */ "./node_modules/formiojs/components/checkbox/Checkbox.form.js"));
+var _Checkbox = _interopRequireDefault(__webpack_require__(/*! ./checkbox/Checkbox.form */ "./node_modules/formiojs/lib/components/checkbox/Checkbox.form.js"));
 
-var _Columns = _interopRequireDefault(__webpack_require__(/*! ./columns/Columns.form */ "./node_modules/formiojs/components/columns/Columns.form.js"));
+var _Columns = _interopRequireDefault(__webpack_require__(/*! ./columns/Columns.form */ "./node_modules/formiojs/lib/components/columns/Columns.form.js"));
 
-var _Container = _interopRequireDefault(__webpack_require__(/*! ./container/Container.form */ "./node_modules/formiojs/components/container/Container.form.js"));
+var _Container = _interopRequireDefault(__webpack_require__(/*! ./container/Container.form */ "./node_modules/formiojs/lib/components/container/Container.form.js"));
 
-var _Content = _interopRequireDefault(__webpack_require__(/*! ./content/Content.form */ "./node_modules/formiojs/components/content/Content.form.js"));
+var _Content = _interopRequireDefault(__webpack_require__(/*! ./content/Content.form */ "./node_modules/formiojs/lib/components/content/Content.form.js"));
 
-var _Currency = _interopRequireDefault(__webpack_require__(/*! ./currency/Currency.form */ "./node_modules/formiojs/components/currency/Currency.form.js"));
+var _Currency = _interopRequireDefault(__webpack_require__(/*! ./currency/Currency.form */ "./node_modules/formiojs/lib/components/currency/Currency.form.js"));
 
-var _DataGrid = _interopRequireDefault(__webpack_require__(/*! ./datagrid/DataGrid.form */ "./node_modules/formiojs/components/datagrid/DataGrid.form.js"));
+var _DataGrid = _interopRequireDefault(__webpack_require__(/*! ./datagrid/DataGrid.form */ "./node_modules/formiojs/lib/components/datagrid/DataGrid.form.js"));
 
-var _DataMap = _interopRequireDefault(__webpack_require__(/*! ./datamap/DataMap.form */ "./node_modules/formiojs/components/datamap/DataMap.form.js"));
+var _DataMap = _interopRequireDefault(__webpack_require__(/*! ./datamap/DataMap.form */ "./node_modules/formiojs/lib/components/datamap/DataMap.form.js"));
 
-var _DateTime = _interopRequireDefault(__webpack_require__(/*! ./datetime/DateTime.form */ "./node_modules/formiojs/components/datetime/DateTime.form.js"));
+var _DateTime = _interopRequireDefault(__webpack_require__(/*! ./datetime/DateTime.form */ "./node_modules/formiojs/lib/components/datetime/DateTime.form.js"));
 
-var _Day = _interopRequireDefault(__webpack_require__(/*! ./day/Day.form */ "./node_modules/formiojs/components/day/Day.form.js"));
+var _Day = _interopRequireDefault(__webpack_require__(/*! ./day/Day.form */ "./node_modules/formiojs/lib/components/day/Day.form.js"));
 
-var _EditGrid = _interopRequireDefault(__webpack_require__(/*! ./editgrid/EditGrid.form */ "./node_modules/formiojs/components/editgrid/EditGrid.form.js"));
+var _EditGrid = _interopRequireDefault(__webpack_require__(/*! ./editgrid/EditGrid.form */ "./node_modules/formiojs/lib/components/editgrid/EditGrid.form.js"));
 
-var _Email = _interopRequireDefault(__webpack_require__(/*! ./email/Email.form */ "./node_modules/formiojs/components/email/Email.form.js"));
+var _Email = _interopRequireDefault(__webpack_require__(/*! ./email/Email.form */ "./node_modules/formiojs/lib/components/email/Email.form.js"));
 
-var _Fieldset = _interopRequireDefault(__webpack_require__(/*! ./fieldset/Fieldset.form */ "./node_modules/formiojs/components/fieldset/Fieldset.form.js"));
+var _Fieldset = _interopRequireDefault(__webpack_require__(/*! ./fieldset/Fieldset.form */ "./node_modules/formiojs/lib/components/fieldset/Fieldset.form.js"));
 
-var _File = _interopRequireDefault(__webpack_require__(/*! ./file/File.form */ "./node_modules/formiojs/components/file/File.form.js"));
+var _File = _interopRequireDefault(__webpack_require__(/*! ./file/File.form */ "./node_modules/formiojs/lib/components/file/File.form.js"));
 
-var _Form = _interopRequireDefault(__webpack_require__(/*! ./form/Form.form */ "./node_modules/formiojs/components/form/Form.form.js"));
+var _Form = _interopRequireDefault(__webpack_require__(/*! ./form/Form.form */ "./node_modules/formiojs/lib/components/form/Form.form.js"));
 
-var _Hidden = _interopRequireDefault(__webpack_require__(/*! ./hidden/Hidden.form */ "./node_modules/formiojs/components/hidden/Hidden.form.js"));
+var _Hidden = _interopRequireDefault(__webpack_require__(/*! ./hidden/Hidden.form */ "./node_modules/formiojs/lib/components/hidden/Hidden.form.js"));
 
-var _HTML = _interopRequireDefault(__webpack_require__(/*! ./html/HTML.form */ "./node_modules/formiojs/components/html/HTML.form.js"));
+var _HTML = _interopRequireDefault(__webpack_require__(/*! ./html/HTML.form */ "./node_modules/formiojs/lib/components/html/HTML.form.js"));
 
-var _Location = _interopRequireDefault(__webpack_require__(/*! ./location/Location.form */ "./node_modules/formiojs/components/location/Location.form.js"));
+var _Location = _interopRequireDefault(__webpack_require__(/*! ./location/Location.form */ "./node_modules/formiojs/lib/components/location/Location.form.js"));
 
-var _Number = _interopRequireDefault(__webpack_require__(/*! ./number/Number.form */ "./node_modules/formiojs/components/number/Number.form.js"));
+var _Number = _interopRequireDefault(__webpack_require__(/*! ./number/Number.form */ "./node_modules/formiojs/lib/components/number/Number.form.js"));
 
-var _Panel = _interopRequireDefault(__webpack_require__(/*! ./panel/Panel.form */ "./node_modules/formiojs/components/panel/Panel.form.js"));
+var _Panel = _interopRequireDefault(__webpack_require__(/*! ./panel/Panel.form */ "./node_modules/formiojs/lib/components/panel/Panel.form.js"));
 
-var _Password = _interopRequireDefault(__webpack_require__(/*! ./password/Password.form */ "./node_modules/formiojs/components/password/Password.form.js"));
+var _Password = _interopRequireDefault(__webpack_require__(/*! ./password/Password.form */ "./node_modules/formiojs/lib/components/password/Password.form.js"));
 
-var _PhoneNumber = _interopRequireDefault(__webpack_require__(/*! ./phonenumber/PhoneNumber.form */ "./node_modules/formiojs/components/phonenumber/PhoneNumber.form.js"));
+var _PhoneNumber = _interopRequireDefault(__webpack_require__(/*! ./phonenumber/PhoneNumber.form */ "./node_modules/formiojs/lib/components/phonenumber/PhoneNumber.form.js"));
 
-var _Radio = _interopRequireDefault(__webpack_require__(/*! ./radio/Radio.form */ "./node_modules/formiojs/components/radio/Radio.form.js"));
+var _Radio = _interopRequireDefault(__webpack_require__(/*! ./radio/Radio.form */ "./node_modules/formiojs/lib/components/radio/Radio.form.js"));
 
-var _Resource = _interopRequireDefault(__webpack_require__(/*! ./resource/Resource.form */ "./node_modules/formiojs/components/resource/Resource.form.js"));
+var _Resource = _interopRequireDefault(__webpack_require__(/*! ./resource/Resource.form */ "./node_modules/formiojs/lib/components/resource/Resource.form.js"));
 
-var _Select = _interopRequireDefault(__webpack_require__(/*! ./select/Select.form */ "./node_modules/formiojs/components/select/Select.form.js"));
+var _ResourceTree = _interopRequireDefault(__webpack_require__(/*! ./resourcetree/ResourceTree.form */ "./node_modules/formiojs/lib/components/resourcetree/ResourceTree.form.js"));
 
-var _SelectBoxes = _interopRequireDefault(__webpack_require__(/*! ./selectboxes/SelectBoxes.form */ "./node_modules/formiojs/components/selectboxes/SelectBoxes.form.js"));
+var _Select = _interopRequireDefault(__webpack_require__(/*! ./select/Select.form */ "./node_modules/formiojs/lib/components/select/Select.form.js"));
 
-var _Signature = _interopRequireDefault(__webpack_require__(/*! ./signature/Signature.form */ "./node_modules/formiojs/components/signature/Signature.form.js"));
+var _SelectBoxes = _interopRequireDefault(__webpack_require__(/*! ./selectboxes/SelectBoxes.form */ "./node_modules/formiojs/lib/components/selectboxes/SelectBoxes.form.js"));
 
-var _Survey = _interopRequireDefault(__webpack_require__(/*! ./survey/Survey.form */ "./node_modules/formiojs/components/survey/Survey.form.js"));
+var _Signature = _interopRequireDefault(__webpack_require__(/*! ./signature/Signature.form */ "./node_modules/formiojs/lib/components/signature/Signature.form.js"));
 
-var _Table = _interopRequireDefault(__webpack_require__(/*! ./table/Table.form */ "./node_modules/formiojs/components/table/Table.form.js"));
+var _Survey = _interopRequireDefault(__webpack_require__(/*! ./survey/Survey.form */ "./node_modules/formiojs/lib/components/survey/Survey.form.js"));
 
-var _Tabs = _interopRequireDefault(__webpack_require__(/*! ./tabs/Tabs.form */ "./node_modules/formiojs/components/tabs/Tabs.form.js"));
+var _Table = _interopRequireDefault(__webpack_require__(/*! ./table/Table.form */ "./node_modules/formiojs/lib/components/table/Table.form.js"));
 
-var _Tags = _interopRequireDefault(__webpack_require__(/*! ./tags/Tags.form */ "./node_modules/formiojs/components/tags/Tags.form.js"));
+var _Tabs = _interopRequireDefault(__webpack_require__(/*! ./tabs/Tabs.form */ "./node_modules/formiojs/lib/components/tabs/Tabs.form.js"));
 
-var _TextArea = _interopRequireDefault(__webpack_require__(/*! ./textarea/TextArea.form */ "./node_modules/formiojs/components/textarea/TextArea.form.js"));
+var _Tags = _interopRequireDefault(__webpack_require__(/*! ./tags/Tags.form */ "./node_modules/formiojs/lib/components/tags/Tags.form.js"));
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ./textfield/TextField.form */ "./node_modules/formiojs/components/textfield/TextField.form.js"));
+var _TextArea = _interopRequireDefault(__webpack_require__(/*! ./textarea/TextArea.form */ "./node_modules/formiojs/lib/components/textarea/TextArea.form.js"));
 
-var _Time = _interopRequireDefault(__webpack_require__(/*! ./time/Time.form */ "./node_modules/formiojs/components/time/Time.form.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ./textfield/TextField.form */ "./node_modules/formiojs/lib/components/textfield/TextField.form.js"));
 
-var _Well = _interopRequireDefault(__webpack_require__(/*! ./well/Well.form */ "./node_modules/formiojs/components/well/Well.form.js"));
+var _Time = _interopRequireDefault(__webpack_require__(/*! ./time/Time.form */ "./node_modules/formiojs/lib/components/time/Time.form.js"));
+
+var _Well = _interopRequireDefault(__webpack_require__(/*! ./well/Well.form */ "./node_modules/formiojs/lib/components/well/Well.form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -27969,6 +30023,7 @@ _.default.password.editForm = _Password.default;
 _.default.phoneNumber.editForm = _PhoneNumber.default;
 _.default.radio.editForm = _Radio.default;
 _.default.resource.editForm = _Resource.default;
+_.default.resourcetree.editForm = _ResourceTree.default;
 _.default.select.editForm = _Select.default;
 _.default.selectboxes.editForm = _SelectBoxes.default;
 _.default.signature.editForm = _Signature.default;
@@ -27985,10 +30040,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/button/Button.form.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/formiojs/components/button/Button.form.js ***!
-  \****************************************************************/
+/***/ "./node_modules/formiojs/lib/components/button/Button.form.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/button/Button.form.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28000,9 +30055,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _ButtonEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Button.edit.display */ "./node_modules/formiojs/components/button/editForm/Button.edit.display.js"));
+var _ButtonEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Button.edit.display */ "./node_modules/formiojs/lib/components/button/editForm/Button.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28019,10 +30074,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/button/Button.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/formiojs/components/button/Button.js ***!
-  \***********************************************************/
+/***/ "./node_modules/formiojs/lib/components/button/Button.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/button/Button.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28064,9 +30119,9 @@ __webpack_require__(/*! core-js/modules/es6.string.includes */ "./node_modules/c
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28605,10 +30660,10 @@ exports.default = ButtonComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/button/editForm/Button.edit.display.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/button/editForm/Button.edit.display.js ***!
-  \*********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/button/editForm/Button.edit.display.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/button/editForm/Button.edit.display.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28620,7 +30675,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _builder = _interopRequireDefault(__webpack_require__(/*! ../../../utils/builder */ "./node_modules/formiojs/utils/builder.js"));
+var _builder = _interopRequireDefault(__webpack_require__(/*! ../../../utils/builder */ "./node_modules/formiojs/lib/utils/builder.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28841,10 +30896,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/checkbox/Checkbox.form.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/checkbox/Checkbox.form.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/checkbox/Checkbox.form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/checkbox/Checkbox.form.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28856,9 +30911,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _CheckboxEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Checkbox.edit.display */ "./node_modules/formiojs/components/checkbox/editForm/Checkbox.edit.display.js"));
+var _CheckboxEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Checkbox.edit.display */ "./node_modules/formiojs/lib/components/checkbox/editForm/Checkbox.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -28875,10 +30930,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/checkbox/Checkbox.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/formiojs/components/checkbox/Checkbox.js ***!
-  \***************************************************************/
+/***/ "./node_modules/formiojs/lib/components/checkbox/Checkbox.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/checkbox/Checkbox.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -28908,7 +30963,7 @@ __webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/cor
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29269,10 +31324,10 @@ exports.default = CheckBoxComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/checkbox/editForm/Checkbox.edit.display.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/checkbox/editForm/Checkbox.edit.display.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/checkbox/editForm/Checkbox.edit.display.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/checkbox/editForm/Checkbox.edit.display.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29284,7 +31339,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _builder = _interopRequireDefault(__webpack_require__(/*! ../../../utils/builder */ "./node_modules/formiojs/utils/builder.js"));
+var _builder = _interopRequireDefault(__webpack_require__(/*! ../../../utils/builder */ "./node_modules/formiojs/lib/utils/builder.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29375,10 +31430,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/columns/Column.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/components/columns/Column.js ***!
-  \************************************************************/
+/***/ "./node_modules/formiojs/lib/components/columns/Column.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/columns/Column.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29398,7 +31453,7 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29442,12 +31497,10 @@ function (_NestedComponent) {
   _createClass(ColumnComponent, [{
     key: "conditionallyVisible",
     value: function conditionallyVisible(data) {
-      if (!this.component.hideOnChildrenHidden) {
-        return _get(_getPrototypeOf(ColumnComponent.prototype), "conditionallyVisible", this).call(this, data);
-      } // Check children components for visibility.
+      // Check children components for visibility.
+      var allChildrenHidden = _lodash.default.every(this.getComponents(), ['visible', false]);
 
-
-      if (_lodash.default.every(this.getComponents(), ['visible', false])) {
+      if (allChildrenHidden) {
         return false;
       }
 
@@ -29472,10 +31525,10 @@ exports.default = ColumnComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/columns/Columns.form.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/formiojs/components/columns/Columns.form.js ***!
-  \******************************************************************/
+/***/ "./node_modules/formiojs/lib/components/columns/Columns.form.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/columns/Columns.form.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29487,9 +31540,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/components/nested/NestedComponent.form.js"));
+var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/lib/components/nested/NestedComponent.form.js"));
 
-var _ColumnsEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Columns.edit.display */ "./node_modules/formiojs/components/columns/editForm/Columns.edit.display.js"));
+var _ColumnsEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Columns.edit.display */ "./node_modules/formiojs/lib/components/columns/editForm/Columns.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29506,10 +31559,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/columns/Columns.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/formiojs/components/columns/Columns.js ***!
-  \*************************************************************/
+/***/ "./node_modules/formiojs/lib/components/columns/Columns.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/columns/Columns.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29537,7 +31590,7 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29629,8 +31682,7 @@ function (_NestedComponent) {
         input: false,
         tableView: false,
         persistent: false,
-        autoAdjust: false,
-        hideOnChildrenHidden: false
+        autoAdjust: false
       }].concat(extend));
     }
   }, {
@@ -29738,7 +31790,6 @@ function (_NestedComponent) {
 
       _lodash.default.each(this.component.columns, function (column) {
         column.type = 'column';
-        column.hideOnChildrenHidden = _this4.component.hideOnChildrenHidden;
 
         _this4.addComponent(column, container, _this4.data, null, null, state);
       });
@@ -29749,9 +31800,14 @@ function (_NestedComponent) {
     key: "checkConditions",
     value: function checkConditions(data) {
       if (this.component.autoAdjust) {
+        var before = this.nbVisible;
+
         var result = _get(_getPrototypeOf(ColumnsComponent.prototype), "checkConditions", this).call(this, data);
 
-        this.justify();
+        if (before !== this.nbVisible) {
+          this.justify();
+        }
+
         return result;
       } else {
         return _get(_getPrototypeOf(ColumnsComponent.prototype), "checkConditions", this).call(this, data);
@@ -29789,10 +31845,10 @@ exports.default = ColumnsComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/columns/editForm/Columns.edit.display.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/columns/editForm/Columns.edit.display.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/columns/editForm/Columns.edit.display.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/columns/editForm/Columns.edit.display.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29839,22 +31895,15 @@ var _default = [{
   tooltip: 'Will automatically adjust columns based on if nested components are hidden.',
   key: 'autoAdjust',
   input: true
-}, {
-  weight: 161,
-  type: 'checkbox',
-  label: 'Hide Column when Children Hidden',
-  key: 'hideOnChildrenHidden',
-  tooltip: 'Check this if you would like to hide any column when the children within that column are also hidden',
-  input: true
 }];
 exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/container/Container.form.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/formiojs/components/container/Container.form.js ***!
-  \**********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/container/Container.form.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/container/Container.form.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29866,7 +31915,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -29876,10 +31925,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/container/Container.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/formiojs/components/container/Container.js ***!
-  \*****************************************************************/
+/***/ "./node_modules/formiojs/lib/components/container/Container.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/container/Container.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -29901,9 +31950,9 @@ __webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30059,10 +32108,10 @@ exports.default = ContainerComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/content/Content.form.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/formiojs/components/content/Content.form.js ***!
-  \******************************************************************/
+/***/ "./node_modules/formiojs/lib/components/content/Content.form.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/content/Content.form.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30074,11 +32123,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _ContentEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Content.edit.display */ "./node_modules/formiojs/components/content/editForm/Content.edit.display.js"));
+var _ContentEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Content.edit.display */ "./node_modules/formiojs/lib/components/content/editForm/Content.edit.display.js"));
 
-var _ContentEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Content.edit.logic */ "./node_modules/formiojs/components/content/editForm/Content.edit.logic.js"));
+var _ContentEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Content.edit.logic */ "./node_modules/formiojs/lib/components/content/editForm/Content.edit.logic.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30098,10 +32147,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/content/Content.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/formiojs/components/content/Content.js ***!
-  \*************************************************************/
+/***/ "./node_modules/formiojs/lib/components/content/Content.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/content/Content.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30121,7 +32170,7 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30278,10 +32327,10 @@ exports.default = ContentComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/content/editForm/Content.edit.display.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/content/editForm/Content.edit.display.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/content/editForm/Content.edit.display.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/content/editForm/Content.edit.display.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30312,10 +32361,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/content/editForm/Content.edit.logic.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/content/editForm/Content.edit.logic.js ***!
-  \*********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/content/editForm/Content.edit.logic.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/content/editForm/Content.edit.logic.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30402,10 +32451,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/currency/Currency.form.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/currency/Currency.form.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/currency/Currency.form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/currency/Currency.form.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30417,7 +32466,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30427,10 +32476,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/currency/Currency.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/formiojs/components/currency/Currency.js ***!
-  \***************************************************************/
+/***/ "./node_modules/formiojs/lib/components/currency/Currency.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/currency/Currency.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30456,9 +32505,9 @@ var _textMaskAddons = __webpack_require__(/*! text-mask-addons */ "./node_module
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
-var _Number = _interopRequireDefault(__webpack_require__(/*! ../number/Number */ "./node_modules/formiojs/components/number/Number.js"));
+var _Number = _interopRequireDefault(__webpack_require__(/*! ../number/Number */ "./node_modules/formiojs/lib/components/number/Number.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30599,10 +32648,10 @@ exports.default = CurrencyComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datagrid/DataGrid.form.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/datagrid/DataGrid.form.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datagrid/DataGrid.form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datagrid/DataGrid.form.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30614,9 +32663,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _DataGridEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/DataGrid.edit.display */ "./node_modules/formiojs/components/datagrid/editForm/DataGrid.edit.display.js"));
+var _DataGridEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/DataGrid.edit.display */ "./node_modules/formiojs/lib/components/datagrid/editForm/DataGrid.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -30633,10 +32682,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datagrid/DataGrid.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/formiojs/components/datagrid/DataGrid.js ***!
-  \***************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datagrid/DataGrid.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datagrid/DataGrid.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -30664,9 +32713,9 @@ __webpack_require__(/*! core-js/modules/es6.string.includes */ "./node_modules/c
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31186,10 +33235,10 @@ exports.default = DataGridComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datagrid/editForm/DataGrid.edit.display.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/datagrid/editForm/DataGrid.edit.display.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datagrid/editForm/DataGrid.edit.display.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datagrid/editForm/DataGrid.edit.display.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31250,10 +33299,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datamap/DataMap.form.js":
-/*!******************************************************************!*\
-  !*** ./node_modules/formiojs/components/datamap/DataMap.form.js ***!
-  \******************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datamap/DataMap.form.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datamap/DataMap.form.js ***!
+  \**********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31265,9 +33314,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _DataMapEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/DataMap.edit.display */ "./node_modules/formiojs/components/datamap/editForm/DataMap.edit.display.js"));
+var _DataMapEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/DataMap.edit.display */ "./node_modules/formiojs/lib/components/datamap/editForm/DataMap.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31284,10 +33333,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datamap/DataMap.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/formiojs/components/datamap/DataMap.js ***!
-  \*************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datamap/DataMap.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datamap/DataMap.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31311,13 +33360,13 @@ __webpack_require__(/*! core-js/modules/es6.array.iterator */ "./node_modules/co
 
 __webpack_require__(/*! core-js/modules/es6.object.keys */ "./node_modules/core-js/modules/es6.object.keys.js");
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31690,10 +33739,10 @@ exports.default = DataMapComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datamap/editForm/DataMap.edit.display.js":
-/*!***********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/datamap/editForm/DataMap.edit.display.js ***!
-  \***********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datamap/editForm/DataMap.edit.display.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datamap/editForm/DataMap.edit.display.js ***!
+  \***************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31732,10 +33781,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datetime/DateTime.form.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/datetime/DateTime.form.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datetime/DateTime.form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datetime/DateTime.form.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31747,15 +33796,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _DateTimeEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/DateTime.edit.data */ "./node_modules/formiojs/components/datetime/editForm/DateTime.edit.data.js"));
+var _DateTimeEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/DateTime.edit.data */ "./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.data.js"));
 
-var _DateTimeEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/DateTime.edit.date */ "./node_modules/formiojs/components/datetime/editForm/DateTime.edit.date.js"));
+var _DateTimeEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/DateTime.edit.date */ "./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.date.js"));
 
-var _DateTimeEdit3 = _interopRequireDefault(__webpack_require__(/*! ./editForm/DateTime.edit.display */ "./node_modules/formiojs/components/datetime/editForm/DateTime.edit.display.js"));
+var _DateTimeEdit3 = _interopRequireDefault(__webpack_require__(/*! ./editForm/DateTime.edit.display */ "./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.display.js"));
 
-var _DateTimeEdit4 = _interopRequireDefault(__webpack_require__(/*! ./editForm/DateTime.edit.time */ "./node_modules/formiojs/components/datetime/editForm/DateTime.edit.time.js"));
+var _DateTimeEdit4 = _interopRequireDefault(__webpack_require__(/*! ./editForm/DateTime.edit.time */ "./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.time.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31785,10 +33834,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datetime/DateTime.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/formiojs/components/datetime/DateTime.js ***!
-  \***************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datetime/DateTime.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datetime/DateTime.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -31812,7 +33861,7 @@ __webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/co
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -31915,8 +33964,6 @@ function (_BaseComponent) {
       _this.component.format = _this.component.format.replace(/ hh:mm a$/g, '');
     } else if (time24hr) {
       _this.component.format = _this.component.format.replace(/hh:mm a$/g, 'HH:mm');
-    } else {
-      _this.component.format = _this.component.format.replace(/HH:mm$/g, 'hh:mm a');
     }
     /* eslint-disable camelcase */
 
@@ -31992,10 +34039,10 @@ exports.default = DateTimeComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datetime/editForm/DateTime.edit.data.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/datetime/editForm/DateTime.edit.data.js ***!
-  \**********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.data.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.data.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32019,10 +34066,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datetime/editForm/DateTime.edit.date.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/datetime/editForm/DateTime.edit.date.js ***!
-  \**********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.date.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.date.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32061,10 +34108,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datetime/editForm/DateTime.edit.display.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/datetime/editForm/DateTime.edit.display.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.display.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.display.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32111,7 +34158,7 @@ var _default = [{
   valueProperty: 'name',
   dataSrc: 'url',
   data: {
-    url: 'https://formio.github.io/formio.js/resources/timezones.json'
+    url: 'https://cdn.rawgit.com/travist/b8b3b3dd51c3ca01469ce18d8f00fd3e/raw/timezones.json'
   },
   template: '<span>{{ item.label }}</span>',
   conditional: {
@@ -32149,10 +34196,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/datetime/editForm/DateTime.edit.time.js":
-/*!**********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/datetime/editForm/DateTime.edit.time.js ***!
-  \**********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.time.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/datetime/editForm/DateTime.edit.time.js ***!
+  \**************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32196,10 +34243,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/day/Day.form.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/formiojs/components/day/Day.form.js ***!
-  \**********************************************************/
+/***/ "./node_modules/formiojs/lib/components/day/Day.form.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/day/Day.form.js ***!
+  \**************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32211,11 +34258,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _DayEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Day.edit.display */ "./node_modules/formiojs/components/day/editForm/Day.edit.display.js"));
+var _DayEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Day.edit.display */ "./node_modules/formiojs/lib/components/day/editForm/Day.edit.display.js"));
 
-var _DayEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Day.edit.validation */ "./node_modules/formiojs/components/day/editForm/Day.edit.validation.js"));
+var _DayEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Day.edit.validation */ "./node_modules/formiojs/lib/components/day/editForm/Day.edit.validation.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32235,10 +34282,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/day/Day.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/formiojs/components/day/Day.js ***!
-  \*****************************************************/
+/***/ "./node_modules/formiojs/lib/components/day/Day.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/day/Day.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -32270,9 +34317,9 @@ var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_m
 
 var _moment = _interopRequireDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -32958,10 +35005,10 @@ exports.default = DayComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/day/editForm/Day.edit.display.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/formiojs/components/day/editForm/Day.edit.display.js ***!
-  \***************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/day/editForm/Day.edit.display.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/day/editForm/Day.edit.display.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33070,10 +35117,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/day/editForm/Day.edit.validation.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/formiojs/components/day/editForm/Day.edit.validation.js ***!
-  \******************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/day/editForm/Day.edit.validation.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/day/editForm/Day.edit.validation.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33132,10 +35179,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/editgrid/EditGrid.form.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/editgrid/EditGrid.form.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/editgrid/EditGrid.form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/editgrid/EditGrid.form.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33147,9 +35194,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _EditGridEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/EditGrid.edit.templates */ "./node_modules/formiojs/components/editgrid/editForm/EditGrid.edit.templates.js"));
+var _EditGridEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/EditGrid.edit.templates */ "./node_modules/formiojs/lib/components/editgrid/editForm/EditGrid.edit.templates.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33168,10 +35215,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/editgrid/EditGrid.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/formiojs/components/editgrid/EditGrid.js ***!
-  \***************************************************************/
+/***/ "./node_modules/formiojs/lib/components/editgrid/EditGrid.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/editgrid/EditGrid.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33193,11 +35240,11 @@ __webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _Components = _interopRequireDefault(__webpack_require__(/*! ../Components */ "./node_modules/formiojs/components/Components.js"));
+var _Components = _interopRequireDefault(__webpack_require__(/*! ../Components */ "./node_modules/formiojs/lib/components/Components.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33311,8 +35358,8 @@ function (_NestedComponent) {
         }
       });
       this.buildTable();
-      this.createAddButton();
       this.createDescription(this.element);
+      this.createAddButton();
       this.element.appendChild(this.errorContainer = this.ce('div', {
         class: 'has-error'
       }));
@@ -33856,10 +35903,10 @@ exports.default = EditGridComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/editgrid/editForm/EditGrid.edit.templates.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/editgrid/editForm/EditGrid.edit.templates.js ***!
-  \***************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/editgrid/editForm/EditGrid.edit.templates.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/editgrid/editForm/EditGrid.edit.templates.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33936,10 +35983,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/email/Email.form.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/formiojs/components/email/Email.form.js ***!
-  \**************************************************************/
+/***/ "./node_modules/formiojs/lib/components/email/Email.form.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/email/Email.form.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33951,7 +35998,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -33961,10 +36008,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/email/Email.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/formiojs/components/email/Email.js ***!
-  \*********************************************************/
+/***/ "./node_modules/formiojs/lib/components/email/Email.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/email/Email.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -33982,7 +36029,7 @@ __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/mo
 
 __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-js/modules/es6.reflect.get.js");
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/components/textfield/TextField.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/lib/components/textfield/TextField.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34078,10 +36125,10 @@ exports.default = EmailComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/fieldset/Fieldset.form.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/fieldset/Fieldset.form.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/fieldset/Fieldset.form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/fieldset/Fieldset.form.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -34093,9 +36140,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/components/nested/NestedComponent.form.js"));
+var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/lib/components/nested/NestedComponent.form.js"));
 
-var _FieldsetEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Fieldset.edit.display */ "./node_modules/formiojs/components/fieldset/editForm/Fieldset.edit.display.js"));
+var _FieldsetEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Fieldset.edit.display */ "./node_modules/formiojs/lib/components/fieldset/editForm/Fieldset.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34112,10 +36159,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/fieldset/Fieldset.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/formiojs/components/fieldset/Fieldset.js ***!
-  \***************************************************************/
+/***/ "./node_modules/formiojs/lib/components/fieldset/Fieldset.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/fieldset/Fieldset.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -34133,7 +36180,7 @@ __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/mo
 
 __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-js/modules/es6.reflect.get.js");
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34247,10 +36294,10 @@ exports.default = FieldsetComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/fieldset/editForm/Fieldset.edit.display.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/fieldset/editForm/Fieldset.edit.display.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/fieldset/editForm/Fieldset.edit.display.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/fieldset/editForm/Fieldset.edit.display.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -34278,10 +36325,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/file/File.form.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/components/file/File.form.js ***!
-  \************************************************************/
+/***/ "./node_modules/formiojs/lib/components/file/File.form.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/file/File.form.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -34293,9 +36340,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _FileEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/File.edit.file */ "./node_modules/formiojs/components/file/editForm/File.edit.file.js"));
+var _FileEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/File.edit.file */ "./node_modules/formiojs/lib/components/file/editForm/File.edit.file.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34314,10 +36361,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/file/File.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/formiojs/components/file/File.js ***!
-  \*******************************************************/
+/***/ "./node_modules/formiojs/lib/components/file/File.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/file/File.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -34349,13 +36396,13 @@ __webpack_require__(/*! core-js/modules/es6.typed.uint8-array */ "./node_modules
 
 __webpack_require__(/*! core-js/modules/es6.regexp.split */ "./node_modules/core-js/modules/es6.regexp.split.js");
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 var _downloadjs = _interopRequireDefault(__webpack_require__(/*! downloadjs */ "./node_modules/downloadjs/download.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -34420,7 +36467,6 @@ function (_BaseComponent) {
         label: 'Upload',
         key: 'file',
         image: false,
-        privateDownload: false,
         imageSize: '200',
         filePattern: '*',
         fileMinSize: '0KB',
@@ -35094,10 +37140,6 @@ function (_BaseComponent) {
           _this12.uploadStatusList.appendChild(uploadStatus);
 
           if (fileUpload.status !== 'error') {
-            if (_this12.component.privateDownload) {
-              file.private = true;
-            }
-
             fileService.uploadFile(_this12.component.storage, file, fileName, dir, function (evt) {
               fileUpload.status = 'progress';
               fileUpload.progress = parseInt(100.0 * evt.loaded / evt.total);
@@ -35136,10 +37178,6 @@ function (_BaseComponent) {
 
       if (!fileService) {
         return alert('File Service not provided');
-      }
-
-      if (this.component.privateDownload) {
-        fileInfo.private = true;
       }
 
       fileService.downloadFile(fileInfo).then(function (file) {
@@ -35205,10 +37243,10 @@ exports.default = FileComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/file/editForm/File.edit.file.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/formiojs/components/file/editForm/File.edit.file.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/file/editForm/File.edit.file.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/file/editForm/File.edit.file.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35220,7 +37258,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../../Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../../Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
@@ -35276,20 +37314,6 @@ var _default = [{
   label: 'Display as image(s)',
   tooltip: 'Instead of a list of linked files, images will be rendered in the view.',
   weight: 30
-}, {
-  type: 'checkbox',
-  input: true,
-  key: 'privateDownload',
-  label: 'Private Download',
-  tooltip: 'When this is checked, the file download will send a POST request to the download URL with the x-jwt-token header. This will allow your endpoint to create a Private download system.',
-  weight: 31,
-  conditional: {
-    json: {
-      '===': [{
-        var: 'data.storage'
-      }, 'url']
-    }
-  }
 }, {
   type: 'textfield',
   input: true,
@@ -35356,10 +37380,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/form/Form.form.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/components/form/Form.form.js ***!
-  \************************************************************/
+/***/ "./node_modules/formiojs/lib/components/form/Form.form.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/form/Form.form.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35371,9 +37395,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/components/nested/NestedComponent.form.js"));
+var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/lib/components/nested/NestedComponent.form.js"));
 
-var _FormEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Form.edit.form */ "./node_modules/formiojs/components/form/editForm/Form.edit.form.js"));
+var _FormEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Form.edit.form */ "./node_modules/formiojs/lib/components/form/editForm/Form.edit.form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35392,10 +37416,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/form/Form.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/formiojs/components/form/Form.js ***!
-  \*******************************************************/
+/***/ "./node_modules/formiojs/lib/components/form/Form.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/form/Form.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35417,15 +37441,15 @@ __webpack_require__(/*! core-js/modules/es6.regexp.split */ "./node_modules/core
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
 
-var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
-var _Form = _interopRequireDefault(__webpack_require__(/*! ../../Form */ "./node_modules/formiojs/Form.js"));
+var _Form = _interopRequireDefault(__webpack_require__(/*! ../../Form */ "./node_modules/formiojs/lib/Form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35812,10 +37836,10 @@ exports.default = FormComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/form/editForm/Form.edit.form.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/formiojs/components/form/editForm/Form.edit.form.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/form/editForm/Form.edit.form.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/form/editForm/Form.edit.form.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35851,10 +37875,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/hidden/Hidden.form.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/formiojs/components/hidden/Hidden.form.js ***!
-  \****************************************************************/
+/***/ "./node_modules/formiojs/lib/components/hidden/Hidden.form.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/hidden/Hidden.form.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35866,7 +37890,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -35876,10 +37900,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/hidden/Hidden.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/formiojs/components/hidden/Hidden.js ***!
-  \***********************************************************/
+/***/ "./node_modules/formiojs/lib/components/hidden/Hidden.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/hidden/Hidden.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -35899,7 +37923,7 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 __webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/core-js/modules/es6.function.name.js");
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36011,10 +38035,10 @@ exports.default = HiddenComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/html/HTML.form.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/components/html/HTML.form.js ***!
-  \************************************************************/
+/***/ "./node_modules/formiojs/lib/components/html/HTML.form.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/html/HTML.form.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36026,11 +38050,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _HTMLEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/HTML.edit.display */ "./node_modules/formiojs/components/html/editForm/HTML.edit.display.js"));
+var _HTMLEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/HTML.edit.display */ "./node_modules/formiojs/lib/components/html/editForm/HTML.edit.display.js"));
 
-var _HTMLEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/HTML.edit.logic */ "./node_modules/formiojs/components/html/editForm/HTML.edit.logic.js"));
+var _HTMLEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/HTML.edit.logic */ "./node_modules/formiojs/lib/components/html/editForm/HTML.edit.logic.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36050,10 +38074,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/html/HTML.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/formiojs/components/html/HTML.js ***!
-  \*******************************************************/
+/***/ "./node_modules/formiojs/lib/components/html/HTML.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/html/HTML.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36071,7 +38095,7 @@ __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/mo
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36182,10 +38206,10 @@ exports.default = HTMLComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/html/editForm/HTML.edit.display.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/formiojs/components/html/editForm/HTML.edit.display.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/html/editForm/HTML.edit.display.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/html/editForm/HTML.edit.display.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36253,10 +38277,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/html/editForm/HTML.edit.logic.js":
-/*!***************************************************************************!*\
-  !*** ./node_modules/formiojs/components/html/editForm/HTML.edit.logic.js ***!
-  \***************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/html/editForm/HTML.edit.logic.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/html/editForm/HTML.edit.logic.js ***!
+  \*******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36343,10 +38367,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/index.js":
-/*!***************************************************!*\
-  !*** ./node_modules/formiojs/components/index.js ***!
-  \***************************************************/
+/***/ "./node_modules/formiojs/lib/components/index.js":
+/*!*******************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/index.js ***!
+  \*******************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36358,87 +38382,89 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ./nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ./nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
-var _Address = _interopRequireDefault(__webpack_require__(/*! ./address/Address */ "./node_modules/formiojs/components/address/Address.js"));
+var _Address = _interopRequireDefault(__webpack_require__(/*! ./address/Address */ "./node_modules/formiojs/lib/components/address/Address.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ./base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ./base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _Content = _interopRequireDefault(__webpack_require__(/*! ./content/Content */ "./node_modules/formiojs/components/content/Content.js"));
+var _Content = _interopRequireDefault(__webpack_require__(/*! ./content/Content */ "./node_modules/formiojs/lib/components/content/Content.js"));
 
-var _Container = _interopRequireDefault(__webpack_require__(/*! ./container/Container */ "./node_modules/formiojs/components/container/Container.js"));
+var _Container = _interopRequireDefault(__webpack_require__(/*! ./container/Container */ "./node_modules/formiojs/lib/components/container/Container.js"));
 
-var _DataGrid = _interopRequireDefault(__webpack_require__(/*! ./datagrid/DataGrid */ "./node_modules/formiojs/components/datagrid/DataGrid.js"));
+var _DataGrid = _interopRequireDefault(__webpack_require__(/*! ./datagrid/DataGrid */ "./node_modules/formiojs/lib/components/datagrid/DataGrid.js"));
 
-var _DataMap = _interopRequireDefault(__webpack_require__(/*! ./datamap/DataMap */ "./node_modules/formiojs/components/datamap/DataMap.js"));
+var _DataMap = _interopRequireDefault(__webpack_require__(/*! ./datamap/DataMap */ "./node_modules/formiojs/lib/components/datamap/DataMap.js"));
 
-var _DateTime = _interopRequireDefault(__webpack_require__(/*! ./datetime/DateTime */ "./node_modules/formiojs/components/datetime/DateTime.js"));
+var _DateTime = _interopRequireDefault(__webpack_require__(/*! ./datetime/DateTime */ "./node_modules/formiojs/lib/components/datetime/DateTime.js"));
 
-var _Day = _interopRequireDefault(__webpack_require__(/*! ./day/Day */ "./node_modules/formiojs/components/day/Day.js"));
+var _Day = _interopRequireDefault(__webpack_require__(/*! ./day/Day */ "./node_modules/formiojs/lib/components/day/Day.js"));
 
-var _EditGrid = _interopRequireDefault(__webpack_require__(/*! ./editgrid/EditGrid */ "./node_modules/formiojs/components/editgrid/EditGrid.js"));
+var _EditGrid = _interopRequireDefault(__webpack_require__(/*! ./editgrid/EditGrid */ "./node_modules/formiojs/lib/components/editgrid/EditGrid.js"));
 
-var _HTML = _interopRequireDefault(__webpack_require__(/*! ./html/HTML */ "./node_modules/formiojs/components/html/HTML.js"));
+var _HTML = _interopRequireDefault(__webpack_require__(/*! ./html/HTML */ "./node_modules/formiojs/lib/components/html/HTML.js"));
 
-var _Hidden = _interopRequireDefault(__webpack_require__(/*! ./hidden/Hidden */ "./node_modules/formiojs/components/hidden/Hidden.js"));
+var _Hidden = _interopRequireDefault(__webpack_require__(/*! ./hidden/Hidden */ "./node_modules/formiojs/lib/components/hidden/Hidden.js"));
 
-var _Form = _interopRequireDefault(__webpack_require__(/*! ./form/Form */ "./node_modules/formiojs/components/form/Form.js"));
+var _Form = _interopRequireDefault(__webpack_require__(/*! ./form/Form */ "./node_modules/formiojs/lib/components/form/Form.js"));
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ./textfield/TextField */ "./node_modules/formiojs/components/textfield/TextField.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ./textfield/TextField */ "./node_modules/formiojs/lib/components/textfield/TextField.js"));
 
-var _PhoneNumber = _interopRequireDefault(__webpack_require__(/*! ./phonenumber/PhoneNumber */ "./node_modules/formiojs/components/phonenumber/PhoneNumber.js"));
+var _PhoneNumber = _interopRequireDefault(__webpack_require__(/*! ./phonenumber/PhoneNumber */ "./node_modules/formiojs/lib/components/phonenumber/PhoneNumber.js"));
 
-var _Email = _interopRequireDefault(__webpack_require__(/*! ./email/Email */ "./node_modules/formiojs/components/email/Email.js"));
+var _Email = _interopRequireDefault(__webpack_require__(/*! ./email/Email */ "./node_modules/formiojs/lib/components/email/Email.js"));
 
-var _Url = _interopRequireDefault(__webpack_require__(/*! ./url/Url */ "./node_modules/formiojs/components/url/Url.js"));
+var _Url = _interopRequireDefault(__webpack_require__(/*! ./url/Url */ "./node_modules/formiojs/lib/components/url/Url.js"));
 
-var _Time = _interopRequireDefault(__webpack_require__(/*! ./time/Time */ "./node_modules/formiojs/components/time/Time.js"));
+var _Time = _interopRequireDefault(__webpack_require__(/*! ./time/Time */ "./node_modules/formiojs/lib/components/time/Time.js"));
 
-var _Checkbox = _interopRequireDefault(__webpack_require__(/*! ./checkbox/Checkbox */ "./node_modules/formiojs/components/checkbox/Checkbox.js"));
+var _Checkbox = _interopRequireDefault(__webpack_require__(/*! ./checkbox/Checkbox */ "./node_modules/formiojs/lib/components/checkbox/Checkbox.js"));
 
-var _Currency = _interopRequireDefault(__webpack_require__(/*! ./currency/Currency */ "./node_modules/formiojs/components/currency/Currency.js"));
+var _Currency = _interopRequireDefault(__webpack_require__(/*! ./currency/Currency */ "./node_modules/formiojs/lib/components/currency/Currency.js"));
 
-var _Fieldset = _interopRequireDefault(__webpack_require__(/*! ./fieldset/Fieldset */ "./node_modules/formiojs/components/fieldset/Fieldset.js"));
+var _Fieldset = _interopRequireDefault(__webpack_require__(/*! ./fieldset/Fieldset */ "./node_modules/formiojs/lib/components/fieldset/Fieldset.js"));
 
-var _Signature = _interopRequireDefault(__webpack_require__(/*! ./signature/Signature */ "./node_modules/formiojs/components/signature/Signature.js"));
+var _Signature = _interopRequireDefault(__webpack_require__(/*! ./signature/Signature */ "./node_modules/formiojs/lib/components/signature/Signature.js"));
 
-var _Select = _interopRequireDefault(__webpack_require__(/*! ./select/Select */ "./node_modules/formiojs/components/select/Select.js"));
+var _Select = _interopRequireDefault(__webpack_require__(/*! ./select/Select */ "./node_modules/formiojs/lib/components/select/Select.js"));
 
-var _Resource = _interopRequireDefault(__webpack_require__(/*! ./resource/Resource */ "./node_modules/formiojs/components/resource/Resource.js"));
+var _Resource = _interopRequireDefault(__webpack_require__(/*! ./resource/Resource */ "./node_modules/formiojs/lib/components/resource/Resource.js"));
 
-var _TextArea = _interopRequireDefault(__webpack_require__(/*! ./textarea/TextArea */ "./node_modules/formiojs/components/textarea/TextArea.js"));
+var _TextArea = _interopRequireDefault(__webpack_require__(/*! ./textarea/TextArea */ "./node_modules/formiojs/lib/components/textarea/TextArea.js"));
 
-var _Tags = _interopRequireDefault(__webpack_require__(/*! ./tags/Tags */ "./node_modules/formiojs/components/tags/Tags.js"));
+var _Tags = _interopRequireDefault(__webpack_require__(/*! ./tags/Tags */ "./node_modules/formiojs/lib/components/tags/Tags.js"));
 
-var _Button = _interopRequireDefault(__webpack_require__(/*! ./button/Button */ "./node_modules/formiojs/components/button/Button.js"));
+var _Button = _interopRequireDefault(__webpack_require__(/*! ./button/Button */ "./node_modules/formiojs/lib/components/button/Button.js"));
 
-var _Number = _interopRequireDefault(__webpack_require__(/*! ./number/Number */ "./node_modules/formiojs/components/number/Number.js"));
+var _Number = _interopRequireDefault(__webpack_require__(/*! ./number/Number */ "./node_modules/formiojs/lib/components/number/Number.js"));
 
-var _Password = _interopRequireDefault(__webpack_require__(/*! ./password/Password */ "./node_modules/formiojs/components/password/Password.js"));
+var _Password = _interopRequireDefault(__webpack_require__(/*! ./password/Password */ "./node_modules/formiojs/lib/components/password/Password.js"));
 
-var _Panel = _interopRequireDefault(__webpack_require__(/*! ./panel/Panel */ "./node_modules/formiojs/components/panel/Panel.js"));
+var _Panel = _interopRequireDefault(__webpack_require__(/*! ./panel/Panel */ "./node_modules/formiojs/lib/components/panel/Panel.js"));
 
-var _Column = _interopRequireDefault(__webpack_require__(/*! ./columns/Column */ "./node_modules/formiojs/components/columns/Column.js"));
+var _Column = _interopRequireDefault(__webpack_require__(/*! ./columns/Column */ "./node_modules/formiojs/lib/components/columns/Column.js"));
 
-var _Columns = _interopRequireDefault(__webpack_require__(/*! ./columns/Columns */ "./node_modules/formiojs/components/columns/Columns.js"));
+var _Columns = _interopRequireDefault(__webpack_require__(/*! ./columns/Columns */ "./node_modules/formiojs/lib/components/columns/Columns.js"));
 
-var _Table = _interopRequireDefault(__webpack_require__(/*! ./table/Table */ "./node_modules/formiojs/components/table/Table.js"));
+var _Table = _interopRequireDefault(__webpack_require__(/*! ./table/Table */ "./node_modules/formiojs/lib/components/table/Table.js"));
 
-var _Unknown = _interopRequireDefault(__webpack_require__(/*! ./unknown/Unknown */ "./node_modules/formiojs/components/unknown/Unknown.js"));
+var _Unknown = _interopRequireDefault(__webpack_require__(/*! ./unknown/Unknown */ "./node_modules/formiojs/lib/components/unknown/Unknown.js"));
 
-var _Radio = _interopRequireDefault(__webpack_require__(/*! ./radio/Radio */ "./node_modules/formiojs/components/radio/Radio.js"));
+var _Radio = _interopRequireDefault(__webpack_require__(/*! ./radio/Radio */ "./node_modules/formiojs/lib/components/radio/Radio.js"));
 
-var _SelectBoxes = _interopRequireDefault(__webpack_require__(/*! ./selectboxes/SelectBoxes */ "./node_modules/formiojs/components/selectboxes/SelectBoxes.js"));
+var _SelectBoxes = _interopRequireDefault(__webpack_require__(/*! ./selectboxes/SelectBoxes */ "./node_modules/formiojs/lib/components/selectboxes/SelectBoxes.js"));
 
-var _Survey = _interopRequireDefault(__webpack_require__(/*! ./survey/Survey */ "./node_modules/formiojs/components/survey/Survey.js"));
+var _Survey = _interopRequireDefault(__webpack_require__(/*! ./survey/Survey */ "./node_modules/formiojs/lib/components/survey/Survey.js"));
 
-var _Well = _interopRequireDefault(__webpack_require__(/*! ./well/Well */ "./node_modules/formiojs/components/well/Well.js"));
+var _Well = _interopRequireDefault(__webpack_require__(/*! ./well/Well */ "./node_modules/formiojs/lib/components/well/Well.js"));
 
-var _Location = _interopRequireDefault(__webpack_require__(/*! ./location/Location */ "./node_modules/formiojs/components/location/Location.js"));
+var _Location = _interopRequireDefault(__webpack_require__(/*! ./location/Location */ "./node_modules/formiojs/lib/components/location/Location.js"));
 
-var _File = _interopRequireDefault(__webpack_require__(/*! ./file/File */ "./node_modules/formiojs/components/file/File.js"));
+var _File = _interopRequireDefault(__webpack_require__(/*! ./file/File */ "./node_modules/formiojs/lib/components/file/File.js"));
 
-var _Tabs = _interopRequireDefault(__webpack_require__(/*! ./tabs/Tabs */ "./node_modules/formiojs/components/tabs/Tabs.js"));
+var _Tabs = _interopRequireDefault(__webpack_require__(/*! ./tabs/Tabs */ "./node_modules/formiojs/lib/components/tabs/Tabs.js"));
+
+var _ResourceTree = _interopRequireDefault(__webpack_require__(/*! ./resourcetree/ResourceTree */ "./node_modules/formiojs/lib/components/resourcetree/ResourceTree.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36467,6 +38493,7 @@ var _default = {
   signature: _Signature.default,
   select: _Select.default,
   resource: _Resource.default,
+  resourcetree: _ResourceTree.default,
   textarea: _TextArea.default,
   tags: _Tags.default,
   button: _Button.default,
@@ -36489,10 +38516,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/location/Location.form.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/location/Location.form.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/location/Location.form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/location/Location.form.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36504,9 +38531,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _LocationEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Location.edit.map */ "./node_modules/formiojs/components/location/editForm/Location.edit.map.js"));
+var _LocationEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Location.edit.map */ "./node_modules/formiojs/lib/components/location/editForm/Location.edit.map.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36525,10 +38552,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/location/Location.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/formiojs/components/location/Location.js ***!
-  \***************************************************************/
+/***/ "./node_modules/formiojs/lib/components/location/Location.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/location/Location.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36548,9 +38575,9 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 __webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/core-js/modules/es6.function.name.js");
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36802,10 +38829,10 @@ exports.default = LocationComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/location/editForm/Location.edit.map.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/location/editForm/Location.edit.map.js ***!
-  \*********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/location/editForm/Location.edit.map.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/location/editForm/Location.edit.map.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36844,10 +38871,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/nested/NestedComponent.form.js":
-/*!*************************************************************************!*\
-  !*** ./node_modules/formiojs/components/nested/NestedComponent.form.js ***!
-  \*************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/nested/NestedComponent.form.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/nested/NestedComponent.form.js ***!
+  \*****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36859,7 +38886,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -36879,10 +38906,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/nested/NestedComponent.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/nested/NestedComponent.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/nested/NestedComponent.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/nested/NestedComponent.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -36918,9 +38945,9 @@ var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_m
 
 var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _Components = _interopRequireDefault(__webpack_require__(/*! ../Components */ "./node_modules/formiojs/components/Components.js"));
+var _Components = _interopRequireDefault(__webpack_require__(/*! ../Components */ "./node_modules/formiojs/lib/components/Components.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37663,10 +39690,10 @@ exports.default = NestedComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/number/Number.form.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/formiojs/components/number/Number.form.js ***!
-  \****************************************************************/
+/***/ "./node_modules/formiojs/lib/components/number/Number.form.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/number/Number.form.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37678,11 +39705,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _NumberEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Number.edit.data */ "./node_modules/formiojs/components/number/editForm/Number.edit.data.js"));
+var _NumberEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Number.edit.data */ "./node_modules/formiojs/lib/components/number/editForm/Number.edit.data.js"));
 
-var _NumberEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Number.edit.validation */ "./node_modules/formiojs/components/number/editForm/Number.edit.validation.js"));
+var _NumberEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Number.edit.validation */ "./node_modules/formiojs/lib/components/number/editForm/Number.edit.validation.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37702,10 +39729,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/number/Number.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/formiojs/components/number/Number.js ***!
-  \***********************************************************/
+/***/ "./node_modules/formiojs/lib/components/number/Number.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/number/Number.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -37741,9 +39768,9 @@ var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_m
 
 var _textMaskAddons = __webpack_require__(/*! text-mask-addons */ "./node_modules/text-mask-addons/dist/textMaskAddons.js");
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -37970,10 +39997,10 @@ exports.default = NumberComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/number/editForm/Number.edit.data.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/formiojs/components/number/editForm/Number.edit.data.js ***!
-  \******************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/number/editForm/Number.edit.data.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/number/editForm/Number.edit.data.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38010,10 +40037,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/number/editForm/Number.edit.validation.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/number/editForm/Number.edit.validation.js ***!
-  \************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/number/editForm/Number.edit.validation.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/number/editForm/Number.edit.validation.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38048,10 +40075,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/panel/Panel.form.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/formiojs/components/panel/Panel.form.js ***!
-  \**************************************************************/
+/***/ "./node_modules/formiojs/lib/components/panel/Panel.form.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/panel/Panel.form.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38063,9 +40090,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/components/nested/NestedComponent.form.js"));
+var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/lib/components/nested/NestedComponent.form.js"));
 
-var _PanelEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Panel.edit.display */ "./node_modules/formiojs/components/panel/editForm/Panel.edit.display.js"));
+var _PanelEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Panel.edit.display */ "./node_modules/formiojs/lib/components/panel/editForm/Panel.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38082,10 +40109,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/panel/Panel.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/formiojs/components/panel/Panel.js ***!
-  \*********************************************************/
+/***/ "./node_modules/formiojs/lib/components/panel/Panel.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/panel/Panel.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38103,7 +40130,7 @@ __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/mo
 
 __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-js/modules/es6.reflect.get.js");
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38263,10 +40290,10 @@ exports.default = PanelComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/panel/editForm/Panel.edit.display.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/formiojs/components/panel/editForm/Panel.edit.display.js ***!
-  \*******************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/panel/editForm/Panel.edit.display.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/panel/editForm/Panel.edit.display.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38367,10 +40394,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/password/Password.form.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/password/Password.form.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/password/Password.form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/password/Password.form.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38382,9 +40409,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField.form */ "./node_modules/formiojs/components/textfield/TextField.form.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField.form */ "./node_modules/formiojs/lib/components/textfield/TextField.form.js"));
 
-var _PasswordEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Password.edit.display */ "./node_modules/formiojs/components/password/editForm/Password.edit.display.js"));
+var _PasswordEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Password.edit.display */ "./node_modules/formiojs/lib/components/password/editForm/Password.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38401,10 +40428,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/password/Password.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/formiojs/components/password/Password.js ***!
-  \***************************************************************/
+/***/ "./node_modules/formiojs/lib/components/password/Password.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/password/Password.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38422,7 +40449,7 @@ __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/mo
 
 __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-js/modules/es6.reflect.get.js");
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/components/textfield/TextField.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/lib/components/textfield/TextField.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38506,10 +40533,10 @@ exports.default = PasswordComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/password/editForm/Password.edit.display.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/password/editForm/Password.edit.display.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/password/editForm/Password.edit.display.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/password/editForm/Password.edit.display.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38531,10 +40558,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/phonenumber/PhoneNumber.form.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/formiojs/components/phonenumber/PhoneNumber.form.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/phonenumber/PhoneNumber.form.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/phonenumber/PhoneNumber.form.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38546,7 +40573,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField.form */ "./node_modules/formiojs/components/textfield/TextField.form.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField.form */ "./node_modules/formiojs/lib/components/textfield/TextField.form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38560,10 +40587,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/phonenumber/PhoneNumber.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/formiojs/components/phonenumber/PhoneNumber.js ***!
-  \*********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/phonenumber/PhoneNumber.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/phonenumber/PhoneNumber.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38579,7 +40606,7 @@ __webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_mod
 
 __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/components/textfield/TextField.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/lib/components/textfield/TextField.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38653,10 +40680,10 @@ exports.default = PhoneNumberComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/radio/Radio.form.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/formiojs/components/radio/Radio.form.js ***!
-  \**************************************************************/
+/***/ "./node_modules/formiojs/lib/components/radio/Radio.form.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/radio/Radio.form.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38668,9 +40695,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _RadioEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Radio.edit.display */ "./node_modules/formiojs/components/radio/editForm/Radio.edit.display.js"));
+var _RadioEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Radio.edit.display */ "./node_modules/formiojs/lib/components/radio/editForm/Radio.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38687,10 +40714,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/radio/Radio.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/formiojs/components/radio/Radio.js ***!
-  \*********************************************************/
+/***/ "./node_modules/formiojs/lib/components/radio/Radio.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/radio/Radio.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -38722,7 +40749,7 @@ __webpack_require__(/*! core-js/modules/es6.array.iterator */ "./node_modules/co
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39023,10 +41050,10 @@ exports.default = RadioComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/radio/editForm/Radio.edit.display.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/formiojs/components/radio/editForm/Radio.edit.display.js ***!
-  \*******************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/radio/editForm/Radio.edit.display.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/radio/editForm/Radio.edit.display.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39038,7 +41065,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _builder = _interopRequireDefault(__webpack_require__(/*! ../../../utils/builder */ "./node_modules/formiojs/utils/builder.js"));
+var _builder = _interopRequireDefault(__webpack_require__(/*! ../../../utils/builder */ "./node_modules/formiojs/lib/utils/builder.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39119,10 +41146,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/resource/Resource.form.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/resource/Resource.form.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/resource/Resource.form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/resource/Resource.form.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39134,9 +41161,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _ResourceEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Resource.edit.display */ "./node_modules/formiojs/components/resource/editForm/Resource.edit.display.js"));
+var _ResourceEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Resource.edit.display */ "./node_modules/formiojs/lib/components/resource/editForm/Resource.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39153,10 +41180,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/resource/Resource.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/formiojs/components/resource/Resource.js ***!
-  \***************************************************************/
+/***/ "./node_modules/formiojs/lib/components/resource/Resource.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/resource/Resource.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39176,11 +41203,11 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Select = _interopRequireDefault(__webpack_require__(/*! ../select/Select */ "./node_modules/formiojs/components/select/Select.js"));
+var _Select = _interopRequireDefault(__webpack_require__(/*! ../select/Select */ "./node_modules/formiojs/lib/components/select/Select.js"));
 
-var _Webform = _interopRequireDefault(__webpack_require__(/*! ../../Webform */ "./node_modules/formiojs/Webform.js"));
+var _Webform = _interopRequireDefault(__webpack_require__(/*! ../../Webform */ "./node_modules/formiojs/lib/Webform.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39324,10 +41351,10 @@ exports.default = ResourceComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/resource/editForm/Resource.edit.display.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/resource/editForm/Resource.edit.display.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/resource/editForm/Resource.edit.display.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/resource/editForm/Resource.edit.display.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39382,10 +41409,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/select/Select.form.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/formiojs/components/select/Select.form.js ***!
-  \****************************************************************/
+/***/ "./node_modules/formiojs/lib/components/resourcetree/ResourceTree.form.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/resourcetree/ResourceTree.form.js ***!
+  \********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39397,11 +41424,537 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _SelectEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Select.edit.data */ "./node_modules/formiojs/components/select/editForm/Select.edit.data.js"));
+var _ResourceTreeEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/ResourceTree.edit.display */ "./node_modules/formiojs/lib/components/resourcetree/editForm/ResourceTree.edit.display.js"));
 
-var _SelectEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Select.edit.validation */ "./node_modules/formiojs/components/select/editForm/Select.edit.validation.js"));
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _default() {
+  for (var _len = arguments.length, extend = new Array(_len), _key = 0; _key < _len; _key++) {
+    extend[_key] = arguments[_key];
+  }
+
+  return _Base.default.apply(void 0, [[{
+    key: 'display',
+    components: _ResourceTreeEdit.default
+  }]].concat(extend));
+}
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/components/resourcetree/ResourceTree.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/resourcetree/ResourceTree.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+__webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_modules/core-js/modules/es7.symbol.async-iterator.js");
+
+__webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
+
+__webpack_require__(/*! core-js/modules/es6.reflect.set */ "./node_modules/core-js/modules/es6.reflect.set.js");
+
+__webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-js/modules/es6.reflect.get.js");
+
+__webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
+
+var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
+
+var _jquery = _interopRequireDefault(__webpack_require__(/*! jquery */ "jquery"));
+
+__webpack_require__(/*! bootstrap/js/dist/modal */ "./node_modules/bootstrap/js/dist/modal.js");
+
+__webpack_require__(/*! bootstrap-treeview/src/js/bootstrap-treeview */ "./node_modules/bootstrap-treeview/src/js/bootstrap-treeview.js");
+
+var _Select = _interopRequireDefault(__webpack_require__(/*! ../select/Select */ "./node_modules/formiojs/lib/components/select/Select.js"));
+
+var _Tags = _interopRequireDefault(__webpack_require__(/*! ../tags/Tags */ "./node_modules/formiojs/lib/components/tags/Tags.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function set(target, property, value, receiver) { if (typeof Reflect !== "undefined" && Reflect.set) { set = Reflect.set; } else { set = function set(target, property, value, receiver) { var base = _superPropBase(target, property); var desc; if (base) { desc = Object.getOwnPropertyDescriptor(base, property); if (desc.set) { desc.set.call(receiver, value); return true; } else if (!desc.writable) { return false; } } desc = Object.getOwnPropertyDescriptor(receiver, property); if (desc) { if (!desc.writable) { return false; } desc.value = value; Object.defineProperty(receiver, property, desc); } else { _defineProperty(receiver, property, value); } return true; }; } return set(target, property, value, receiver); }
+
+function _set(target, property, value, receiver, isStrict) { var s = set(target, property, value, receiver || target); if (!s && isStrict) { throw new Error('failed to set property'); } return value; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var ResourceTreeComponent =
+/*#__PURE__*/
+function (_TagsComponent) {
+  _inherits(ResourceTreeComponent, _TagsComponent);
+
+  _createClass(ResourceTreeComponent, null, [{
+    key: "schema",
+    value: function schema() {
+      for (var _len = arguments.length, extend = new Array(_len), _key = 0; _key < _len; _key++) {
+        extend[_key] = arguments[_key];
+      }
+
+      return _Select.default.schema.apply(_Select.default, [{
+        type: 'resourcetree',
+        label: 'Resource tree',
+        key: 'resourcetree',
+        dataSrc: 'resource',
+        resource: '',
+        project: '',
+        template: '<span>{{ item.data }}</span>'
+      }].concat(extend));
+    }
+  }, {
+    key: "builderInfo",
+    get: function get() {
+      return {
+        title: 'Resource tree',
+        group: 'advanced',
+        icon: 'fa fa-sitemap',
+        weight: 90,
+        documentation: 'http://help.form.io/userguide/#resourcetree',
+        schema: ResourceTreeComponent.schema()
+      };
+    }
+  }]);
+
+  function ResourceTreeComponent(component, options, data) {
+    var _this;
+
+    _classCallCheck(this, ResourceTreeComponent);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(ResourceTreeComponent).call(this, component, options, data));
+    _this.component.dataSrc = 'resource';
+    _this.component.data = {
+      resource: _this.component.resource
+    };
+    return _this;
+  }
+
+  _createClass(ResourceTreeComponent, [{
+    key: "addButton",
+
+    /**
+     * Creates a new button to add a resource instance
+     * @returns {HTMLElement} - The "Add Resource" button html element.
+     */
+    value: function addButton() {
+      var addButton = this.ce('button', {
+        class: 'btn btn-primary'
+      });
+      var addIcon = this.ce('i', {
+        class: this.iconClass('plus')
+      });
+      addButton.appendChild(addIcon);
+      addButton.appendChild(this.text(" ".concat(this.component.addResourceLabel || 'Add Resource')));
+      this.addEventListener(addButton, 'click', function (event) {
+        event.preventDefault(); // $('#exampleModal').modal('show');
+        // const dialog = this.createModal(this.component.addResourceLabel || 'Add Resource');
+        // const formioForm = this.ce('div');
+        // dialog.body.appendChild(formioForm);
+        // const form = new Webform(formioForm);
+        // form.on('submit', (submission) => {
+        //   this.setValue(submission);
+        //   form.destroy();
+        //   dialog.close();
+        // });
+        // form.src = `${_.get(this.root, 'formio.projectUrl', Formio.getBaseUrl())}/form/${this.component.resource}`;
+      });
+      return addButton;
+    }
+  }, {
+    key: "addInput",
+    value: function addInput(input, container) {
+      // Add Resource button
+      // if (this.component.addResource) {
+      var table = this.ce('table', {
+        class: 'table table-bordered'
+      });
+      var template = "\n        <div>\n          <tbody>\n            <tr>\n              <td id=\"tags\">\n              </td>\n            </tr>\n            <tr>\n              <div id=\"tree\"></div>\n            </tr>\n          </tbody>\n        </div>";
+      container.appendChild(table);
+      table.innerHTML = template;
+
+      _get(_getPrototypeOf(ResourceTreeComponent.prototype), "addInput", this).call(this, input, table.querySelector('#tags'));
+
+      _set(_getPrototypeOf(ResourceTreeComponent.prototype), "disabled", true, this, true);
+
+      (0, _jquery.default)('#tree').treeview({
+        data: this.getTree(),
+        showCheckbox: true,
+        multiSelect: true
+      }); // }
+      // else {
+      //   super.addInput(input, container);
+      // }
+    }
+  }, {
+    key: "getTree",
+    value: function getTree() {
+      var response = [{
+        id: '000000000000000000000523',
+        name: 'Sport',
+        children: [{
+          id: '000000000000000000000520',
+          name: 'Olympische Spiele'
+        }, {
+          id: '000000000000000000000524',
+          name: 'Leichtathletik'
+        }, {
+          id: '000000000000000000000525',
+          name: 'Ballsport'
+        }, {
+          id: '000000000000000000000526',
+          name: 'Wintersport'
+        }, {
+          id: '000000000000000000000527',
+          name: 'Motorsport'
+        }, {
+          id: '000000000000000000000528',
+          name: 'Wassersport'
+        }, {
+          id: '000000000000000000000529',
+          name: 'Reiten'
+        }, {
+          id: '000000000000000000000530',
+          name: 'Fußball'
+        }, {
+          id: '000000000000000000000531',
+          name: 'Kampfsport'
+        }, {
+          id: '000000000000000000000532',
+          name: 'Radsport'
+        }, {
+          id: '000000000000000000000533',
+          name: 'Turnen'
+        }, {
+          id: '000000000000000000000534',
+          name: 'Fechten'
+        }, {
+          id: '000000000000000000000535',
+          name: 'Extremsport'
+        }, {
+          id: '000000000000000000000536',
+          name: 'Schießen'
+        }, {
+          id: '000000000000000000000537',
+          name: 'Sonstiges'
+        }]
+      }, {
+        id: '000000000000000000000538',
+        name: 'Wirtschaft',
+        children: [{
+          id: '000000000000000000000539',
+          name: 'Unternehmen'
+        }, {
+          id: '000000000000000000000540',
+          name: 'Märkte'
+        }, {
+          id: '000000000000000000000541',
+          name: 'Verbraucher'
+        }, {
+          id: '000000000000000000000542',
+          name: 'Service'
+        }, {
+          id: '000000000000000000000543',
+          name: 'Geld und Finanzen'
+        }, {
+          id: '000000000000000000000544',
+          name: 'Mittelstand'
+        }, {
+          id: '000000000000000000000545',
+          name: 'Industrie'
+        }, {
+          id: '000000000000000000000546',
+          name: 'Mobilität'
+        }, {
+          id: '000000000000000000000547',
+          name: 'Auto'
+        }, {
+          id: '000000000000000000000548',
+          name: 'Gesundheit'
+        }, {
+          id: '000000000000000000000549',
+          name: 'Energie'
+        }]
+      }, {
+        id: '000000000000000000000550',
+        name: 'Kultur',
+        children: [{
+          id: '000000000000000000000551',
+          name: 'Musik'
+        }, {
+          id: '000000000000000000000552',
+          name: 'Literatur'
+        }, {
+          id: '000000000000000000000553',
+          name: 'TV'
+        }, {
+          id: '000000000000000000000554',
+          name: 'Kino'
+        }, {
+          id: '000000000000000000000555',
+          name: 'Kunst'
+        }, {
+          id: '000000000000000000000556',
+          name: 'Medien'
+        }]
+      }, {
+        id: '000000000000000000000557',
+        name: 'Wissenschaft',
+        children: [{
+          id: '000000000000000000000558',
+          name: 'Gesundheit und Medizin'
+        }, {
+          id: '000000000000000000000559',
+          name: 'Technik'
+        }, {
+          id: '000000000000000000000560',
+          name: 'Umwelt'
+        }, {
+          id: '000000000000000000000561',
+          name: 'Ernährung'
+        }, {
+          id: '000000000000000000000562',
+          name: 'Forschung'
+        }, {
+          id: '000000000000000000000563',
+          name: 'Bildung'
+        }, {
+          id: '000000000000000000000564',
+          name: 'Klima'
+        }, {
+          id: '000000000000000000000565',
+          name: 'Digitales'
+        }]
+      }, {
+        id: '000000000000000000000566',
+        name: 'Politik',
+        children: [{
+          id: '000000000000000000000567',
+          name: 'Deutschland'
+        }, {
+          id: '000000000000000000000568',
+          name: 'Europa'
+        }, {
+          id: '000000000000000000000569',
+          name: 'Ausland'
+        }]
+      }, {
+        id: '000000000000000000000570',
+        name: 'Lifestyle',
+        children: [{
+          id: '000000000000000000000571',
+          name: 'Reise'
+        }, {
+          id: '000000000000000000000572',
+          name: 'Mode'
+        }, {
+          id: '000000000000000000000573',
+          name: 'Architektur'
+        }, {
+          id: '000000000000000000000574',
+          name: 'Freizeit'
+        }, {
+          id: '000000000000000000000575',
+          name: 'Familie'
+        }]
+      }];
+
+      if (!response) {
+        return [];
+      } // TODO: id, name, children must be defined in the component editor/schema
+
+
+      this.idAttribute = 'id';
+      this.titleAttribute = 'name';
+      this.childrenAttribute = 'children';
+      this.prepareTreeAttributes(response);
+      console.log('//////////////////////////// response: {}', JSON.stringify(response));
+      return response;
+    }
+  }, {
+    key: "prepareTreeAttributes",
+    value: function prepareTreeAttributes(response) {
+      var _this2 = this;
+
+      response.map(function (val, idx) {
+        if (Array.isArray(val)) {
+          val.forEach(function (v) {
+            _this2.prepareTreeAttributes(v);
+          });
+        }
+
+        if (val.hasOwnProperty(_this2.titleAttribute)) {
+          val.text = val[_this2.titleAttribute];
+        }
+
+        if (val.hasOwnProperty(_this2.childrenAttribute)) {
+          _this2.prepareTreeAttributes(val[_this2.childrenAttribute]);
+
+          val.nodes = val[_this2.childrenAttribute];
+        }
+      });
+      return [{
+        text: 'Parent 1',
+        nodes: [{
+          text: 'Child 1',
+          nodes: [{
+            text: 'Grandchild 1'
+          }, {
+            text: 'Grandchild 2'
+          }]
+        }, {
+          text: 'Child 2'
+        }]
+      }, {
+        text: 'Parent 2'
+      }, {
+        text: 'Parent 3'
+      }, {
+        text: 'Parent 4'
+      }, {
+        text: 'Parent 5'
+      }];
+    }
+  }, {
+    key: "defaultSchema",
+    get: function get() {
+      return ResourceTreeComponent.schema();
+    }
+  }]);
+
+  return ResourceTreeComponent;
+}(_Tags.default);
+
+exports.default = ResourceTreeComponent;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/components/resourcetree/editForm/ResourceTree.edit.display.js":
+/*!*************************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/resourcetree/editForm/ResourceTree.edit.display.js ***!
+  \*************************************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+var _default = [{
+  label: 'Resource',
+  key: 'resource',
+  type: 'select',
+  input: false,
+  dataSrc: 'url',
+  data: {
+    url: '/form?type=resource&limit=4294967295'
+  },
+  template: '<span>{{ item.title }}</span>',
+  validate: {
+    custom: 'tabs = _.filter(form.components, {key: "tabs"})[0].components; display = _.filter(tabs, {key: "display"})[0].components; children = _.filter(display, {key: "childrenField"})[0]; children.data.url = "/form/" + data.resource + "/components" ; valid = true'
+  },
+  valueProperty: '_id',
+  weight: 50,
+  tooltip: 'The resource to be used with this field.'
+}, {
+  label: 'Children field',
+  key: 'childrenField',
+  type: 'select',
+  dataSrc: 'url',
+  data: {
+    url: '/form/'
+  },
+  template: '<span>{{ item.key }}</span>',
+  valueProperty: 'key',
+  weight: 51,
+  tooltip: 'The field of the resource which contains an array of child resources in the hierarchy.',
+  mask: false,
+  tableView: true,
+  input: true,
+  refreshOn: 'resource'
+}, {
+  type: 'tags',
+  input: true,
+  key: 'selectFields',
+  label: 'Select Fields',
+  tooltip: 'The properties on the resource to return as part of the options. If left blank, all properties will be returned.',
+  placeholder: 'Enter the fields to select.',
+  weight: 52
+}, {
+  type: 'tags',
+  input: true,
+  key: 'searchFields',
+  label: 'Search Fields',
+  tooltip: 'A list of search filters based on the fields of the resource. See the <a target=\'_blank\' href=\'https://github.com/travist/resourcejs#filtering-the-results\'>ResourceTree.js documentation</a> for the format of these filters.',
+  placeholder: 'The fields to query on the server',
+  weight: 53
+}, {
+  type: 'textarea',
+  input: true,
+  key: 'template',
+  label: 'Item Template',
+  editor: 'ace',
+  as: 'html',
+  rows: 3,
+  weight: 54,
+  tooltip: 'The HTML template for the result data items.'
+}];
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/components/select/Select.form.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/select/Select.form.js ***!
+  \********************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = _default;
+
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
+
+var _SelectEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Select.edit.data */ "./node_modules/formiojs/lib/components/select/editForm/Select.edit.data.js"));
+
+var _SelectEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/Select.edit.validation */ "./node_modules/formiojs/lib/components/select/editForm/Select.edit.validation.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39421,10 +41974,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/select/Select.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/formiojs/components/select/Select.js ***!
-  \***********************************************************/
+/***/ "./node_modules/formiojs/lib/components/select/Select.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/select/Select.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -39464,9 +42017,9 @@ var _choices = _interopRequireDefault(__webpack_require__(/*! choices.js/assets/
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -39555,7 +42108,9 @@ function (_BaseComponent) {
 
     _this.triggerUpdate = _lodash.default.debounce(_this.updateItems.bind(_assertThisInitialized(_assertThisInitialized(_this))), 100); // Keep track of the select options.
 
-    _this.selectOptions = []; // If this component has been activated.
+    _this.selectOptions = []; // See if this should use the template.
+
+    _this.useTemplate = _this.component.dataSrc !== 'values' && _this.component.template; // If this component has been activated.
 
     _this.activated = false; // Determine when the items have been loaded.
 
@@ -39587,7 +42142,7 @@ function (_BaseComponent) {
       } // Perform a fast interpretation if we should not use the template.
 
 
-      if (data && !this.component.template) {
+      if (data && !this.useTemplate) {
         var itemLabel = data.label || data;
         return typeof itemLabel === 'string' ? this.t(itemLabel) : itemLabel;
       }
@@ -40411,10 +42966,10 @@ exports.default = SelectComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/select/editForm/Select.edit.data.js":
-/*!******************************************************************************!*\
-  !*** ./node_modules/formiojs/components/select/editForm/Select.edit.data.js ***!
-  \******************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/select/editForm/Select.edit.data.js":
+/*!**********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/select/editForm/Select.edit.data.js ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40426,7 +42981,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _utils = __webpack_require__(/*! ../../../utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ../../../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 var _default = [{
   type: 'select',
@@ -40842,10 +43397,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/select/editForm/Select.edit.validation.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/select/editForm/Select.edit.validation.js ***!
-  \************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/select/editForm/Select.edit.validation.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/select/editForm/Select.edit.validation.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40873,10 +43428,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/selectboxes/SelectBoxes.form.js":
-/*!**************************************************************************!*\
-  !*** ./node_modules/formiojs/components/selectboxes/SelectBoxes.form.js ***!
-  \**************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/selectboxes/SelectBoxes.form.js":
+/*!******************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/selectboxes/SelectBoxes.form.js ***!
+  \******************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40888,7 +43443,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Radio = _interopRequireDefault(__webpack_require__(/*! ../radio/Radio.form */ "./node_modules/formiojs/components/radio/Radio.form.js"));
+var _Radio = _interopRequireDefault(__webpack_require__(/*! ../radio/Radio.form */ "./node_modules/formiojs/lib/components/radio/Radio.form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -40898,10 +43453,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/selectboxes/SelectBoxes.js":
-/*!*********************************************************************!*\
-  !*** ./node_modules/formiojs/components/selectboxes/SelectBoxes.js ***!
-  \*********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/selectboxes/SelectBoxes.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/selectboxes/SelectBoxes.js ***!
+  \*************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -40925,7 +43480,7 @@ __webpack_require__(/*! core-js/modules/es6.array.iterator */ "./node_modules/co
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Radio = _interopRequireDefault(__webpack_require__(/*! ../radio/Radio */ "./node_modules/formiojs/components/radio/Radio.js"));
+var _Radio = _interopRequireDefault(__webpack_require__(/*! ../radio/Radio */ "./node_modules/formiojs/lib/components/radio/Radio.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41102,10 +43657,10 @@ exports.default = SelectBoxesComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/signature/Signature.form.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/formiojs/components/signature/Signature.form.js ***!
-  \**********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/signature/Signature.form.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/signature/Signature.form.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41117,9 +43672,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _SignatureEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Signature.edit.display */ "./node_modules/formiojs/components/signature/editForm/Signature.edit.display.js"));
+var _SignatureEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Signature.edit.display */ "./node_modules/formiojs/lib/components/signature/editForm/Signature.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41136,10 +43691,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/signature/Signature.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/formiojs/components/signature/Signature.js ***!
-  \*****************************************************************/
+/***/ "./node_modules/formiojs/lib/components/signature/Signature.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/signature/Signature.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41161,7 +43716,7 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 var _signature_pad = _interopRequireDefault(__webpack_require__(/*! signature_pad/dist/signature_pad.js */ "./node_modules/signature_pad/dist/signature_pad.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
@@ -41472,10 +44027,10 @@ exports.default = SignatureComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/signature/editForm/Signature.edit.display.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/signature/editForm/Signature.edit.display.js ***!
-  \***************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/signature/editForm/Signature.edit.display.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/signature/editForm/Signature.edit.display.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41531,10 +44086,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/survey/Survey.form.js":
-/*!****************************************************************!*\
-  !*** ./node_modules/formiojs/components/survey/Survey.form.js ***!
-  \****************************************************************/
+/***/ "./node_modules/formiojs/lib/components/survey/Survey.form.js":
+/*!********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/survey/Survey.form.js ***!
+  \********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41546,9 +44101,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _SurveyEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Survey.edit.display */ "./node_modules/formiojs/components/survey/editForm/Survey.edit.display.js"));
+var _SurveyEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Survey.edit.display */ "./node_modules/formiojs/lib/components/survey/editForm/Survey.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41565,10 +44120,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/survey/Survey.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/formiojs/components/survey/Survey.js ***!
-  \***********************************************************/
+/***/ "./node_modules/formiojs/lib/components/survey/Survey.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/survey/Survey.js ***!
+  \***************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41594,9 +44149,9 @@ __webpack_require__(/*! core-js/modules/es6.array.iterator */ "./node_modules/co
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
-var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/utils/utils.js");
+var _utils = __webpack_require__(/*! ../../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41855,10 +44410,10 @@ exports.default = SurveyComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/survey/editForm/Survey.edit.display.js":
-/*!*********************************************************************************!*\
-  !*** ./node_modules/formiojs/components/survey/editForm/Survey.edit.display.js ***!
-  \*********************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/survey/editForm/Survey.edit.display.js":
+/*!*************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/survey/editForm/Survey.edit.display.js ***!
+  \*************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41930,10 +44485,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/table/Table.form.js":
-/*!**************************************************************!*\
-  !*** ./node_modules/formiojs/components/table/Table.form.js ***!
-  \**************************************************************/
+/***/ "./node_modules/formiojs/lib/components/table/Table.form.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/table/Table.form.js ***!
+  \******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41945,9 +44500,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/components/nested/NestedComponent.form.js"));
+var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/lib/components/nested/NestedComponent.form.js"));
 
-var _TableEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Table.edit.display */ "./node_modules/formiojs/components/table/editForm/Table.edit.display.js"));
+var _TableEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Table.edit.display */ "./node_modules/formiojs/lib/components/table/editForm/Table.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -41964,10 +44519,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/table/Table.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/formiojs/components/table/Table.js ***!
-  \*********************************************************/
+/***/ "./node_modules/formiojs/lib/components/table/Table.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/table/Table.js ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -41987,7 +44542,7 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42222,10 +44777,10 @@ exports.default = TableComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/table/editForm/Table.edit.display.js":
-/*!*******************************************************************************!*\
-  !*** ./node_modules/formiojs/components/table/editForm/Table.edit.display.js ***!
-  \*******************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/table/editForm/Table.edit.display.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/table/editForm/Table.edit.display.js ***!
+  \***********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42288,10 +44843,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/tabs/Tabs.form.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/components/tabs/Tabs.form.js ***!
-  \************************************************************/
+/***/ "./node_modules/formiojs/lib/components/tabs/Tabs.form.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/tabs/Tabs.form.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42303,9 +44858,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/components/nested/NestedComponent.form.js"));
+var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/lib/components/nested/NestedComponent.form.js"));
 
-var _TabsEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Tabs.edit.display */ "./node_modules/formiojs/components/tabs/editForm/Tabs.edit.display.js"));
+var _TabsEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Tabs.edit.display */ "./node_modules/formiojs/lib/components/tabs/editForm/Tabs.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42322,10 +44877,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/tabs/Tabs.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/formiojs/components/tabs/Tabs.js ***!
-  \*******************************************************/
+/***/ "./node_modules/formiojs/lib/components/tabs/Tabs.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/tabs/Tabs.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42343,9 +44898,9 @@ __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/mo
 
 __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-js/modules/es6.reflect.get.js");
 
-__webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
+var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42384,7 +44939,6 @@ function (_NestedComponent) {
       }
 
       return _NestedComponent2.default.schema.apply(_NestedComponent2.default, [{
-        label: 'Tabs',
         type: 'tabs',
         input: false,
         key: 'tabs',
@@ -42425,15 +44979,22 @@ function (_NestedComponent) {
     value: function createElement() {
       var _this2 = this;
 
-      this.tabsBar = this.ce('ul', {
+      this.tabBar = this.ce('ul', {
         class: 'nav nav-tabs'
       });
-      this.tabsContent = this.ce('div', {
+      this.tabContent = this.ce('div', {
         class: 'tab-content'
       });
-      this.tabLinks = [];
       this.tabs = [];
-      this.component.components.forEach(function (tab, index) {
+      this.tabLinks = [];
+
+      _lodash.default.each(this.component.components, function (tab, index) {
+        var tabPanel = _this2.ce('div', {
+          role: 'tabpanel',
+          class: 'tab-pane',
+          id: tab.key
+        });
+
         var tabLink = _this2.ce('a', {
           class: 'nav-link',
           href: "#".concat(tab.key)
@@ -42452,24 +45013,19 @@ function (_NestedComponent) {
 
         tabElement.tabLink = tabLink;
 
-        _this2.tabsBar.appendChild(tabElement);
-
         _this2.tabLinks.push(tabElement);
 
-        var tabPanel = _this2.ce('div', {
-          role: 'tabpanel',
-          class: 'tab-pane',
-          id: tab.key
-        });
-
-        _this2.tabsContent.appendChild(tabPanel);
-
         _this2.tabs.push(tabPanel);
+
+        _this2.tabBar.appendChild(tabElement);
+
+        _this2.tabContent.appendChild(tabPanel);
       });
+
       this.element = this.ce('div', {
         id: this.id,
         class: this.className
-      }, [this.tabsBar, this.tabsContent]);
+      }, [this.tabBar, this.tabContent]);
       this.element.component = this;
       return this.element;
     }
@@ -42490,26 +45046,39 @@ function (_NestedComponent) {
 
       this.currentTab = index; // Get the current tab.
 
-      var tab = this.component.components[index];
-      this.empty(this.tabs[index]);
-      this.components = [];
-      var components = this.hook('addComponents', tab.components, this);
-      components.forEach(function (component) {
-        return _this3.addComponent(component, _this3.tabs[index], _this3.data, null, null, state);
+      var tab = this.component.components[this.currentTab];
+      this.empty(this.tabs[this.currentTab]);
+
+      _lodash.default.remove(this.components, function (comp) {
+        return comp.component.tab === _this3.currentTab;
       });
+
+      var components = this.hook('addComponents', tab.components, this);
+
+      _lodash.default.each(components, function (component) {
+        return _this3.addComponent(component, _this3.tabs[_this3.currentTab], _this3.data, null, null, state);
+      });
+
       this.restoreValue();
 
       if (this.tabLinks.length <= index) {
         return;
       }
 
-      this.tabLinks.forEach(function (tabLink) {
-        return _this3.removeClass(tabLink, 'active').removeClass(tabLink.tabLink, 'active');
+      _lodash.default.each(this.tabLinks, function (tabLink) {
+        _this3.removeClass(tabLink, 'active');
+
+        _this3.removeClass(tabLink.tabLink, 'active');
       });
-      this.tabs.forEach(function (tab) {
-        return _this3.removeClass(tab, 'active');
+
+      this.addClass(this.tabLinks[index], 'active');
+      this.addClass(this.tabLinks[index].tabLink, 'active');
+
+      _lodash.default.each(this.tabs, function (tab) {
+        _this3.removeClass(tab, 'active');
       });
-      this.addClass(this.tabLinks[index], 'active').addClass(this.tabLinks[index].tabLink, 'active').addClass(this.tabs[index], 'active');
+
+      this.addClass(this.tabs[index], 'active');
       this.triggerChange();
     }
   }, {
@@ -42542,9 +45111,7 @@ function (_NestedComponent) {
   }, {
     key: "addComponents",
     value: function addComponents(element, data, options, state) {
-      var _ref = state && state.currentTab ? state : this,
-          currentTab = _ref.currentTab;
-
+      var currentTab = state && state.currentTab ? state.currentTab : this.currentTab;
       this.setTab(currentTab, state);
     }
   }, {
@@ -42555,19 +45122,23 @@ function (_NestedComponent) {
   }, {
     key: "schema",
     get: function get() {
-      var _this4 = this;
-
       var schema = _get(_getPrototypeOf(TabsComponent.prototype), "schema", this);
 
-      schema.components = this.component.components.map(function (tab, index) {
-        if (index === _this4.currentTab) {
-          tab.components = _this4.getComponents().map(function (component) {
-            return component.schema;
-          });
-        }
+      schema.components = [];
 
-        return tab;
+      var allComponents = _lodash.default.groupBy(this.getComponents(), 'component.tab');
+
+      _lodash.default.each(this.component.components, function (tab, index) {
+        var tabSchema = tab;
+        tabSchema.components = [];
+
+        _lodash.default.each(allComponents[index], function (component) {
+          return tabSchema.components.push(component.schema);
+        });
+
+        schema.components.push(tabSchema);
       });
+
       return schema;
     }
   }]);
@@ -42579,10 +45150,10 @@ exports.default = TabsComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/tabs/editForm/Tabs.edit.display.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/formiojs/components/tabs/editForm/Tabs.edit.display.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/tabs/editForm/Tabs.edit.display.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/tabs/editForm/Tabs.edit.display.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42621,10 +45192,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/tags/Tags.form.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/components/tags/Tags.form.js ***!
-  \************************************************************/
+/***/ "./node_modules/formiojs/lib/components/tags/Tags.form.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/tags/Tags.form.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42636,9 +45207,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _TagsEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Tags.edit.display */ "./node_modules/formiojs/components/tags/editForm/Tags.edit.display.js"));
+var _TagsEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Tags.edit.display */ "./node_modules/formiojs/lib/components/tags/editForm/Tags.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42655,10 +45226,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/tags/Tags.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/formiojs/components/tags/Tags.js ***!
-  \*******************************************************/
+/***/ "./node_modules/formiojs/lib/components/tags/Tags.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/tags/Tags.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42680,7 +45251,7 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 __webpack_require__(/*! core-js/modules/es6.regexp.split */ "./node_modules/core-js/modules/es6.regexp.split.js");
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 var _choices = _interopRequireDefault(__webpack_require__(/*! choices.js/assets/scripts/dist/choices.js */ "./node_modules/choices.js/assets/scripts/dist/choices.js"));
 
@@ -42857,10 +45428,10 @@ exports.default = TagsComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/tags/editForm/Tags.edit.display.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/formiojs/components/tags/editForm/Tags.edit.display.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/tags/editForm/Tags.edit.display.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/tags/editForm/Tags.edit.display.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42907,10 +45478,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/textarea/TextArea.form.js":
-/*!********************************************************************!*\
-  !*** ./node_modules/formiojs/components/textarea/TextArea.form.js ***!
-  \********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/textarea/TextArea.form.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/textarea/TextArea.form.js ***!
+  \************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42922,9 +45493,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField.form */ "./node_modules/formiojs/components/textfield/TextField.form.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField.form */ "./node_modules/formiojs/lib/components/textfield/TextField.form.js"));
 
-var _TextAreaEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/TextArea.edit.display */ "./node_modules/formiojs/components/textarea/editForm/TextArea.edit.display.js"));
+var _TextAreaEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/TextArea.edit.display */ "./node_modules/formiojs/lib/components/textarea/editForm/TextArea.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -42941,10 +45512,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/textarea/TextArea.js":
-/*!***************************************************************!*\
-  !*** ./node_modules/formiojs/components/textarea/TextArea.js ***!
-  \***************************************************************/
+/***/ "./node_modules/formiojs/lib/components/textarea/TextArea.js":
+/*!*******************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/textarea/TextArea.js ***!
+  \*******************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -42962,9 +45533,9 @@ __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/mo
 
 __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-js/modules/es6.reflect.get.js");
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/components/textfield/TextField.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/lib/components/textfield/TextField.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ../../Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
@@ -43306,10 +45877,10 @@ exports.default = TextAreaComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/textarea/editForm/TextArea.edit.display.js":
-/*!*************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/textarea/editForm/TextArea.edit.display.js ***!
-  \*************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/textarea/editForm/TextArea.edit.display.js":
+/*!*****************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/textarea/editForm/TextArea.edit.display.js ***!
+  \*****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43419,10 +45990,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/textfield/TextField.form.js":
-/*!**********************************************************************!*\
-  !*** ./node_modules/formiojs/components/textfield/TextField.form.js ***!
-  \**********************************************************************/
+/***/ "./node_modules/formiojs/lib/components/textfield/TextField.form.js":
+/*!**************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/textfield/TextField.form.js ***!
+  \**************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43434,13 +46005,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _TextFieldEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/TextField.edit.data */ "./node_modules/formiojs/components/textfield/editForm/TextField.edit.data.js"));
+var _TextFieldEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/TextField.edit.data */ "./node_modules/formiojs/lib/components/textfield/editForm/TextField.edit.data.js"));
 
-var _TextFieldEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/TextField.edit.display */ "./node_modules/formiojs/components/textfield/editForm/TextField.edit.display.js"));
+var _TextFieldEdit2 = _interopRequireDefault(__webpack_require__(/*! ./editForm/TextField.edit.display */ "./node_modules/formiojs/lib/components/textfield/editForm/TextField.edit.display.js"));
 
-var _TextFieldEdit3 = _interopRequireDefault(__webpack_require__(/*! ./editForm/TextField.edit.validation */ "./node_modules/formiojs/components/textfield/editForm/TextField.edit.validation.js"));
+var _TextFieldEdit3 = _interopRequireDefault(__webpack_require__(/*! ./editForm/TextField.edit.validation */ "./node_modules/formiojs/lib/components/textfield/editForm/TextField.edit.validation.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43463,10 +46034,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/textfield/TextField.js":
-/*!*****************************************************************!*\
-  !*** ./node_modules/formiojs/components/textfield/TextField.js ***!
-  \*****************************************************************/
+/***/ "./node_modules/formiojs/lib/components/textfield/TextField.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/textfield/TextField.js ***!
+  \*********************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43490,7 +46061,7 @@ __webpack_require__(/*! core-js/modules/es6.regexp.split */ "./node_modules/core
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -43846,10 +46417,10 @@ exports.default = TextFieldComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/textfield/editForm/TextField.edit.data.js":
-/*!************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/textfield/editForm/TextField.edit.data.js ***!
-  \************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/textfield/editForm/TextField.edit.data.js":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/textfield/editForm/TextField.edit.data.js ***!
+  \****************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43887,10 +46458,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/textfield/editForm/TextField.edit.display.js":
-/*!***************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/textfield/editForm/TextField.edit.display.js ***!
-  \***************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/textfield/editForm/TextField.edit.display.js":
+/*!*******************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/textfield/editForm/TextField.edit.display.js ***!
+  \*******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -43902,7 +46473,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _widgets = _interopRequireDefault(__webpack_require__(/*! ../../../widgets */ "./node_modules/formiojs/widgets/index.js"));
+var _widgets = _interopRequireDefault(__webpack_require__(/*! ../../../widgets */ "./node_modules/formiojs/lib/widgets/index.js"));
 
 var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
 
@@ -43925,13 +46496,6 @@ var _default = [{
       label: 'Calendar',
       value: 'calendar'
     }]
-  },
-  conditional: {
-    json: {
-      '===': [{
-        var: 'data.type'
-      }, 'textfield']
-    }
   }
 }, {
   weight: 55,
@@ -44023,10 +46587,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/textfield/editForm/TextField.edit.validation.js":
-/*!******************************************************************************************!*\
-  !*** ./node_modules/formiojs/components/textfield/editForm/TextField.edit.validation.js ***!
-  \******************************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/textfield/editForm/TextField.edit.validation.js":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/textfield/editForm/TextField.edit.validation.js ***!
+  \**********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44082,10 +46646,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/time/Time.form.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/components/time/Time.form.js ***!
-  \************************************************************/
+/***/ "./node_modules/formiojs/lib/components/time/Time.form.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/time/Time.form.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44097,9 +46661,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/components/base/Base.form.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base.form */ "./node_modules/formiojs/lib/components/base/Base.form.js"));
 
-var _TimeEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Time.edit.display */ "./node_modules/formiojs/components/time/editForm/Time.edit.display.js"));
+var _TimeEdit = _interopRequireDefault(__webpack_require__(/*! ./editForm/Time.edit.display */ "./node_modules/formiojs/lib/components/time/editForm/Time.edit.display.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44116,10 +46680,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/time/Time.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/formiojs/components/time/Time.js ***!
-  \*******************************************************/
+/***/ "./node_modules/formiojs/lib/components/time/Time.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/time/Time.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44139,13 +46703,17 @@ __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-
 
 var _moment = _interopRequireDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/components/textfield/TextField.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/lib/components/textfield/TextField.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
@@ -44157,10 +46725,6 @@ function _superPropBase(object, property) { while (!Object.prototype.hasOwnPrope
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
@@ -44170,39 +46734,10 @@ var TimeComponent =
 function (_TextFieldComponent) {
   _inherits(TimeComponent, _TextFieldComponent);
 
-  _createClass(TimeComponent, null, [{
-    key: "schema",
-    value: function schema() {
-      for (var _len = arguments.length, extend = new Array(_len), _key = 0; _key < _len; _key++) {
-        extend[_key] = arguments[_key];
-      }
-
-      return _TextField.default.schema.apply(_TextField.default, [{
-        type: 'time',
-        label: 'Time',
-        key: 'time',
-        inputType: 'time',
-        format: 'HH:mm'
-      }].concat(extend));
-    }
-  }]);
-
-  function TimeComponent(component, options, data) {
-    var _this;
-
+  function TimeComponent() {
     _classCallCheck(this, TimeComponent);
 
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TimeComponent).call(this, component, options, data)); //check if <input type="time" /> is supported to fallback to input with mask (for Safari and IE)
-
-    var input = _this.ce('time');
-
-    _this.timeInputSupported = input.type === 'time';
-
-    if (!_this.timeInputSupported) {
-      _this.component.inputMask = '99:99';
-    }
-
-    return _this;
+    return _possibleConstructorReturn(this, _getPrototypeOf(TimeComponent).apply(this, arguments));
   }
 
   _createClass(TimeComponent, [{
@@ -44231,7 +46766,7 @@ function (_TextFieldComponent) {
   }, {
     key: "setValueAt",
     value: function setValueAt(index, value) {
-      this.inputs[index].value = value ? (0, _moment.default)(value, 'HH:mm:ss').format(this.component.format) : value;
+      this.inputs[index].value = (0, _moment.default)(value, 'HH:mm:ss').format(this.component.format);
     }
   }, {
     key: "defaultSchema",
@@ -44239,6 +46774,21 @@ function (_TextFieldComponent) {
       return TimeComponent.schema();
     }
   }], [{
+    key: "schema",
+    value: function schema() {
+      for (var _len = arguments.length, extend = new Array(_len), _key = 0; _key < _len; _key++) {
+        extend[_key] = arguments[_key];
+      }
+
+      return _TextField.default.schema.apply(_TextField.default, [{
+        type: 'time',
+        label: 'Time',
+        key: 'time',
+        inputType: 'time',
+        format: 'HH:mm'
+      }].concat(extend));
+    }
+  }, {
     key: "builderInfo",
     get: function get() {
       return {
@@ -44259,10 +46809,10 @@ exports.default = TimeComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/time/editForm/Time.edit.display.js":
-/*!*****************************************************************************!*\
-  !*** ./node_modules/formiojs/components/time/editForm/Time.edit.display.js ***!
-  \*****************************************************************************/
+/***/ "./node_modules/formiojs/lib/components/time/editForm/Time.edit.display.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/time/editForm/Time.edit.display.js ***!
+  \*********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44286,10 +46836,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/unknown/Unknown.js":
-/*!*************************************************************!*\
-  !*** ./node_modules/formiojs/components/unknown/Unknown.js ***!
-  \*************************************************************/
+/***/ "./node_modules/formiojs/lib/components/unknown/Unknown.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/unknown/Unknown.js ***!
+  \*****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44305,7 +46855,7 @@ __webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_mod
 
 __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
 
-var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/components/base/Base.js"));
+var _Base = _interopRequireDefault(__webpack_require__(/*! ../base/Base */ "./node_modules/formiojs/lib/components/base/Base.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44354,10 +46904,10 @@ exports.default = UnknownComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/url/Url.js":
-/*!*****************************************************!*\
-  !*** ./node_modules/formiojs/components/url/Url.js ***!
-  \*****************************************************/
+/***/ "./node_modules/formiojs/lib/components/url/Url.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/url/Url.js ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44375,7 +46925,7 @@ __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/mo
 
 __webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-js/modules/es6.reflect.get.js");
 
-var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/components/textfield/TextField.js"));
+var _TextField = _interopRequireDefault(__webpack_require__(/*! ../textfield/TextField */ "./node_modules/formiojs/lib/components/textfield/TextField.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44468,10 +47018,10 @@ exports.default = UrlComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/well/Well.form.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/components/well/Well.form.js ***!
-  \************************************************************/
+/***/ "./node_modules/formiojs/lib/components/well/Well.form.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/well/Well.form.js ***!
+  \****************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44483,7 +47033,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = _default;
 
-var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/components/nested/NestedComponent.form.js"));
+var _NestedComponent = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent.form */ "./node_modules/formiojs/lib/components/nested/NestedComponent.form.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44493,10 +47043,10 @@ function _default() {
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/components/well/Well.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/formiojs/components/well/Well.js ***!
-  \*******************************************************/
+/***/ "./node_modules/formiojs/lib/components/well/Well.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/formiojs/lib/components/well/Well.js ***!
+  \***********************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44512,7 +47062,7 @@ __webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_mod
 
 __webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
 
-var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/components/nested/NestedComponent.js"));
+var _NestedComponent2 = _interopRequireDefault(__webpack_require__(/*! ../nested/NestedComponent */ "./node_modules/formiojs/lib/components/nested/NestedComponent.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44591,21 +47141,10 @@ exports.default = WellComponent;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/dist/formio.full.min.css":
-/*!********************************************************!*\
-  !*** ./node_modules/formiojs/dist/formio.full.min.css ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/formio.form.js":
-/*!**********************************************!*\
-  !*** ./node_modules/formiojs/formio.form.js ***!
-  \**********************************************/
+/***/ "./node_modules/formiojs/lib/formio.form.js":
+/*!**************************************************!*\
+  !*** ./node_modules/formiojs/lib/formio.form.js ***!
+  \**************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44640,15 +47179,15 @@ Object.defineProperty(exports, "Utils", {
   }
 });
 
-var _components = _interopRequireDefault(__webpack_require__(/*! ./components */ "./node_modules/formiojs/components/index.js"));
+var _components = _interopRequireDefault(__webpack_require__(/*! ./components */ "./node_modules/formiojs/lib/components/index.js"));
 
-var _Components = _interopRequireDefault(__webpack_require__(/*! ./components/Components */ "./node_modules/formiojs/components/Components.js"));
+var _Components = _interopRequireDefault(__webpack_require__(/*! ./components/Components */ "./node_modules/formiojs/lib/components/Components.js"));
 
-var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/Formio.js"));
+var _Formio = _interopRequireDefault(__webpack_require__(/*! ./Formio */ "./node_modules/formiojs/lib/Formio.js"));
 
-var _Form2 = _interopRequireDefault(__webpack_require__(/*! ./Form */ "./node_modules/formiojs/Form.js"));
+var _Form2 = _interopRequireDefault(__webpack_require__(/*! ./Form */ "./node_modules/formiojs/lib/Form.js"));
 
-var _utils = _interopRequireDefault(__webpack_require__(/*! ./utils */ "./node_modules/formiojs/utils/index.js"));
+var _utils = _interopRequireDefault(__webpack_require__(/*! ./utils */ "./node_modules/formiojs/lib/utils/index.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -44658,10 +47197,10 @@ _Formio.default.Components = _Components.default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/i18n.js":
-/*!***************************************!*\
-  !*** ./node_modules/formiojs/i18n.js ***!
-  \***************************************/
+/***/ "./node_modules/formiojs/lib/i18n.js":
+/*!*******************************************!*\
+  !*** ./node_modules/formiojs/lib/i18n.js ***!
+  \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44724,10 +47263,10 @@ exports.default = _default;
 
 /***/ }),
 
-/***/ "./node_modules/formiojs/index.js":
-/*!****************************************!*\
-  !*** ./node_modules/formiojs/index.js ***!
-  \****************************************/
+/***/ "./node_modules/formiojs/lib/index.js":
+/*!********************************************!*\
+  !*** ./node_modules/formiojs/lib/index.js ***!
+  \********************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -44753,7 +47292,7 @@ Object.defineProperty(exports, "FormBuilder", {
   }
 });
 
-var _formio = __webpack_require__(/*! ./formio.form */ "./node_modules/formiojs/formio.form.js");
+var _formio = __webpack_require__(/*! ./formio.form */ "./node_modules/formiojs/lib/formio.form.js");
 
 Object.keys(_formio).forEach(function (key) {
   if (key === "default" || key === "__esModule") return;
@@ -44766,9 +47305,2664 @@ Object.keys(_formio).forEach(function (key) {
   });
 });
 
-var _FormBuilder2 = _interopRequireDefault(__webpack_require__(/*! ./FormBuilder */ "./node_modules/formiojs/FormBuilder.js"));
+var _FormBuilder2 = _interopRequireDefault(__webpack_require__(/*! ./FormBuilder */ "./node_modules/formiojs/lib/FormBuilder.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/pdf.image.js":
+/*!************************************************!*\
+  !*** ./node_modules/formiojs/lib/pdf.image.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAAAA3NCSVQICAjb4U/gAAAC9FBMVEX' + '///+HiYuGhomCg4aCgIF6eX12eHokJCQkICAgICAjHSOOj5KJi46DhYd1dnltb3EkICAgICAjHSOVl5qTlZeOj5KHiYt6eX0kICAjH' + 'SOZmp2Vl5qGhokkICDOz9G+vsCztbapq66cnqGbnZ6ZmZmTlZckICCbnZ6Zmp2Vl5qTlZeOj5KMioqGhomCg4aCgIGZmp2TlZeCgIG' + 'mqauho6aen6KcnqGmqaucnqGbnZ66u76cnqGZmp2Vl5rKISjS0dLR0NHOz9HMzMzHycrHxsfFxMXCwsPCw8W+vsCen6KbnZ7GISjCw' + 'sO+v8K+vsCpq66kpqmeoaObnZ7////7+/v5+vr39/j09fXz8/P88PHx8fL37+/u7+/r7O3r6+zp6uvn5+jj5+fz4+P44eLw4eHj5OX' + 'i4+Th4uPf4OLf3+Dc3t/b3N7a29z109TY2tvv1NXv0tPX2NrW19jU1tfS09XP0dLOz9Hrx8jxxMbnxsfMzMzkxMXHycrGx8nDxcfqu' + 'bvCw8XCwsPkuLrutbe/wcO+v8Lftre+vsC7vb+6u763ubu1t7riqqzeqquztbbqpqmxs7bZqKmvsbOtr7Kqra+pq67bnJ7gm56mqav' + 'XnJ3nl5ulp6qkpqmjpaeho6aeoaPbj5Gen6KcnqHXjpGbnZ7jiYzfio7SjpDdiYyZmp3LjI6ZmZnahoqVl5rXgoaTlZeSk5bSgIOPk' + 'ZPOf4Lgen6Oj5LLf4KLjY+Ji46HiYvVcnaGhonNcnWDhYfKcXSCg4bca3DFcXTBcHJ+gIJ9foHRZWl6fH7MZmbOZWnGZGd6eX12eHr' + 'BY2bZXGF1dnlydHa4YWNwcXTOV1vKVlvIVlrCVlnPUFW+VVnOTlS3VFe1VFbKS1HGSE3BR0y/R0y7R0zEREq2R0rSP0WzRkmtRUjBO' + 'kC4OT6zOD3OMDaqNzrBLTO2KzCzKzCuKi/KISiqKi6lKS2+ICa6HyW7Hya2HySuHiOyHiSrHiKnHSGiHCCeHB+aGx/MBOLyAAAA/HR' + 'STlMAERERERERERERESIiIiIiIiIiMzMzMzMzM0RERERVVVVVVVVVVVVmZmZmZmZmZmZ3d3eIiIiImZmZqqqqqrvMzMzMzMzMzMzMz' + 'MzM3d3d3e7u7v/////////////////////////////////////////////////////////////////////////////////////////' + '//////////////////////////////////////////////////////////////////////////////////////////////////////' + '/////////////////////////////////8PeNL3AAAACXBIWXMAAC37AAAt+wH8h0rnAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJ' + 'ld29ya3MgQ1M26LyyjAAAFydJREFUeJzt3Xl8FNd9AHD31K56LfSIaOumTY80aeK06R23TXq5xXV8ZIRhzWEkgkAHKICQZCwpQpZsS' + 'SsWRQdeR2hlCWEsXFkHyELmtMEkGBvnMKZ2iV1jW2COGAOSwPzT33tv5s2bY3fn+O2slg8//DFikeT97u94b2Zn5FtuuRk342bcjJt' + 'xM8zCl5nhaWRm+lJNJuHP8Psy/H6/z7uA/1oG/CvVfL+P/vJS7qP/uQx4wVOJh9f/93q6u6LRzs0dHZH29ra21taWluZwOBRqbGxsq' + 'K+vr6urra2trq6qqqqsrKyoqFhHo5TEWiFKtKE8TD6NfgF8ZUUlfJNq+G519Q2NoVA4/Lek2lJI931algO8HeCqvKGBwOsIvFqBV+j' + 'hJXHCFF+9Huj1hN7Scs/vQvZTJ/f9Ppe3mcjVlGsyrsv1mpI1mtDo6QtVyvHV1WBvDIWbW1pb2//G58tMjRwaLvAHXE7hIA9RuVzsc' + 'sqNGedsHquFf6t+rqd2kndOb2ttn/2p1OQ9w58ZCHxWlbeYyUnKNXAh4cxqEuwFMLVXVpFmh3pvbYP/Zvu9n/Olot+h3AOBzwtyqHX' + 'tgNOmXN/ignuVJmQ/56s9D98J0v5YQ2O4pa090gH2jtt/LQV2WNUCgT8Tqp3KhT7n802bcrXSGXqlPrif4tfwzFM7tHsdo3ds7oR+7' + '5j9W97LM3wzA1lfUOXNOvn6anFJ0zY5r3UTucznuVfLXrbXQrO3tEU6o13RFrDf9zmv6Zl+fyCQ9cWIblGLKdc2uVLnDFoEUUj/YcH' + '0K9XUq3hS8nUNlN7V0xMh9ujtHtMzCH3WbcqEExY1bbWLcqHS1XxTbKE2OF/Wi3aa9ua2SLS7t6+vmdpn/4rHdGj1rNuM8jrDhGO1b' + 'tbiWnUBDc4vLOJ6mnm54ysqIe3h1ki0p69/IBoi9s77ftNTuo/0+pc0s12zkREHnJpxNeGCusAYYvJXqZmneYe0h1ragT4wOBwO07x' + '3ednwQJ8RyPpyG5/tYpvHk2vhGm8+/DLo2cwX7CTtUPGbu58ZHB7tbpTt/+ApHQr+yyabVy6vUOVrqZzPNgM8XwiNvUi2r+ajvpSkv' + 'SHUGunqGxzZNdbYGGomNd915y84lPyT7fgvGv9H4qQY/2sS/6OLN+wE+5JtHE/skPb2aN/A6NjuzfXMHu2685ed0X863WMHdPwaJe+' + 'V1fWh1s6egZGx/WNkT89q/hvOhl2qZQljiEw71vAs7S2Rrn6gHwrV1Ss1/40/vkHprOPXMPv6hlBbtG8Y6J3Vtbzmez9/Q9KL2DIn2' + '6tqG1s6egZ37T88CgOf13zvX9yI9MJChqf2dRXV9c3tXf2j+w8fq2B2VvO9/3gD0gvYIs+mHaS9DgbdMyN7Dx8LgV2oedv2VMsSxhB' + 'd6Cke8r62tKIaBl3v8NihY22lFZqat2tPtSxhDOWzTQ7YSd4h7fXh9u6BXQePRdfK9rBi/7mk0rc+Ur5CglhS/t0D6oPl5UHyYPkjO' + '8+onyqJ8apT+rPL8xme2km314Zao/2jB48Okz9o7Hfastt9JiJnyQHjg8Gt6PTly/OVoqdpr25o6ewb2f/y6MrVJbrE3/mzHtElaaf' + 'JgyvOmH2qc/qy5QwPRb+SYKHimzt6h/ceHi2kf3Rsd0eXDpg8qNix6Iq9AGp+1Zq16yrrQpGewd2HDy8vFPKuHMz8TJLpK1hvQ30LD' + '5YrD34XlZ6Xl8cTDyVfUgrN3tY1MHbotWVGO+Tdcr87o8MHW4WSVx48s5F9dEr41FdZnIn3TePSly4V7atK1lasb4Q5N3bw2NJl+WL' + 'Nh2wewDum/5QxH9E+WE4/2qj7VDcBdNUOaYeKr25o7ezfdfDo4qUmee/s+vuk019lpa998JShDTDoon11Ccw5GPGj+4/maezqxs6i3' + 'Tld+FB4cIXa2Yh0Yif4goKiVWtKK+ubN5PVrfTBxeY1b82OTWcjYCsiPScnh9pJ4iHtK9eUVtSFI72wiy9d+GCMmv9zL+hB3YMHzCa' + 'AK/rixYtzeNHnFxStXltRG470wMK+doHOXsvtf5pUOmvrch3yVdNHXcR/E7pqLyhcvXZdbai9G+glDzB7vibv9AR91+8kk75VHeYik' + 'n64BJcuJ57Y8wtXlayrhoUd9jRr5j2gz7tc85HO+34jefQzS+hHB0zp+gnghv6gal8K9oKVQG8E+tih1XONdl7z9yXc2jilH1gRYxn' + 'T0yW1AxzSH2R4Nu2WFxSVlFbBnga2c6vu5/Z846ybncjujM5jpyd0NfF5y/OLYHVrIPSDRXPuN8k7r/lEb8S6o2/Uc5NAX7RokWAHI' + '4z4hpYobOeKskV7gaHm/y6J9I2aB4WPg/pPdUFfuJDYmT6HVPyqtRWwnesf3V8gZcfLe0fnZ5NFL39V+yD98A1VikN/eiGxL2J2kva' + 'CVSUVcMTeN7J3sRTDLuc9cu+v49PLyzdufUP/IP2QreuIW5qnFywkwe15+TDiyXZueDf59vFr/r6fR6fHfhB9I/v0Ao0d6EUl6+gR+' + '6hksBtqfraH9Efoh4bV3hWd4VnD5yyFOVdaRU7PbZYW5+eva2wMhRvAG2N9/2vv6OxEzRlk+gI179DsMOKh4rueGd61e//BQ4cOv/z' + 'y0WPHXvvhyGCkapVhT/uHXtF3qq2OSudFvzgnj+3nWjq6+gaGR3eN7d67d//Bg/ACHAX+D/f3hrQ1f+8veUM/w5Ju3Oi4pjM7r/iKO' + 'nJVTXdf/8DA4PDICH0FCJ/ojw2ExZqP2e6o9FNsd7skzqfapz+wYIGqJ/ZlkPbSitqGMNmyRbu6unt64SUYhAqgfEj+a0ej1WrN/1X' + 'y6extGYmffcWii/ZFpNthVwP26rpGcrlwa1s7bF6iXeAfGByh3Q/6Y0f7annN/3bS6UrsjPepTug6e07ecjhyJVeX0Fsj6A0C8ALAQ' + 'XpPX/+wrIfoq5Nr/p5f9Ii+M+6nOqKrerKpJfaCIjLMyDWUleT2EHJzCHv/hehHx0APsT9ay/JufiCDTd94Kv6nOqVzO6zfMOrgKLV' + 'oNb3OQrmAtpZcON3cGuns6u0nF5fthdg90sLsn0kanb37GoTd7alEn2o7np6no9PjOHL0St+Iki80KSV8qm9t3xzt6YehNwaxa6T7M' + 'Wr/VQS65/HUPAgBv5DNupyl7CxlAXkDFl4A+bq6Wnb1NL2YdGR0dHRksC9M7Leb3DiQalnCoHSG16xx9KxNHjs5Xyjr5WuIQ80UD6k' + 'fHhzo72sl9s8Y7amWJQwjfYG8r5NPWcnn54meXGvD8C1tHWzD09/f19MKQ7DFeMNIqmUJQ6aLNS93/IPCiVpa+iq+Xu75Poje7q52s' + 'H/FcGNgqmUJ46m584x5V+0MT96Vkt9/ZxdV1taHwjDto909PT3d0U5S83+kt6daljCemivaxYbX4vkb8DKetDzJfLQrGt0caWlovMe' + 'ns6daljCArtrnae2LBDt5eyJfGHhV6x8jN0hFNnd2bu5ob2tuaPxLnT3VsoRB6IqdpT5G3hV7kTLs6ayHHW4kEmlvaw3VN37Kn5mZd' + 'nSrdrnoKZ50/GNkO9NG77RuDtXf7ctwdVOkfBcEvZMhn7zfvywvj7wnlJNDT5WTs0iLFpFjaz6SaIvypz6Xxf3GmKP5TQ1b9uVC0bN' + '1Ltwi33raWP8VPwodXz5njvCbni7oE9g1Oxx6X2A4zG7Sabgr4PO7uAdapVM50OllD0y+2JWcoOXfyAcGvB27fFUpuTGQ3vNPb9G5I' + '+DLdJF2mZ4UOQ/2Z9GuKXtrNc8anh3VN9B7EO+YGYB2d01n1e5ezsucRHa27hWI0fFx1neh5ql9HT2gZfH1QMDnottlukmfO5SDcA6' + 'Xy3blJTD0vL1+Vw5pyA89gFh/dyCQmeGajjThNEnOzpbt/CVwmvd8rZ2cy6mqrqq6Owsq3nXBY8p5qmU7fwlwap7/5IPKu7MCM100u' + '0h3PeHEMs/WB1rNK7fAVwA94He+vHE6ptw85siDwHnNF9E7ghX8uq/j0DFmu1H+rW83NZXlavPu0L5csJew+8AJ3efPcElfhjLbtfL' + '5z5/9mMbz87md+W3bNXsbbr+L9LrPLR1twgkZl+EQJ+cLjzvOO5vz8m1ixA70Ge7p+PL5H3ysxrP6nndR8yv5DcF3kYLHoFuUz7Umz' + '37yYzFyXduFmlfseHTU2T7/rIb+uGHWm9vjnbPS13wJFh15tjdp5B+fzM6WYust4tWDGXo3dMl/4tCR5dkvaekfZ0tSHLudzU0+a3i' + 'w49BRJxwJeVlrkuv+cpmU2G48iNWfpVbshdR+BwodW17GxJLECv/y5SYJ345Hx5rtEBKb7z8C7VlGf1JKYI/Z74tinKxciUtH2rdLA' + 'v1HVK7QDXYLg97EzmYdGh1TLrEp9zyjg/zyjyXn9lhzHouO1+eSnGtzehy73TmPRMeVy3RS8Cep/JJKT2S3Puv+A4WOLBfoTC7SJR3' + 'dsR2LjjXb9XQm19Dj2G3N+X/HoVP5grhykwEXSy6POVjXy8zoSHYcOt5sZyEftwWlJibX0Z3YjTWPREfsc4FeJj3P5JeelKzarc95H' + 'DqyXHpcPlaVzsagY8y6f8OiY8oltoe//FITg5vQEexYdKzZzqKY0c+eVeiPG+juZx0SHW22y8F27pcV+aUyI921HYeON9vlOGmB7nb' + 'O49Ix+pzGS1r5paAZ3eWcR6WjyaUntfJLpnKXsw6TjieXvq2VfxCD7sr+r3h0lNkuxxKNXL+ZM6fbnXV4dKTZLscHovzS92PR3djR6' + 'BblengMufSShm7c0biys5rHoiP2OY3HRfmVptj0ePb4cx6Jji2XikX5FdNl3ao91qzDoaPLodkF+RXzZd2lHY+ONNuVeFakx5Vr6dZ' + 'nHRodbbbLUSzIX49Pdzjn/wWJjjfblTjJ5Vdir21u7Eh03D6n0cTlV+KsbRbsseY8Dj0Jcil4VpHHXdus2o2zDpeOKJek5znd5EQFg' + 'h2TjjTblchV5FfOxV/cTOhW+h2RjjXbeZy8ooSFZtfjE9vx6HizXYkfc7qltNu99ACNji+XrlyxmXbrcx6TngR5riqfPJeLY58rpB2' + 'JngS5VCbQJ/dY/CIbdhy6dblluCQ9KcgnJ52kPWa/00mHSceVS98X5ZNHrH6ZZTsi3Qh3JZc+EOWTk3GP2a3b1SmPR0ftc4igVj553' + 'PJXxu93bkejY8uVKafIJydq3Ns1qzsWHV0uTzlVPjFu/Wtj2eeKdiQ68oQj8bpOPjFh5QDOhG6wo9KTIJf0SZ+YsLidNeLN845PR5j' + 'tJMoM8omJLTa+PrH9n5NDd9nnEmt1qn6dyycmLO5rTO336+3odCQ5bXVKD57j8gmr21kTu7i+MTs2HUsuKfKfSFsm1LC8r9HbDXv5u' + 'dh0nD6XaKuzLh+SpHGVbn1fo6WbHcfg0tHk0OrygIMVrUmlT1lf4ET8HLNjOEw60myn8bpCJ5PtbS6fOm9jgVPtc8zsiHRMuaTI6Ra' + 'uTKVP2Vng4tu/hkzHmHAEqyzobKYfV+AQdha4uHY8OqZcGlLom+gfcwX6CZvfKma/o9Exq12SfqLs4orZn7dw+dSUrQVOHfOGvGPRc' + 'eVBJennlAfGuXzqtCO50Y5Ex5VLNUrS+WmpGpU+tc2R3GDHoSPLpT3KQYu6jB9X6RcsTzrdM9La8ehYE47EuHK4piJzz6t2i5PO8Iy' + '0djQ6pjxXkYsnZjap9Clr56qMdM2cx6IjwkGpHKJrjtTUkr962tKeLiZ9DiYdVS59T6Frspt7gdOvWpx0ce04dFy5xM/LaJO7icuvX' + 'i12b08K3aW8RpHrD1FPcPnVdy1+rzj2ZNBdyukultI36f4ieEGRWy75WPYkZd0tfVw5GWeo6jIuv3r1Ief27CT1ulu4VKzITd5z2KH' + 'SP3L03msy6a7lZGlj9CGTvzzB6Zbb3YhPzoR3L1fPyZgdogUvqPbnHNqT0+sI8lzl3PN5078uVunXNjiyJ2fCI8jVk5AxTrpv4PJrH' + '1lc3Y23BxH79KMfUeixNuo7OP3aR2TPU1yz7YU333zz4idvvvXWi9sffXi+RftXEekYcCk4EbfeSbygyK9de++F966x+ESN97/jNR1' + 'FnrDeIYLvcroaAv2T6++bZN6Ax6PjyNV6j3MKDuzX4smvX3/f5Kv0djQ6kpzXe+xrKHI3vPJR3JyT2J7YjkVHkqv1brafgVemZsdpk' + '2q/ppdf/zABPRuNjiVX691km5r7xAl1uMdP+vXr34ovB/s0o+cq8nf0fxPc8K66l9HLL8K69pYIv3794QRyLDqWXNqk0LXvqAY3vHJ' + 'VCGPOn4ORPv/FeHS9PDt7mtGV/bvmDdWyfReumskvCtV+8Qn4xPdV+XXd8maUT7OsFyvvqO7jD+VuOz111Sh/77maYPAVsdE/3P7N7' + 'ar8rYTyaUYfUujK5nzDiakpg/yjFzbIQ3Cb+YiDeDShfJrRz8vvqLKTcrk7Lqgn4/hR+nPiMctDF83lLyaWTy96k3IBARlyNSeEE7C' + 'K+wn9mhd8xUz+lqbTzeXTi65cQTAuBbecntLLX9lg+sbDQx8a6NqtnFE+/ej8AoIj+4Q3mZj7hLmbxnc+1MB/8M1E8ulX8EMKXQ831' + 'rkuHn3xokL/gW5BN5VPuzF33igH+ukdlk69PvzEdohH9UerMeTTbHFrMpPvs34DgFnElE+vLc3bBvnpTfaukrMjn070Mr18n73rhWz' + 'Kp88ePnePttxdJzyhfJpkncFV+RHXCU8snxZ0Ga7IL1gb6W7l04AeVK53x6v0xPLpQA9uOTch0neguK3IU01v4nAmv4CTcivy1NLLh' + 'PsbWLnrr6NIihz13RdHzy/3+IRebuvyV5fy1NGDQ5MGuc2Lnt3JU0ZvEm7hOr9Hplu+R92FPNX04uPqbXvntwT3yAu6B+u58D8BxXl' + '/3d6TCw6p92oCXMqVy93mbS0u5UiXFth6cmXjXE7gkrQHccZZhaNdUGLjuQW/p96fS+FSGeKMsyH3nF5zjsuPs9YOjk+h7ePsyD2my' + 'ymnl7orp1+G5HJH2MdZ73PP6XLKQX6Oj7QavHK3J/eUzm9emzjClzHlvo4dnsu9pO/hd3AJpxrfYXLD2+nY8jkGuXf0oHLX3uTbws5' + 'Ffq/hguVr//Dk3tFf53Jhnm2RG93yFZ+Ics/oe8zkTcq51yTLjX3uIb2J97lQ7Yr8HdfrmhO5R/TgOYUu7NOVu3jcN7ojuUd0Xu7qN' + 'WHK4drUVJLlpn3uGV1N+oTyUNn4FNaIcyj3hl7D5TKdnHlPtdwb+hYuJzftBWuOTHglj9XnXtPJ4drbx8eFk3EXkvyOYjy5pwUvnIZ' + 'k9HfcTrgE8Lhyjyb8uE4un4VM8noep8+9oxefM+b8fEp2r2og/YSShE+yeFwv35f0988TyL2ii28rkh+ntA/hvLObPveSDtF0hF0HO' + 'r6vCeNNRbdyL+kkysrcH5lbgVuQe01HC1d9zn7oWprSXcnlH+6N80PX0lGennT3fZ6udBx5GtITwC3L049uGZ5IfqPRLU44xB+mmo7' + 'ydKNj9Tnez4xOR3la0RPAbcrTiW4Zbk1+49BtTTgk+gyP6NhyQp/hjj4zkPWllMvt9rlMn+mG7icFf1s6ylnB+13Q/YHArKTTE8Ady' + 'ed9bVYg4HdOzyT0rC+mVm57tsv0LELPdEr3ZZBe/0JK6Q4mHP0fHX2V9HqGzyn9Fh9t9ltvvfVP0ivgGdNWdy6/xU8W9lnEnk548nS' + 'zZpFl3e+cnuHPDEDaqT2tIguSHsh0PuVI1jMg7ZD3tNLDs4WcB+C5u8j6LX5a8iTxhJ8eMYumnJS7G7lqT7twLQe6PyOT7GcDgZkzU' + 's2xEDPoM/X5MmE75pJO+p3+guynSfjlZ+wWTuywlSevYapJFoPUKWzeMeQ0oIDSJzI1O5n/B5/xAXbXPcU5AAAAAElFTkSuQmCC';
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/providers/index.js":
+/*!******************************************************!*\
+  !*** ./node_modules/formiojs/lib/providers/index.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "storage", {
+  enumerable: true,
+  get: function get() {
+    return _storage2.default;
+  }
+});
+
+var _storage2 = _interopRequireDefault(__webpack_require__(/*! ./storage */ "./node_modules/formiojs/lib/providers/storage/index.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/providers/storage/base64.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/formiojs/lib/providers/storage/base64.js ***!
+  \***************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/core-js/modules/es6.regexp.replace.js");
+
+var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var base64 = function base64() {
+  return {
+    title: 'Base64',
+    name: 'base64',
+    uploadFile: function uploadFile(file, fileName) {
+      var _this = this;
+
+      var reader = new FileReader();
+      return new _nativePromiseOnly.default(function (resolve, reject) {
+        reader.onload = function (event) {
+          var url = event.target.result;
+          resolve({
+            storage: 'base64',
+            name: fileName,
+            url: url,
+            size: file.size,
+            type: file.type,
+            data: url.replace("data:".concat(file.type, ";base64,"), '')
+          });
+        };
+
+        reader.onerror = function () {
+          return reject(_this);
+        };
+
+        reader.readAsDataURL(file);
+      });
+    },
+    downloadFile: function downloadFile(file) {
+      // Return the original as there is nothing to do.
+      return _nativePromiseOnly.default.resolve(file);
+    }
+  };
+};
+
+base64.title = 'Base64';
+var _default = base64;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/providers/storage/dropbox.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/providers/storage/dropbox.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var dropbox = function dropbox(formio) {
+  return {
+    uploadFile: function uploadFile(file, fileName, dir, progressCallback) {
+      return new _nativePromiseOnly.default(function (resolve, reject) {
+        // Send the file with data.
+        var xhr = new XMLHttpRequest();
+
+        if (typeof progressCallback === 'function') {
+          xhr.upload.onprogress = progressCallback;
+        }
+
+        var fd = new FormData();
+        fd.append('name', fileName);
+        fd.append('dir', dir);
+        fd.append('file', file); // Fire on network error.
+
+        xhr.onerror = function (err) {
+          err.networkError = true;
+          reject(err);
+        };
+
+        xhr.onload = function () {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            var response = JSON.parse(xhr.response);
+            response.storage = 'dropbox';
+            response.size = file.size;
+            response.type = file.type;
+            response.url = response.path_lower;
+            resolve(response);
+          } else {
+            reject(xhr.response || 'Unable to upload file');
+          }
+        };
+
+        xhr.onabort = reject;
+        xhr.open('POST', "".concat(formio.formUrl, "/storage/dropbox"));
+        var token = formio.getToken();
+
+        if (token) {
+          xhr.setRequestHeader('x-jwt-token', token);
+        }
+
+        xhr.send(fd);
+      });
+    },
+    downloadFile: function downloadFile(file) {
+      var token = formio.getToken();
+      file.url = "".concat(formio.formUrl, "/storage/dropbox?path_lower=").concat(file.path_lower).concat(token ? "&x-jwt-token=".concat(token) : '');
+      return _nativePromiseOnly.default.resolve(file);
+    }
+  };
+};
+
+dropbox.title = 'Dropbox';
+var _default = dropbox;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/providers/storage/index.js":
+/*!**************************************************************!*\
+  !*** ./node_modules/formiojs/lib/providers/storage/index.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _base = _interopRequireDefault(__webpack_require__(/*! ./base64 */ "./node_modules/formiojs/lib/providers/storage/base64.js"));
+
+var _dropbox = _interopRequireDefault(__webpack_require__(/*! ./dropbox */ "./node_modules/formiojs/lib/providers/storage/dropbox.js"));
+
+var _s = _interopRequireDefault(__webpack_require__(/*! ./s3 */ "./node_modules/formiojs/lib/providers/storage/s3.js"));
+
+var _url = _interopRequireDefault(__webpack_require__(/*! ./url */ "./node_modules/formiojs/lib/providers/storage/url.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = {
+  base64: _base.default,
+  dropbox: _dropbox.default,
+  s3: _s.default,
+  url: _url.default
+};
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/providers/storage/s3.js":
+/*!***********************************************************!*\
+  !*** ./node_modules/formiojs/lib/providers/storage/s3.js ***!
+  \***********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
+
+var _trim2 = _interopRequireDefault(__webpack_require__(/*! lodash/trim */ "./node_modules/formiojs/node_modules/lodash/trim.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var trim = function trim(text) {
+  return (0, _trim2.default)(text, '/');
+};
+
+var path = function path(items) {
+  return items.filter(function (item) {
+    return !!item;
+  }).map(trim).join('/');
+};
+
+var s3 = function s3(formio) {
+  return {
+    uploadFile: function uploadFile(file, fileName, dir, progressCallback) {
+      return new _nativePromiseOnly.default(function (resolve, reject) {
+        // Send the pre response to sign the upload.
+        var pre = new XMLHttpRequest(); // This only fires on a network error.
+
+        pre.onerror = function (err) {
+          err.networkError = true;
+          reject(err);
+        };
+
+        pre.onabort = reject;
+
+        pre.onload = function () {
+          if (pre.status >= 200 && pre.status < 300) {
+            var response = JSON.parse(pre.response); // Send the file with data.
+
+            var xhr = new XMLHttpRequest();
+
+            if (typeof progressCallback === 'function') {
+              xhr.upload.onprogress = progressCallback;
+            }
+
+            response.data.fileName = fileName;
+            response.data.key = path([response.data.key, dir, fileName]); // Fire on network error.
+
+            xhr.onerror = function (err) {
+              err.networkError = true;
+              reject(err);
+            };
+
+            xhr.onload = function () {
+              if (xhr.status >= 200 && xhr.status < 300) {
+                resolve({
+                  storage: 's3',
+                  name: fileName,
+                  bucket: response.bucket,
+                  key: response.data.key,
+                  url: path([response.url, response.data.key]),
+                  acl: response.data.acl,
+                  size: file.size,
+                  type: file.type
+                });
+              } else {
+                reject(xhr.response || 'Unable to upload file');
+              }
+            };
+
+            xhr.onabort = reject;
+
+            if (response.signed) {
+              xhr.open('PUT', response.signed);
+              xhr.setRequestHeader('Content-Type', file.type);
+              xhr.send(file);
+            } else {
+              var fd = new FormData();
+
+              for (var key in response.data) {
+                fd.append(key, response.data[key]);
+              }
+
+              fd.append('file', file);
+              xhr.open('POST', response.url);
+              xhr.send(fd);
+            }
+          } else {
+            reject(pre.response || 'Unable to sign file');
+          }
+        };
+
+        pre.open('POST', "".concat(formio.formUrl, "/storage/s3"));
+        pre.setRequestHeader('Accept', 'application/json');
+        pre.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
+        var token = formio.getToken();
+
+        if (token) {
+          pre.setRequestHeader('x-jwt-token', token);
+        }
+
+        pre.send(JSON.stringify({
+          name: path([dir, fileName]),
+          size: file.size,
+          type: file.type
+        }));
+      });
+    },
+    downloadFile: function downloadFile(file) {
+      if (file.acl !== 'public-read') {
+        return formio.makeRequest('file', "".concat(formio.formUrl, "/storage/s3?bucket=").concat(trim(file.bucket), "&key=").concat(trim(file.key)), 'GET');
+      } else {
+        return _nativePromiseOnly.default.resolve(file);
+      }
+    }
+  };
+};
+
+s3.title = 'S3';
+var _default = s3;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/providers/storage/url.js":
+/*!************************************************************!*\
+  !*** ./node_modules/formiojs/lib/providers/storage/url.js ***!
+  \************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var url = function url(formio) {
+  return {
+    title: 'Url',
+    name: 'url',
+    uploadFile: function uploadFile(file, fileName, dir, progressCallback, url) {
+      return new _nativePromiseOnly.default(function (resolve, reject) {
+        var data = {
+          dir: dir,
+          file: file,
+          name: fileName
+        }; // Send the file with data.
+
+        var xhr = new XMLHttpRequest();
+
+        if (typeof progressCallback === 'function') {
+          xhr.upload.onprogress = progressCallback;
+        }
+
+        var fd = new FormData();
+
+        for (var key in data) {
+          fd.append(key, data[key]);
+        }
+
+        xhr.onload = function () {
+          if (xhr.status >= 200 && xhr.status < 300) {
+            // Need to test if xhr.response is decoded or not.
+            var respData = {};
+
+            try {
+              respData = typeof xhr.response === 'string' ? JSON.parse(xhr.response) : {};
+              respData = respData && respData.data ? respData.data : respData;
+            } catch (err) {
+              respData = {};
+            }
+
+            var _url = respData.hasOwnProperty('url') ? respData.url : "".concat(xhr.responseURL, "/").concat(fileName);
+
+            resolve({
+              storage: 'url',
+              name: fileName,
+              url: _url,
+              size: file.size,
+              type: file.type,
+              data: respData
+            });
+          } else {
+            reject(xhr.response || 'Unable to upload file');
+          }
+        }; // Fire on network error.
+
+
+        xhr.onerror = function () {
+          return reject(xhr);
+        };
+
+        xhr.onabort = function () {
+          return reject(xhr);
+        };
+
+        xhr.open('POST', url);
+        var token = formio.getToken();
+
+        if (token) {
+          xhr.setRequestHeader('x-jwt-token', token);
+        }
+
+        xhr.send(fd);
+      });
+    },
+    downloadFile: function downloadFile(file) {
+      // Return the original as there is nothing to do.
+      return _nativePromiseOnly.default.resolve(file);
+    }
+  };
+};
+
+url.title = 'Url';
+var _default = url;
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/utils/builder.js":
+/*!****************************************************!*\
+  !*** ./node_modules/formiojs/lib/utils/builder.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+__webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
+
+__webpack_require__(/*! core-js/modules/es6.array.iterator */ "./node_modules/core-js/modules/es6.array.iterator.js");
+
+var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
+
+var _utils = __webpack_require__(/*! ./utils */ "./node_modules/formiojs/lib/utils/utils.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = {
+  /**
+   * Appends a number to a component.key to keep it unique
+   *
+   * @param {Object} form
+   *   The components parent form.
+   * @param {Object} component
+   *   The component to uniquify
+   */
+  uniquify: function uniquify(form, component) {
+    var changed = false;
+    var formKeys = {};
+    (0, _utils.eachComponent)(form.components, function (comp) {
+      formKeys[comp.key] = true;
+    }); // Recurse into all child components.
+
+    (0, _utils.eachComponent)([component], function (component) {
+      // Skip key uniquification if this component doesn't have a key.
+      if (!component.key) {
+        return;
+      }
+
+      var newKey = (0, _utils.uniqueKey)(formKeys, component.key);
+
+      if (newKey !== component.key) {
+        component.key = newKey;
+        changed = true;
+      }
+    }, true);
+    return changed;
+  },
+  additionalShortcuts: {
+    button: ['Enter', 'Esc']
+  },
+  getAlphaShortcuts: function getAlphaShortcuts() {
+    return _lodash.default.range('A'.charCodeAt(), 'Z'.charCodeAt() + 1).map(function (charCode) {
+      return String.fromCharCode(charCode);
+    });
+  },
+  getAdditionalShortcuts: function getAdditionalShortcuts(type) {
+    return this.additionalShortcuts[type] || [];
+  },
+  getBindedShortcuts: function getBindedShortcuts(components, input) {
+    var result = [];
+    (0, _utils.eachComponent)(components, function (component) {
+      if (component === input) {
+        return;
+      }
+
+      if (component.shortcut) {
+        result.push(component.shortcut);
+      }
+
+      if (component.values) {
+        component.values.forEach(function (value) {
+          if (value.shortcut) {
+            result.push(value.shortcut);
+          }
+        });
+      }
+    }, true);
+    return result;
+  },
+  getAvailableShortcuts: function getAvailableShortcuts(form, component) {
+    if (!component) {
+      return [];
+    }
+
+    return [''].concat(_lodash.default.difference(this.getAlphaShortcuts().concat(this.getAdditionalShortcuts(component.type)), this.getBindedShortcuts(form.components, component)));
+  }
+};
+exports.default = _default;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/utils/formUtils.js":
+/*!******************************************************!*\
+  !*** ./node_modules/formiojs/lib/utils/formUtils.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.isLayoutComponent = isLayoutComponent;
+exports.eachComponent = eachComponent;
+exports.matchComponent = matchComponent;
+exports.getComponent = getComponent;
+exports.findComponents = findComponents;
+exports.flattenComponents = flattenComponents;
+exports.hasCondition = hasCondition;
+exports.parseFloatExt = parseFloatExt;
+exports.formatAsCurrency = formatAsCurrency;
+exports.escapeRegExCharacters = escapeRegExCharacters;
+exports.getValue = getValue;
+
+__webpack_require__(/*! core-js/modules/es6.string.iterator */ "./node_modules/core-js/modules/es6.string.iterator.js");
+
+__webpack_require__(/*! core-js/modules/es6.array.from */ "./node_modules/core-js/modules/es6.array.from.js");
+
+__webpack_require__(/*! core-js/modules/es6.regexp.to-string */ "./node_modules/core-js/modules/es6.regexp.to-string.js");
+
+__webpack_require__(/*! core-js/modules/es6.regexp.split */ "./node_modules/core-js/modules/es6.regexp.split.js");
+
+__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/core-js/modules/es6.regexp.replace.js");
+
+__webpack_require__(/*! core-js/modules/es7.array.includes */ "./node_modules/core-js/modules/es7.array.includes.js");
+
+__webpack_require__(/*! core-js/modules/es6.string.includes */ "./node_modules/core-js/modules/es6.string.includes.js");
+
+__webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
+
+var _get = _interopRequireDefault(__webpack_require__(/*! lodash/get */ "./node_modules/formiojs/node_modules/lodash/get.js"));
+
+var _has = _interopRequireDefault(__webpack_require__(/*! lodash/has */ "./node_modules/formiojs/node_modules/lodash/has.js"));
+
+var _clone = _interopRequireDefault(__webpack_require__(/*! lodash/clone */ "./node_modules/formiojs/node_modules/lodash/clone.js"));
+
+var _forOwn = _interopRequireDefault(__webpack_require__(/*! lodash/forOwn */ "./node_modules/formiojs/node_modules/lodash/forOwn.js"));
+
+var _isString = _interopRequireDefault(__webpack_require__(/*! lodash/isString */ "./node_modules/formiojs/node_modules/lodash/isString.js"));
+
+var _isNaN = _interopRequireDefault(__webpack_require__(/*! lodash/isNaN */ "./node_modules/formiojs/node_modules/lodash/isNaN.js"));
+
+var _isNil = _interopRequireDefault(__webpack_require__(/*! lodash/isNil */ "./node_modules/formiojs/node_modules/lodash/isNil.js"));
+
+var _isPlainObject = _interopRequireDefault(__webpack_require__(/*! lodash/isPlainObject */ "./node_modules/formiojs/node_modules/lodash/isPlainObject.js"));
+
+var _round = _interopRequireDefault(__webpack_require__(/*! lodash/round */ "./node_modules/formiojs/node_modules/lodash/round.js"));
+
+var _chunk = _interopRequireDefault(__webpack_require__(/*! lodash/chunk */ "./node_modules/formiojs/node_modules/lodash/chunk.js"));
+
+var _pad = _interopRequireDefault(__webpack_require__(/*! lodash/pad */ "./node_modules/formiojs/node_modules/lodash/pad.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+/**
+ * Determine if a component is a layout component or not.
+ *
+ * @param {Object} component
+ *   The component to check.
+ *
+ * @returns {Boolean}
+ *   Whether or not the component is a layout component.
+ */
+function isLayoutComponent(component) {
+  return Boolean(component.columns && Array.isArray(component.columns) || component.rows && Array.isArray(component.rows) || component.components && Array.isArray(component.components));
+}
+/**
+ * Iterate through each component within a form.
+ *
+ * @param {Object} components
+ *   The components to iterate.
+ * @param {Function} fn
+ *   The iteration function to invoke for each component.
+ * @param {Boolean} includeAll
+ *   Whether or not to include layout components.
+ * @param {String} path
+ *   The current data path of the element. Example: data.user.firstName
+ * @param {Object} parent
+ *   The parent object.
+ */
+
+
+function eachComponent(components, fn, includeAll, path, parent) {
+  if (!components) return;
+  path = path || '';
+  components.forEach(function (component) {
+    if (!component) {
+      return;
+    }
+
+    var hasColumns = component.columns && Array.isArray(component.columns);
+    var hasRows = component.rows && Array.isArray(component.rows);
+    var hasComps = component.components && Array.isArray(component.components);
+    var noRecurse = false;
+    var newPath = component.key ? path ? "".concat(path, ".").concat(component.key) : component.key : ''; // Keep track of parent references.
+
+    if (parent) {
+      // Ensure we don't create infinite JSON structures.
+      component.parent = (0, _clone.default)(parent);
+      delete component.parent.components;
+      delete component.parent.componentMap;
+      delete component.parent.columns;
+      delete component.parent.rows;
+    }
+
+    if (includeAll || component.tree || !hasColumns && !hasRows && !hasComps) {
+      noRecurse = fn(component, newPath);
+    }
+
+    var subPath = function subPath() {
+      if (component.key && !['panel', 'table', 'well', 'columns', 'fieldset', 'tabs', 'form'].includes(component.type) && (['datagrid', 'container', 'editgrid'].includes(component.type) || component.tree)) {
+        return newPath;
+      } else if (component.key && component.type === 'form') {
+        return "".concat(newPath, ".data");
+      }
+
+      return path;
+    };
+
+    if (!noRecurse) {
+      if (hasColumns) {
+        component.columns.forEach(function (column) {
+          return eachComponent(column.components, fn, includeAll, subPath(), parent ? component : null);
+        });
+      } else if (hasRows) {
+        component.rows.forEach(function (row) {
+          if (Array.isArray(row)) {
+            row.forEach(function (column) {
+              return eachComponent(column.components, fn, includeAll, subPath(), parent ? component : null);
+            });
+          }
+        });
+      } else if (hasComps) {
+        eachComponent(component.components, fn, includeAll, subPath(), parent ? component : null);
+      }
+    }
+  });
+}
+/**
+ * Matches if a component matches the query.
+ *
+ * @param component
+ * @param query
+ * @return {boolean}
+ */
+
+
+function matchComponent(component, query) {
+  if ((0, _isString.default)(query)) {
+    return component.key === query;
+  } else {
+    var matches = false;
+    (0, _forOwn.default)(query, function (value, key) {
+      matches = (0, _get.default)(component, key) === value;
+
+      if (!matches) {
+        return false;
+      }
+    });
+    return matches;
+  }
+}
+/**
+ * Get a component by its key
+ *
+ * @param {Object} components
+ *   The components to iterate.
+ * @param {String|Object} key
+ *   The key of the component to get, or a query of the component to search.
+ *
+ * @returns {Object}
+ *   The component that matches the given key, or undefined if not found.
+ */
+
+
+function getComponent(components, key, includeAll) {
+  var result;
+  eachComponent(components, function (component, path) {
+    if (path === key) {
+      component.path = path;
+      result = component;
+      return true;
+    }
+  }, includeAll);
+  return result;
+}
+/**
+ * Finds a component provided a query of properties of that component.
+ *
+ * @param components
+ * @param query
+ * @return {*}
+ */
+
+
+function findComponents(components, query) {
+  var results = [];
+  eachComponent(components, function (component, path) {
+    if (matchComponent(component, query)) {
+      component.path = path;
+      results.push(component);
+    }
+  }, true);
+  return results;
+}
+/**
+ * Flatten the form components for data manipulation.
+ *
+ * @param {Object} components
+ *   The components to iterate.
+ * @param {Boolean} includeAll
+ *   Whether or not to include layout components.
+ *
+ * @returns {Object}
+ *   The flattened components map.
+ */
+
+
+function flattenComponents(components, includeAll) {
+  var flattened = {};
+  eachComponent(components, function (component, path) {
+    flattened[path] = component;
+  }, includeAll);
+  return flattened;
+}
+/**
+ * Returns if this component has a conditional statement.
+ *
+ * @param component - The component JSON schema.
+ *
+ * @returns {boolean} - TRUE - This component has a conditional, FALSE - No conditional provided.
+ */
+
+
+function hasCondition(component) {
+  return Boolean(component.customConditional || component.conditional && component.conditional.when || component.conditional && component.conditional.json);
+}
+/**
+ * Extension of standard #parseFloat(value) function, that also clears input string.
+ *
+ * @param {any} value
+ *   The value to parse.
+ *
+ * @returns {Number}
+ *   Parsed value.
+ */
+
+
+function parseFloatExt(value) {
+  return parseFloat((0, _isString.default)(value) ? value.replace(/[^\de.+-]/gi, '') : value);
+}
+/**
+ * Formats provided value in way how Currency component uses it.
+ *
+ * @param {any} value
+ *   The value to format.
+ *
+ * @returns {String}
+ *   Value formatted for Currency component.
+ */
+
+
+function formatAsCurrency(value) {
+  var parsedValue = parseFloatExt(value);
+
+  if ((0, _isNaN.default)(parsedValue)) {
+    return '';
+  }
+
+  var parts = (0, _round.default)(parsedValue, 2).toString().split('.');
+  parts[0] = (0, _chunk.default)(Array.from(parts[0]).reverse(), 3).reverse().map(function (part) {
+    return part.reverse().join('');
+  }).join(',');
+  parts[1] = (0, _pad.default)(parts[1], 2, '0');
+  return parts.join('.');
+}
+/**
+ * Escapes RegEx characters in provided String value.
+ *
+ * @param {String} value
+ *   String for escaping RegEx characters.
+ * @returns {string}
+ *   String with escaped RegEx characters.
+ */
+
+
+function escapeRegExCharacters(value) {
+  return value.replace(/[-[\]/{}()*+?.\\^$|]/g, '\\$&');
+}
+/**
+ * Get the value for a component key, in the given submission.
+ *
+ * @param {Object} submission
+ *   A submission object to search.
+ * @param {String} key
+ *   A for components API key to search for.
+ */
+
+
+function getValue(submission, key) {
+  var search = function search(data) {
+    if ((0, _isPlainObject.default)(data)) {
+      if ((0, _has.default)(data, key)) {
+        return data[key];
+      }
+
+      var value = null;
+      (0, _forOwn.default)(data, function (prop) {
+        var result = search(prop);
+
+        if (!(0, _isNil.default)(result)) {
+          value = result;
+          return false;
+        }
+      });
+      return value;
+    } else {
+      return null;
+    }
+  };
+
+  return search(submission.data);
+}
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/utils/index.js":
+/*!**************************************************!*\
+  !*** ./node_modules/formiojs/lib/utils/index.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(global) {
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+__webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_modules/core-js/modules/es7.symbol.async-iterator.js");
+
+__webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
+
+var FormioUtils = _interopRequireWildcard(__webpack_require__(/*! ./utils */ "./node_modules/formiojs/lib/utils/utils.js"));
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+if ((typeof global === "undefined" ? "undefined" : _typeof(global)) === 'object') {
+  global.FormioUtils = FormioUtils;
+}
+
+var _default = FormioUtils;
+exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/utils/jsonlogic/operators.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/formiojs/lib/utils/jsonlogic/operators.js ***!
+  \****************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.lodashOperators = void 0;
+// Use only immutable useful functions from Lodash.
+// Visit https://lodash.com/docs for more info.
+var lodashOperators = [// Array
+'chunk', 'compact', 'concat', 'difference', 'differenceBy', 'differenceWith', 'drop', 'dropRight', 'dropRightWhile', 'dropWhile', 'findIndex', 'findLastIndex', 'first', 'flatten', 'flattenDeep', 'flattenDepth', 'fromPairs', 'head', 'indexOf', 'initial', 'intersection', 'intersectionBy', 'intersectionWith', 'join', 'last', 'lastIndexOf', 'nth', 'slice', 'sortedIndex', 'sortedIndexBy', 'sortedIndexOf', 'sortedLastIndex', 'sortedLastIndexBy', 'sortedLastIndexOf', 'sortedUniq', 'sortedUniqBy', 'tail', 'take', 'takeRight', 'takeRightWhile', 'takeWhile', 'union', 'unionBy', 'unionWith', 'uniq', 'uniqBy', 'uniqWith', 'unzip', 'unzipWith', 'without', 'xor', 'xorBy', 'xorWith', 'zip', 'zipObject', 'zipObjectDeep', 'zipWith', // Collection
+'countBy', 'every', 'filter', 'find', 'findLast', 'flatMap', 'flatMapDeep', 'flatMapDepth', 'groupBy', 'includes', 'invokeMap', 'keyBy', 'map', 'orderBy', 'partition', 'reduce', 'reduceRight', 'reject', 'sample', 'sampleSize', 'shuffle', 'size', 'some', 'sortBy', // Date
+'now', // Function
+'flip', 'negate', 'overArgs', 'partial', 'partialRight', 'rearg', 'rest', 'spread', // Lang
+'castArray', 'clone', 'cloneDeep', 'cloneDeepWith', 'cloneDeep', 'conformsTo', 'eq', 'gt', 'gte', 'isArguments', 'isArray', 'isArrayBuffer', 'isArrayLike', 'isArrayLikeObject', 'isBoolean', 'isBuffer', 'isDate', 'isElement', 'isEmpty', 'isEqual', 'isEqualWith', 'isError', 'isFinite', 'isFunction', 'isInteger', 'isLength', 'isMap', 'isMatch', 'isMatchWith', 'isNaN', 'isNative', 'isNil', 'isNull', 'isNumber', 'isObject', 'isObjectLike', 'isPlainObject', 'isRegExp', 'isSafeInteger', 'isSet', 'isString', 'isSymbol', 'isTypedArray', 'isUndefined', 'isWeakMap', 'isWeakSet', 'lt', 'lte', 'toArray', 'toFinite', 'toInteger', 'toLength', 'toNumber', 'toPlainObject', 'toSafeInteger', 'toString', // Math
+'add', 'ceil', 'divide', 'floor', 'max', 'maxBy', 'mean', 'meanBy', 'min', 'minBy', 'multiply', 'round', 'subtract', 'sum', 'sumBy', // Number
+'clamp', 'inRange', 'random', // Object
+'at', 'entries', 'entriesIn', 'findKey', 'findLastKey', 'functions', 'functionsIn', 'get', 'has', 'hasIn', 'invert', 'invertBy', 'invoke', 'keys', 'keysIn', 'mapKeys', 'mapValues', 'omit', 'omitBy', 'pick', 'pickBy', 'result', 'toPairs', 'toPairsIn', 'transform', 'values', 'valuesIn', // String
+'camelCase', 'capitalize', 'deburr', 'endsWith', 'escape', 'escapeRegExp', 'kebabCase', 'lowerCase', 'lowerFirst', 'pad', 'padEnd', 'padStart', 'parseInt', 'repeat', 'replace', 'snakeCase', 'split', 'startCase', 'startsWith', 'toLower', 'toUpper', 'trim', 'trimEnd', 'trimStart', 'truncate', 'unescape', 'upperCase', 'upperFirst', 'words', // Util
+'cond', 'conforms', 'constant', 'defaultTo', 'flow', 'flowRight', 'identity', 'iteratee', 'matches', 'matchesProperty', 'method', 'methodOf', 'nthArg', 'over', 'overEvery', 'overSome', 'property', 'propertyOf', 'range', 'rangeRight', 'stubArray', 'stubFalse', 'stubObject', 'stubString', 'stubTrue', 'times', 'toPath', 'uniqueId'];
+exports.lodashOperators = lodashOperators;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/utils/utils.js":
+/*!**************************************************!*\
+  !*** ./node_modules/formiojs/lib/utils/utils.js ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function($) {
+
+__webpack_require__(/*! core-js/modules/es6.object.keys */ "./node_modules/core-js/modules/es6.object.keys.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var _exportNames = {
+  evaluate: true,
+  getRandomComponentId: true,
+  getPropertyValue: true,
+  getElementRect: true,
+  boolValue: true,
+  isMongoId: true,
+  checkCalculated: true,
+  checkSimpleConditional: true,
+  checkCustomConditional: true,
+  checkJsonConditional: true,
+  checkCondition: true,
+  checkTrigger: true,
+  setActionProperty: true,
+  interpolate: true,
+  uniqueName: true,
+  guid: true,
+  getDateSetting: true,
+  isValidDate: true,
+  currentTimezone: true,
+  offsetDate: true,
+  zonesLoaded: true,
+  shouldLoadZones: true,
+  loadZones: true,
+  momentDate: true,
+  formatDate: true,
+  formatOffset: true,
+  getLocaleDateFormatInfo: true,
+  convertFormatToFlatpickr: true,
+  convertFormatToMoment: true,
+  convertFormatToMask: true,
+  getInputMask: true,
+  matchInputMask: true,
+  getNumberSeparators: true,
+  getNumberDecimalLimit: true,
+  getCurrencyAffixes: true,
+  fieldData: true,
+  delay: true,
+  iterateKey: true,
+  uniqueKey: true,
+  bootstrapVersion: true,
+  jsonLogic: true,
+  moment: true
+};
+exports.evaluate = evaluate;
+exports.getRandomComponentId = getRandomComponentId;
+exports.getPropertyValue = getPropertyValue;
+exports.getElementRect = getElementRect;
+exports.boolValue = boolValue;
+exports.isMongoId = isMongoId;
+exports.checkCalculated = checkCalculated;
+exports.checkSimpleConditional = checkSimpleConditional;
+exports.checkCustomConditional = checkCustomConditional;
+exports.checkJsonConditional = checkJsonConditional;
+exports.checkCondition = checkCondition;
+exports.checkTrigger = checkTrigger;
+exports.setActionProperty = setActionProperty;
+exports.interpolate = interpolate;
+exports.uniqueName = uniqueName;
+exports.guid = guid;
+exports.getDateSetting = getDateSetting;
+exports.isValidDate = isValidDate;
+exports.currentTimezone = currentTimezone;
+exports.offsetDate = offsetDate;
+exports.zonesLoaded = zonesLoaded;
+exports.shouldLoadZones = shouldLoadZones;
+exports.loadZones = loadZones;
+exports.momentDate = momentDate;
+exports.formatDate = formatDate;
+exports.formatOffset = formatOffset;
+exports.getLocaleDateFormatInfo = getLocaleDateFormatInfo;
+exports.convertFormatToFlatpickr = convertFormatToFlatpickr;
+exports.convertFormatToMoment = convertFormatToMoment;
+exports.convertFormatToMask = convertFormatToMask;
+exports.getInputMask = getInputMask;
+exports.matchInputMask = matchInputMask;
+exports.getNumberSeparators = getNumberSeparators;
+exports.getNumberDecimalLimit = getNumberDecimalLimit;
+exports.getCurrencyAffixes = getCurrencyAffixes;
+exports.fieldData = fieldData;
+exports.delay = delay;
+exports.iterateKey = iterateKey;
+exports.uniqueKey = uniqueKey;
+exports.bootstrapVersion = bootstrapVersion;
+Object.defineProperty(exports, "jsonLogic", {
+  enumerable: true,
+  get: function get() {
+    return _jsonLogicJs.default;
+  }
+});
+Object.defineProperty(exports, "moment", {
+  enumerable: true,
+  get: function get() {
+    return _momentTimezone.default;
+  }
+});
+
+__webpack_require__(/*! core-js/modules/es6.reflect.construct */ "./node_modules/core-js/modules/es6.reflect.construct.js");
+
+__webpack_require__(/*! core-js/modules/es6.string.iterator */ "./node_modules/core-js/modules/es6.string.iterator.js");
+
+__webpack_require__(/*! core-js/modules/es6.array.from */ "./node_modules/core-js/modules/es6.array.from.js");
+
+__webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_modules/core-js/modules/es7.symbol.async-iterator.js");
+
+__webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
+
+__webpack_require__(/*! core-js/modules/es6.number.constructor */ "./node_modules/core-js/modules/es6.number.constructor.js");
+
+__webpack_require__(/*! core-js/modules/es6.regexp.constructor */ "./node_modules/core-js/modules/es6.regexp.constructor.js");
+
+__webpack_require__(/*! core-js/modules/es6.regexp.split */ "./node_modules/core-js/modules/es6.regexp.split.js");
+
+__webpack_require__(/*! core-js/modules/es7.array.includes */ "./node_modules/core-js/modules/es7.array.includes.js");
+
+__webpack_require__(/*! core-js/modules/es6.string.includes */ "./node_modules/core-js/modules/es6.string.includes.js");
+
+__webpack_require__(/*! core-js/modules/es6.regexp.match */ "./node_modules/core-js/modules/es6.regexp.match.js");
+
+__webpack_require__(/*! core-js/modules/es6.regexp.to-string */ "./node_modules/core-js/modules/es6.regexp.to-string.js");
+
+__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/core-js/modules/es6.regexp.replace.js");
+
+__webpack_require__(/*! core-js/modules/es6.array.iterator */ "./node_modules/core-js/modules/es6.array.iterator.js");
+
+__webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/core-js/modules/es6.function.name.js");
+
+__webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
+
+var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
+
+__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+
+var _jsonLogicJs = _interopRequireDefault(__webpack_require__(/*! json-logic-js */ "./node_modules/json-logic-js/logic.js"));
+
+var _momentTimezone = _interopRequireDefault(__webpack_require__(/*! moment-timezone/moment-timezone */ "./node_modules/moment-timezone/moment-timezone.js"));
+
+var _jstimezonedetect = _interopRequireDefault(__webpack_require__(/*! jstimezonedetect */ "./node_modules/jstimezonedetect/dist/jstz.js"));
+
+var _operators = __webpack_require__(/*! ./jsonlogic/operators */ "./node_modules/formiojs/lib/utils/jsonlogic/operators.js");
+
+var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
+
+var _formUtils = __webpack_require__(/*! ./formUtils */ "./node_modules/formiojs/lib/utils/formUtils.js");
+
+Object.keys(_formUtils).forEach(function (key) {
+  if (key === "default" || key === "__esModule") return;
+  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
+  Object.defineProperty(exports, key, {
+    enumerable: true,
+    get: function get() {
+      return _formUtils[key];
+    }
+  });
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+
+function _construct(Parent, args, Class) { if (isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+// Configure JsonLogic
+_operators.lodashOperators.forEach(function (name) {
+  return _jsonLogicJs.default.add_operation("_".concat(name), _lodash.default[name]);
+}); // Retrieve Any Date
+
+
+_jsonLogicJs.default.add_operation('getDate', function (date) {
+  return (0, _momentTimezone.default)(date).toISOString();
+}); // Set Relative Minimum Date
+
+
+_jsonLogicJs.default.add_operation('relativeMinDate', function (relativeMinDate) {
+  return (0, _momentTimezone.default)().subtract(relativeMinDate, 'days').toISOString();
+}); // Set Relative Maximum Date
+
+
+_jsonLogicJs.default.add_operation('relativeMaxDate', function (relativeMaxDate) {
+  return (0, _momentTimezone.default)().add(relativeMaxDate, 'days').toISOString();
+});
+
+/**
+ * Evaluate a method.
+ *
+ * @param func
+ * @param args
+ * @return {*}
+ */
+function evaluate(func, args, ret, tokenize) {
+  var returnVal = null;
+  var component = args.component ? args.component : {
+    key: 'unknown'
+  };
+
+  if (!args.form && args.instance) {
+    args.form = _lodash.default.get(args.instance, 'root._form', {});
+  }
+
+  if (typeof func === 'string') {
+    if (ret) {
+      func += ";return ".concat(ret);
+    }
+
+    var params = _lodash.default.keys(args);
+
+    if (tokenize) {
+      // Replace all {{ }} references with actual data.
+      func = func.replace(/({{\s+(.*)\s+}})/, function (match, $1, $2) {
+        if ($2.indexOf('data.') === 0) {
+          return _lodash.default.get(args.data, $2.replace('data.', ''));
+        } else if ($2.indexOf('row.') === 0) {
+          return _lodash.default.get(args.row, $2.replace('row.', ''));
+        } // Support legacy...
+
+
+        return _lodash.default.get(args.data, $2);
+      });
+    }
+
+    try {
+      func = _construct(Function, _toConsumableArray(params).concat([func]));
+      args = _lodash.default.values(args);
+    } catch (err) {
+      console.warn("An error occured within the custom function for ".concat(component.key), err);
+      returnVal = null;
+      func = false;
+    }
+  }
+
+  if (typeof func === 'function') {
+    try {
+      returnVal = Array.isArray(args) ? func.apply(void 0, _toConsumableArray(args)) : func(args);
+    } catch (err) {
+      returnVal = null;
+      console.warn("An error occured within custom function for ".concat(component.key), err);
+    }
+  } else if (_typeof(func) === 'object') {
+    try {
+      returnVal = _jsonLogicJs.default.apply(func, args);
+    } catch (err) {
+      returnVal = null;
+      console.warn("An error occured within custom function for ".concat(component.key), err);
+    }
+  } else if (func) {
+    console.warn("Unknown function type for ".concat(component.key));
+  }
+
+  return returnVal;
+}
+
+function getRandomComponentId() {
+  return "e".concat(Math.random().toString(36).substring(7));
+}
+/**
+ * Get a property value of an element.
+ *
+ * @param style
+ * @param prop
+ * @return {number}
+ */
+
+
+function getPropertyValue(style, prop) {
+  var value = style.getPropertyValue(prop);
+  value = value ? value.replace(/[^0-9.]/g, '') : '0';
+  return parseFloat(value);
+}
+/**
+ * Get an elements bounding rectagle.
+ *
+ * @param element
+ * @return {{x: string, y: string, width: string, height: string}}
+ */
+
+
+function getElementRect(element) {
+  var style = window.getComputedStyle(element, null);
+  return {
+    x: getPropertyValue(style, 'left'),
+    y: getPropertyValue(style, 'top'),
+    width: getPropertyValue(style, 'width'),
+    height: getPropertyValue(style, 'height')
+  };
+}
+/**
+ * Determines the boolean value of a setting.
+ *
+ * @param value
+ * @return {boolean}
+ */
+
+
+function boolValue(value) {
+  if (_lodash.default.isBoolean(value)) {
+    return value;
+  } else if (_lodash.default.isString(value)) {
+    return value.toLowerCase() === 'true';
+  } else {
+    return !!value;
+  }
+}
+/**
+ * Check to see if an ID is a mongoID.
+ * @param text
+ * @return {Array|{index: number, input: string}|Boolean|*}
+ */
+
+
+function isMongoId(text) {
+  return text.toString().match(/^[0-9a-fA-F]{24}$/);
+}
+/**
+ * Checks the calculated value for a provided component and data.
+ *
+ * @param {Object} component
+ *   The component to check for the calculated value.
+ * @param {Object} submission
+ *   A submission object.
+ * @param data
+ *   The full submission data.
+ */
+
+
+function checkCalculated(component, submission, rowData) {
+  // Process calculated value stuff if present.
+  if (component.calculateValue) {
+    _lodash.default.set(rowData, component.key, evaluate(component.calculateValue, {
+      value: undefined,
+      data: submission ? submission.data : rowData,
+      row: rowData,
+      util: this,
+      component: component
+    }, 'value'));
+  }
+}
+/**
+ * Check if a simple conditional evaluates to true.
+ *
+ * @param condition
+ * @param condition
+ * @param row
+ * @param data
+ * @returns {boolean}
+ */
+
+
+function checkSimpleConditional(component, condition, row, data) {
+  var value = null;
+
+  if (row) {
+    value = (0, _formUtils.getValue)({
+      data: row
+    }, condition.when);
+  }
+
+  if (data && _lodash.default.isNil(value)) {
+    value = (0, _formUtils.getValue)({
+      data: data
+    }, condition.when);
+  } // FOR-400 - Fix issue where falsey values were being evaluated as show=true
+
+
+  if (_lodash.default.isNil(value)) {
+    value = '';
+  }
+
+  var eq = String(condition.eq);
+  var show = String(condition.show); // Special check for selectboxes component.
+
+  if (_lodash.default.isObject(value) && _lodash.default.has(value, condition.eq)) {
+    return String(value[condition.eq]) === show;
+  } // FOR-179 - Check for multiple values.
+
+
+  if (Array.isArray(value) && value.map(String).includes(eq)) {
+    return show === 'true';
+  }
+
+  return String(value) === eq === (show === 'true');
+}
+/**
+ * Check custom javascript conditional.
+ *
+ * @param component
+ * @param custom
+ * @param row
+ * @param data
+ * @returns {*}
+ */
+
+
+function checkCustomConditional(component, custom, row, data, form, variable, onError, instance) {
+  if (typeof custom === 'string') {
+    custom = "var ".concat(variable, " = true; ").concat(custom, "; return ").concat(variable, ";");
+  }
+
+  var value = instance && instance.evaluate ? instance.evaluate(custom) : evaluate(custom, {
+    row: row,
+    data: data,
+    form: form
+  });
+
+  if (value === null) {
+    return onError;
+  }
+
+  return value;
+}
+
+function checkJsonConditional(component, json, row, data, form, onError) {
+  try {
+    return _jsonLogicJs.default.apply(json, {
+      data: data,
+      row: row,
+      form: form,
+      _: _lodash.default
+    });
+  } catch (err) {
+    console.warn("An error occurred in jsonLogic advanced condition for ".concat(component.key), err);
+    return onError;
+  }
+}
+/**
+ * Checks the conditions for a provided component and data.
+ *
+ * @param component
+ *   The component to check for the condition.
+ * @param row
+ *   The data within a row
+ * @param data
+ *   The full submission data.
+ *
+ * @returns {boolean}
+ */
+
+
+function checkCondition(component, row, data, form, instance) {
+  if (component.customConditional) {
+    return checkCustomConditional(component, component.customConditional, row, data, form, 'show', true, instance);
+  } else if (component.conditional && component.conditional.when) {
+    return checkSimpleConditional(component, component.conditional, row, data, true);
+  } else if (component.conditional && component.conditional.json) {
+    return checkJsonConditional(component, component.conditional.json, row, data, form, instance);
+  } // Default to show.
+
+
+  return true;
+}
+/**
+ * Test a trigger on a component.
+ *
+ * @param component
+ * @param action
+ * @param data
+ * @param row
+ * @returns {mixed}
+ */
+
+
+function checkTrigger(component, trigger, row, data, form, instance) {
+  switch (trigger.type) {
+    case 'simple':
+      return checkSimpleConditional(component, trigger.simple, row, data);
+
+    case 'javascript':
+      return checkCustomConditional(component, trigger.javascript, row, data, form, 'result', false, instance);
+
+    case 'json':
+      return checkJsonConditional(component, trigger.json, row, data, form, false);
+  } // If none of the types matched, don't fire the trigger.
+
+
+  return false;
+}
+
+function setActionProperty(component, action, row, data, result, instance) {
+  switch (action.property.type) {
+    case 'boolean':
+      if (_lodash.default.get(component, action.property.value, false).toString() !== action.state.toString()) {
+        _lodash.default.set(component, action.property.value, action.state.toString() === 'true');
+      }
+
+      break;
+
+    case 'string':
+      {
+        var evalData = {
+          data: data,
+          row: row,
+          component: component,
+          result: result
+        };
+        var textValue = action.property.component ? action[action.property.component] : action.text;
+        var newValue = instance && instance.interpolate ? instance.interpolate(textValue, evalData) : interpolate(textValue, evalData);
+
+        if (newValue !== _lodash.default.get(component, action.property.value, '')) {
+          _lodash.default.set(component, action.property.value, newValue);
+        }
+
+        break;
+      }
+  }
+
+  return component;
+}
+/**
+ * Interpolate a string and add data replacements.
+ *
+ * @param string
+ * @param data
+ * @returns {XML|string|*|void}
+ */
+
+
+function interpolate(string, data) {
+  var templateSettings = {
+    evaluate: /\{%(.+?)%\}/g,
+    interpolate: /\{\{(.+?)\}\}/g,
+    escape: /\{\{\{(.+?)\}\}\}/g
+  };
+
+  try {
+    return _lodash.default.template(string, templateSettings)(data);
+  } catch (err) {
+    console.warn('Error interpolating template', err, string, data);
+  }
+}
+/**
+ * Make a filename guaranteed to be unique.
+ * @param name
+ * @returns {string}
+ */
+
+
+function uniqueName(name) {
+  var parts = name.toLowerCase().replace(/[^0-9a-z.]/g, '').split('.');
+  var fileName = parts[0];
+  var ext = parts.length > 1 ? ".".concat(_lodash.default.last(parts)) : '';
+  return "".concat(fileName.substr(0, 10), "-").concat(guid()).concat(ext);
+}
+
+function guid() {
+  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+    var r = Math.random() * 16 | 0;
+    var v = c === 'x' ? r : r & 0x3 | 0x8;
+    return v.toString(16);
+  });
+}
+/**
+ * Return a translated date setting.
+ *
+ * @param date
+ * @return {(null|Date)}
+ */
+
+
+function getDateSetting(date) {
+  if (_lodash.default.isNil(date) || _lodash.default.isNaN(date) || date === '') {
+    return null;
+  }
+
+  if (date instanceof Date) {
+    return date;
+  } else if (typeof date.toDate === 'function') {
+    return date.isValid() ? date.toDate() : null;
+  }
+
+  var dateSetting = typeof date !== 'string' || date.indexOf('moment(') === -1 ? (0, _momentTimezone.default)(date) : null;
+
+  if (dateSetting && dateSetting.isValid()) {
+    return dateSetting.toDate();
+  }
+
+  dateSetting = null;
+
+  try {
+    var value = new Function('moment', "return ".concat(date, ";"))(_momentTimezone.default);
+
+    if (typeof value === 'string') {
+      dateSetting = (0, _momentTimezone.default)(value);
+    } else if (typeof value.toDate === 'function') {
+      dateSetting = (0, _momentTimezone.default)(value.toDate().toUTCString());
+    } else if (value instanceof Date) {
+      dateSetting = (0, _momentTimezone.default)(value);
+    }
+  } catch (e) {
+    return null;
+  }
+
+  if (!dateSetting) {
+    return null;
+  } // Ensure this is a date.
+
+
+  if (!dateSetting.isValid()) {
+    return null;
+  }
+
+  return dateSetting.toDate();
+}
+
+function isValidDate(date) {
+  return _lodash.default.isDate(date) && !_lodash.default.isNaN(date.getDate());
+}
+/**
+ * Get the current timezone string.
+ *
+ * @return {string}
+ */
+
+
+function currentTimezone() {
+  if (_momentTimezone.default.currentTimezone) {
+    return _momentTimezone.default.currentTimezone;
+  }
+
+  _momentTimezone.default.currentTimezone = _jstimezonedetect.default.determine().name();
+  return _momentTimezone.default.currentTimezone;
+}
+/**
+ * Get an offset date provided a date object and timezone object.
+ *
+ * @param date
+ * @param timezone
+ * @return {Date}
+ */
+
+
+function offsetDate(date, timezone) {
+  if (timezone === 'UTC') {
+    return {
+      date: new Date(date.getTime() + date.getTimezoneOffset() * 60000),
+      abbr: 'UTC'
+    };
+  }
+
+  var dateMoment = (0, _momentTimezone.default)(date).tz(timezone);
+  return {
+    date: new Date(date.getTime() + (dateMoment.utcOffset() + date.getTimezoneOffset()) * 60000),
+    abbr: dateMoment.format('z')
+  };
+}
+/**
+ * Returns if the zones are loaded.
+ *
+ * @return {boolean}
+ */
+
+
+function zonesLoaded() {
+  return _momentTimezone.default.zonesLoaded;
+}
+/**
+ * Returns if we should load the zones.
+ *
+ * @param timezone
+ * @return {boolean}
+ */
+
+
+function shouldLoadZones(timezone) {
+  if (timezone === currentTimezone() || timezone === 'UTC') {
+    return false;
+  }
+
+  return true;
+}
+/**
+ * Externally load the timezone data.
+ *
+ * @return {Promise<any> | *}
+ */
+
+
+function loadZones(timezone) {
+  if (timezone && !shouldLoadZones(timezone)) {
+    // Return non-resolving promise.
+    return new _nativePromiseOnly.default(_lodash.default.noop);
+  }
+
+  if (_momentTimezone.default.zonesPromise) {
+    return _momentTimezone.default.zonesPromise;
+  }
+
+  return _momentTimezone.default.zonesPromise = fetch('https://cdn.rawgit.com/moment/moment-timezone/develop/data/packed/latest.json').then(function (resp) {
+    return resp.json().then(function (zones) {
+      _momentTimezone.default.tz.load(zones);
+
+      _momentTimezone.default.zonesLoaded = true; // Trigger a global event that the timezones have finished loading.
+
+      if (document && document.createEvent && document.body && document.body.dispatchEvent) {
+        var event = document.createEvent('Event');
+        event.initEvent('zonesLoaded', true, true);
+        document.body.dispatchEvent(event);
+      }
+    });
+  });
+}
+/**
+ * Get the moment date object for translating dates with timezones.
+ *
+ * @param value
+ * @param format
+ * @param timezone
+ * @return {*}
+ */
+
+
+function momentDate(value, format, timezone) {
+  var momentDate = (0, _momentTimezone.default)(value);
+
+  if (timezone === 'UTC') {
+    timezone = 'Etc/UTC';
+  }
+
+  if ((timezone !== currentTimezone() || format && format.match(/\s(z$|z\s)/)) && _momentTimezone.default.zonesLoaded) {
+    return momentDate.tz(timezone);
+  }
+
+  return momentDate;
+}
+/**
+ * Format a date provided a value, format, and timezone object.
+ *
+ * @param value
+ * @param format
+ * @param timezone
+ * @return {string}
+ */
+
+
+function formatDate(value, format, timezone) {
+  var momentDate = (0, _momentTimezone.default)(value);
+
+  if (timezone === currentTimezone()) {
+    // See if our format contains a "z" timezone character.
+    if (format.match(/\s(z$|z\s)/)) {
+      loadZones();
+
+      if (_momentTimezone.default.zonesLoaded) {
+        return momentDate.tz(timezone).format(convertFormatToMoment(format));
+      } else {
+        return momentDate.format(convertFormatToMoment(format.replace(/\s(z$|z\s)/, '')));
+      }
+    } // Return the standard format.
+
+
+    return momentDate.format(convertFormatToMoment(format));
+  }
+
+  if (timezone === 'UTC') {
+    var offset = offsetDate(momentDate.toDate(), 'UTC');
+    return "".concat((0, _momentTimezone.default)(offset.date).format(convertFormatToMoment(format)), " UTC");
+  } // Load the zones since we need timezone information.
+
+
+  loadZones();
+
+  if (_momentTimezone.default.zonesLoaded) {
+    return momentDate.tz(timezone).format("".concat(convertFormatToMoment(format), " z"));
+  } else {
+    return momentDate.format(convertFormatToMoment(format));
+  }
+}
+/**
+ * Pass a format function to format within a timezone.
+ *
+ * @param formatFn
+ * @param date
+ * @param format
+ * @param timezone
+ * @return {string}
+ */
+
+
+function formatOffset(formatFn, date, format, timezone) {
+  if (timezone === currentTimezone()) {
+    return formatFn(date, format);
+  }
+
+  if (timezone === 'UTC') {
+    return "".concat(formatFn(offsetDate(date, 'UTC').date, format), " UTC");
+  } // Load the zones since we need timezone information.
+
+
+  loadZones();
+
+  if (_momentTimezone.default.zonesLoaded) {
+    var offset = offsetDate(date, timezone);
+    return "".concat(formatFn(offset.date, format), " ").concat(offset.abbr);
+  } else {
+    return formatFn(date, format);
+  }
+}
+
+function getLocaleDateFormatInfo(locale) {
+  var formatInfo = {};
+  var day = 21;
+  var exampleDate = new Date(2017, 11, day);
+  var localDateString = exampleDate.toLocaleDateString(locale);
+  formatInfo.dayFirst = localDateString.slice(0, 2) === day.toString();
+  return formatInfo;
+}
+/**
+ * Convert the format from the angular-datepicker module to flatpickr format.
+ * @param format
+ * @return {string}
+ */
+
+
+function convertFormatToFlatpickr(format) {
+  return format // Remove the Z timezone offset, not supported by flatpickr.
+  .replace(/Z/g, '') // Year conversion.
+  .replace(/y/g, 'Y').replace('YYYY', 'Y').replace('YY', 'y') // Month conversion.
+  .replace('MMMM', 'F').replace(/M/g, 'n').replace('nnn', 'M').replace('nn', 'm') // Day in month.
+  .replace(/d/g, 'j').replace(/jj/g, 'd') // Day in week.
+  .replace('EEEE', 'l').replace('EEE', 'D') // Hours, minutes, seconds
+  .replace('HH', 'H').replace('hh', 'h').replace('mm', 'i').replace('ss', 'S').replace(/a/g, 'K');
+}
+/**
+ * Convert the format from the angular-datepicker module to moment format.
+ * @param format
+ * @return {string}
+ */
+
+
+function convertFormatToMoment(format) {
+  return format // Year conversion.
+  .replace(/y/g, 'Y') // Day in month.
+  .replace(/d/g, 'D') // Day in week.
+  .replace(/E/g, 'd') // AM/PM marker
+  .replace(/a/g, 'A');
+}
+
+function convertFormatToMask(format) {
+  return format // Short and long month replacement.
+  .replace(/(MMM|MMMM)/g, 'MM') // Year conversion
+  .replace(/[ydhmsHM]/g, '9') // AM/PM conversion
+  .replace(/a/g, 'AA');
+}
+/**
+ * Returns an input mask that is compatible with the input mask library.
+ * @param {string} mask - The Form.io input mask.
+ * @returns {Array} - The input mask for the mask library.
+ */
+
+
+function getInputMask(mask) {
+  if (mask instanceof Array) {
+    return mask;
+  }
+
+  var maskArray = [];
+  maskArray.numeric = true;
+
+  for (var i = 0; i < mask.length; i++) {
+    switch (mask[i]) {
+      case '9':
+        maskArray.push(/\d/);
+        break;
+
+      case 'A':
+        maskArray.numeric = false;
+        maskArray.push(/[a-zA-Z]/);
+        break;
+
+      case 'a':
+        maskArray.numeric = false;
+        maskArray.push(/[a-z]/);
+        break;
+
+      case '*':
+        maskArray.numeric = false;
+        maskArray.push(/[a-zA-Z0-9]/);
+        break;
+
+      default:
+        maskArray.push(mask[i]);
+        break;
+    }
+  }
+
+  return maskArray;
+}
+
+function matchInputMask(value, inputMask) {
+  if (!inputMask) {
+    return true;
+  }
+
+  for (var i = 0; i < inputMask.length; i++) {
+    var char = value[i];
+    var charPart = inputMask[i];
+
+    if (!(_lodash.default.isRegExp(charPart) && charPart.test(char) || charPart === char)) {
+      return false;
+    }
+  }
+
+  return true;
+}
+
+function getNumberSeparators() {
+  var lang = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'en';
+  var formattedNumberString = 12345.6789.toLocaleString(lang);
+  var delimeters = formattedNumberString.match(/..(.)...(.)../);
+
+  if (!delimeters) {
+    return {
+      delimiter: ',',
+      decimalSeparator: '.'
+    };
+  }
+
+  return {
+    delimiter: delimeters.length > 1 ? delimeters[1] : ',',
+    decimalSeparator: delimeters.length > 2 ? delimeters[2] : '.'
+  };
+}
+
+function getNumberDecimalLimit(component) {
+  // Determine the decimal limit. Defaults to 20 but can be overridden by validate.step or decimalLimit settings.
+  var decimalLimit = 20;
+
+  var step = _lodash.default.get(component, 'validate.step', 'any');
+
+  if (step !== 'any') {
+    var parts = step.toString().split('.');
+
+    if (parts.length > 1) {
+      decimalLimit = parts[1].length;
+    }
+  }
+
+  return decimalLimit;
+}
+
+function getCurrencyAffixes(_ref) {
+  var _ref$currency = _ref.currency,
+      currency = _ref$currency === void 0 ? 'USD' : _ref$currency,
+      decimalLimit = _ref.decimalLimit,
+      decimalSeparator = _ref.decimalSeparator,
+      lang = _ref.lang;
+  // Get the prefix and suffix from the localized string.
+  var regex = '(.*)?100';
+
+  if (decimalLimit) {
+    regex += "".concat(decimalSeparator === '.' ? '\\.' : decimalSeparator, "0{").concat(decimalLimit, "}");
+  }
+
+  regex += '(.*)?';
+  var parts = 100 .toLocaleString(lang, {
+    style: 'currency',
+    currency: currency,
+    useGrouping: true,
+    maximumFractionDigits: decimalLimit,
+    minimumFractionDigits: decimalLimit
+  }).replace('.', decimalSeparator).match(new RegExp(regex));
+  return {
+    prefix: parts[1] || '',
+    suffix: parts[2] || ''
+  };
+}
+/**
+ * Fetch the field data provided a component.
+ *
+ * @param data
+ * @param component
+ * @return {*}
+ */
+
+
+function fieldData(data, component) {
+  if (!data) {
+    return '';
+  }
+
+  if (!component || !component.key) {
+    return data;
+  }
+
+  if (component.key.includes('.')) {
+    var value = data;
+    var parts = component.key.split('.');
+    var key = '';
+
+    for (var i = 0; i < parts.length; i++) {
+      key = parts[i]; // Handle nested resources
+
+      if (value.hasOwnProperty('_id')) {
+        value = value.data;
+      } // Return if the key is not found on the value.
+
+
+      if (!value.hasOwnProperty(key)) {
+        return;
+      } // Convert old single field data in submissions to multiple
+
+
+      if (key === parts[parts.length - 1] && component.multiple && !Array.isArray(value[key])) {
+        value[key] = [value[key]];
+      } // Set the value of this key.
+
+
+      value = value[key];
+    }
+
+    return value;
+  } else {
+    // Convert old single field data in submissions to multiple
+    if (component.multiple && !Array.isArray(data[component.key])) {
+      data[component.key] = [data[component.key]];
+    }
+
+    return data[component.key];
+  }
+}
+/**
+ * Delays function execution with possibility to execute function synchronously or cancel it.
+ *
+ * @param fn Function to delay
+ * @param delay Delay time
+ * @return {*}
+ */
+
+
+function delay(fn) {
+  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
+
+  for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+    args[_key - 2] = arguments[_key];
+  }
+
+  var timer = setTimeout.apply(void 0, [fn, delay].concat(args));
+
+  function cancel() {
+    clearTimeout(timer);
+  }
+
+  function earlyCall() {
+    cancel();
+    return fn.apply(void 0, args);
+  }
+
+  earlyCall.timer = timer;
+  earlyCall.cancel = cancel;
+  return earlyCall;
+}
+/**
+ * Iterate the given key to make it unique.
+ *
+ * @param {String} key
+ *   Modify the component key to be unique.
+ *
+ * @returns {String}
+ *   The new component key.
+ */
+
+
+function iterateKey(key) {
+  if (!key.match(/(\d+)$/)) {
+    return "".concat(key, "2");
+  }
+
+  return key.replace(/(\d+)$/, function (suffix) {
+    return Number(suffix) + 1;
+  });
+}
+/**
+ * Determines a unique key within a map provided the base key.
+ *
+ * @param map
+ * @param base
+ * @return {*}
+ */
+
+
+function uniqueKey(map, base) {
+  var newKey = base;
+
+  while (map.hasOwnProperty(newKey)) {
+    newKey = iterateKey(newKey);
+  }
+
+  return newKey;
+}
+/**
+ * Determines the major version number of bootstrap.
+ *
+ * @return {number}
+ */
+
+
+function bootstrapVersion() {
+  if (typeof $ === 'function' && typeof $().collapse === 'function') {
+    return parseInt($.fn.collapse.Constructor.VERSION.split('.')[0], 10);
+  }
+
+  return 0;
+}
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/widgets/CalendarWidget.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/formiojs/lib/widgets/CalendarWidget.js ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+__webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_modules/core-js/modules/es7.symbol.async-iterator.js");
+
+__webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
+
+__webpack_require__(/*! core-js/modules/es6.reflect.set */ "./node_modules/core-js/modules/es6.reflect.set.js");
+
+__webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-js/modules/es6.reflect.get.js");
+
+__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/core-js/modules/es6.regexp.replace.js");
+
+var _flatpickr = _interopRequireDefault(__webpack_require__(/*! flatpickr */ "./node_modules/flatpickr/dist/flatpickr.js"));
+
+var _InputWidget2 = _interopRequireDefault(__webpack_require__(/*! ./InputWidget */ "./node_modules/formiojs/lib/widgets/InputWidget.js"));
+
+var _utils = __webpack_require__(/*! ../utils/utils */ "./node_modules/formiojs/lib/utils/utils.js");
+
+var _moment = _interopRequireDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
+
+var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function set(target, property, value, receiver) { if (typeof Reflect !== "undefined" && Reflect.set) { set = Reflect.set; } else { set = function set(target, property, value, receiver) { var base = _superPropBase(target, property); var desc; if (base) { desc = Object.getOwnPropertyDescriptor(base, property); if (desc.set) { desc.set.call(receiver, value); return true; } else if (!desc.writable) { return false; } } desc = Object.getOwnPropertyDescriptor(receiver, property); if (desc) { if (!desc.writable) { return false; } desc.value = value; Object.defineProperty(receiver, property, desc); } else { _defineProperty(receiver, property, value); } return true; }; } return set(target, property, value, receiver); }
+
+function _set(target, property, value, receiver, isStrict) { var s = set(target, property, value, receiver || target); if (!s && isStrict) { throw new Error('failed to set property'); } return value; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
+
+function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var DEFAULT_FORMAT = 'yyyy-MM-dd hh:mm a';
+var ISO_8601_FORMAT = 'yyyy-MM-ddTHH:mm:ssZ';
+
+var CalendarWidget =
+/*#__PURE__*/
+function (_InputWidget) {
+  _inherits(CalendarWidget, _InputWidget);
+
+  _createClass(CalendarWidget, null, [{
+    key: "defaultSettings",
+
+    /* eslint-disable camelcase */
+    get: function get() {
+      return {
+        type: 'calendar',
+        altInput: true,
+        allowInput: true,
+        clickOpens: true,
+        enableDate: true,
+        enableTime: true,
+        mode: 'single',
+        noCalendar: false,
+        format: DEFAULT_FORMAT,
+        dateFormat: ISO_8601_FORMAT,
+        useLocaleSettings: false,
+        language: 'us-en',
+        defaultDate: null,
+        hourIncrement: 1,
+        minuteIncrement: 5,
+        time_24hr: false,
+        saveAs: 'date',
+        displayInTimezone: '',
+        timezone: '',
+        minDate: '',
+        maxDate: ''
+      };
+    }
+    /* eslint-enable camelcase */
+
+  }]);
+
+  function CalendarWidget(settings, component) {
+    var _this;
+
+    _classCallCheck(this, CalendarWidget);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(CalendarWidget).call(this, settings, component)); // Change the format to map to the settings.
+
+    if (_this.settings.noCalendar) {
+      _this.settings.format = _this.settings.format.replace(/yyyy-MM-dd /g, '');
+    }
+
+    if (!_this.settings.enableTime) {
+      _this.settings.format = _this.settings.format.replace(/ hh:mm a$/g, '');
+    } else if (_this.settings.time_24hr) {
+      _this.settings.format = _this.settings.format.replace(/hh:mm a$/g, 'HH:mm');
+    }
+
+    _this.component.suffix = true;
+    return _this;
+  }
+  /**
+   * Load the timezones.
+   *
+   * @return {boolean} TRUE if the zones are loading, FALSE otherwise.
+   */
+
+
+  _createClass(CalendarWidget, [{
+    key: "loadZones",
+    value: function loadZones() {
+      var _this2 = this;
+
+      var timezone = this.timezone;
+
+      if (!(0, _utils.zonesLoaded)() && (0, _utils.shouldLoadZones)(timezone)) {
+        (0, _utils.loadZones)(timezone).then(function () {
+          return _this2.emit('redraw');
+        }); // Return zones are loading.
+
+        return true;
+      } // Zones are already loaded.
+
+
+      return false;
+    }
+  }, {
+    key: "attach",
+    value: function attach(input) {
+      var _this3 = this;
+
+      _get(_getPrototypeOf(CalendarWidget.prototype), "attach", this).call(this, input);
+
+      if (input && !input.getAttribute('placeholder')) {
+        input.setAttribute('placeholder', this.settings.format);
+      }
+
+      var dateFormatInfo = (0, _utils.getLocaleDateFormatInfo)(this.settings.language);
+      this.defaultFormat = {
+        date: dateFormatInfo.dayFirst ? 'd/m/Y ' : 'm/d/Y ',
+        time: 'h:i K'
+      };
+      this.closedOn = 0;
+      this.valueFormat = this.settings.dateFormat || ISO_8601_FORMAT;
+      this.valueMomentFormat = (0, _utils.convertFormatToMoment)(this.valueFormat);
+      this.settings.minDate = (0, _utils.getDateSetting)(this.settings.minDate);
+      this.settings.maxDate = (0, _utils.getDateSetting)(this.settings.maxDate);
+      this.settings.defaultDate = (0, _utils.getDateSetting)(this.settings.defaultDate);
+      this.settings.altFormat = (0, _utils.convertFormatToFlatpickr)(this.settings.format);
+      this.settings.dateFormat = (0, _utils.convertFormatToFlatpickr)(this.settings.dateFormat);
+
+      this.settings.onChange = function () {
+        return _this3.emit('update');
+      };
+
+      this.settings.onClose = function () {
+        return _this3.closedOn = Date.now();
+      };
+
+      this.settings.formatDate = function (date, format) {
+        // Only format this if this is the altFormat and the form is readOnly.
+        if (_this3.settings.readOnly && format === _this3.settings.altFormat) {
+          if (_this3.settings.saveAs === 'text' || _this3.loadZones()) {
+            return _flatpickr.default.formatDate(date, format);
+          }
+
+          return (0, _utils.formatOffset)(_flatpickr.default.formatDate.bind(_flatpickr.default), date, format, _this3.timezone);
+        }
+
+        return _flatpickr.default.formatDate(date, format);
+      };
+
+      if (this._input) {
+        // Create a new flatpickr.
+        this.calendar = new _flatpickr.default(this._input, this.settings); // Enforce the input mask of the format.
+
+        this.setInputMask(this.calendar._input, (0, _utils.convertFormatToMask)(this.settings.format)); // Make sure we commit the value after a blur event occurs.
+
+        this.addEventListener(this.calendar._input, 'blur', function () {
+          return _this3.calendar.setDate(_this3.calendar._input.value, true, _this3.settings.altFormat);
+        });
+      }
+    }
+  }, {
+    key: "addSuffix",
+    value: function addSuffix(container) {
+      var _this4 = this;
+
+      var suffix = this.ce('span', {
+        class: 'input-group-addon',
+        style: 'cursor: pointer'
+      });
+      suffix.appendChild(this.getIcon(this.settings.enableDate ? 'calendar' : 'time'));
+      this.addEventListener(suffix, 'click', function () {
+        if (_this4.calendar && !_this4.calendar.isOpen && Date.now() - _this4.closedOn > 200) {
+          _this4.calendar.open();
+        }
+      });
+      container.appendChild(suffix);
+      return suffix;
+    }
+  }, {
+    key: "getDateValue",
+
+    /**
+     * Return the date value.
+     *
+     * @param date
+     * @param format
+     * @return {string}
+     */
+    value: function getDateValue(date, format) {
+      return (0, _moment.default)(date).format((0, _utils.convertFormatToMoment)(format));
+    }
+    /**
+     * Return the value of the selected date.
+     *
+     * @return {*}
+     */
+
+  }, {
+    key: "getValue",
+    value: function getValue() {
+      // Standard output format.
+      if (!this.calendar) {
+        return _get(_getPrototypeOf(CalendarWidget.prototype), "getValue", this).call(this);
+      } // Get the selected dates from the calendar widget.
+
+
+      var dates = this.calendar.selectedDates;
+
+      if (!dates || !dates.length) {
+        return _get(_getPrototypeOf(CalendarWidget.prototype), "getValue", this).call(this);
+      }
+
+      if (!(dates[0] instanceof Date)) {
+        return 'Invalid Date';
+      }
+
+      return this.getDateValue(dates[0], this.valueFormat);
+    }
+    /**
+     * Set the selected date value.
+     *
+     * @param value
+     */
+
+  }, {
+    key: "setValue",
+    value: function setValue(value) {
+      if (!this.calendar) {
+        return _get(_getPrototypeOf(CalendarWidget.prototype), "setValue", this).call(this, value);
+      }
+
+      if (value) {
+        if (this.settings.saveAs !== 'text' && this.settings.readOnly && !this.loadZones()) {
+          this.calendar.setDate((0, _utils.momentDate)(value, this.valueFormat, this.timezone).toDate(), false);
+        } else {
+          this.calendar.setDate((0, _moment.default)(value, this.valueMomentFormat).toDate(), false);
+        }
+      } else {
+        this.calendar.clear(false);
+      }
+    }
+  }, {
+    key: "getView",
+    value: function getView(value, format) {
+      format = format || this.dateFormat;
+
+      if (this.settings.saveAs === 'text') {
+        return this.getDateValue(value, format);
+      }
+
+      return (0, _utils.formatDate)(value, format, this.timezone);
+    }
+  }, {
+    key: "validationValue",
+    value: function validationValue(value) {
+      if (typeof value === 'string') {
+        return new Date(value);
+      }
+
+      return value.map(function (val) {
+        return new Date(val);
+      });
+    }
+  }, {
+    key: "destroy",
+    value: function destroy() {
+      _get(_getPrototypeOf(CalendarWidget.prototype), "destroy", this).call(this);
+
+      this.calendar.destroy();
+    }
+  }, {
+    key: "timezone",
+    get: function get() {
+      if (this.settings.timezone) {
+        return this.settings.timezone;
+      }
+
+      if (this.settings.displayInTimezone === 'submission' && this.settings.submissionTimezone) {
+        return this.settings.submissionTimezone;
+      }
+
+      if (this.settings.displayInTimezone === 'utc') {
+        return 'UTC';
+      } // Return current timezone if none are provided.
+
+
+      return (0, _utils.currentTimezone)();
+    }
+  }, {
+    key: "defaultSettings",
+    get: function get() {
+      return CalendarWidget.defaultSettings;
+    }
+  }, {
+    key: "disabled",
+    set: function set(disabled) {
+      _set(_getPrototypeOf(CalendarWidget.prototype), "disabled", disabled, this, true);
+
+      if (this.calendar) {
+        if (disabled) {
+          this.calendar._input.setAttribute('disabled', 'disabled');
+        } else {
+          this.calendar._input.removeAttribute('disabled');
+        }
+
+        this.calendar.close();
+        this.calendar.redraw();
+      }
+    }
+  }, {
+    key: "input",
+    get: function get() {
+      return this.calendar ? this.calendar.altInput : null;
+    }
+  }, {
+    key: "localeFormat",
+    get: function get() {
+      var format = '';
+
+      if (this.settings.enableDate) {
+        format += this.defaultFormat.date;
+      }
+
+      if (this.settings.enableTime) {
+        format += this.defaultFormat.time;
+      }
+
+      return format;
+    }
+  }, {
+    key: "dateTimeFormat",
+    get: function get() {
+      return this.settings.useLocaleSettings ? this.localeFormat : (0, _utils.convertFormatToFlatpickr)(this.dateFormat);
+    }
+  }, {
+    key: "dateFormat",
+    get: function get() {
+      return _lodash.default.get(this.settings, 'format', DEFAULT_FORMAT);
+    }
+    /**
+     * Get the default date for the calendar.
+     * @return {*}
+     */
+
+  }, {
+    key: "defaultDate",
+    get: function get() {
+      return (0, _utils.getDateSetting)(this.settings.defaultDate);
+    }
+  }, {
+    key: "defaultValue",
+    get: function get() {
+      var defaultDate = this.defaultDate;
+      return defaultDate ? defaultDate.toISOString() : '';
+    }
+  }]);
+
+  return CalendarWidget;
+}(_InputWidget2.default);
+
+exports.default = CalendarWidget;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/widgets/InputWidget.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/formiojs/lib/widgets/InputWidget.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+__webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_modules/core-js/modules/es7.symbol.async-iterator.js");
+
+__webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
+
+var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
+
+var _Component2 = _interopRequireDefault(__webpack_require__(/*! ../Component */ "./node_modules/formiojs/lib/Component.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+var InputWidget =
+/*#__PURE__*/
+function (_Component) {
+  _inherits(InputWidget, _Component);
+
+  function InputWidget(settings, component) {
+    var _this;
+
+    _classCallCheck(this, InputWidget);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(InputWidget).call(this, settings));
+    _this.namespace = 'formio.widget';
+    _this.component = component || {};
+    _this.settings = _lodash.default.merge({}, _this.defaultSettings, settings || {});
+    return _this;
+  }
+
+  _createClass(InputWidget, [{
+    key: "attach",
+    value: function attach(input) {
+      this._input = input;
+    }
+  }, {
+    key: "getValue",
+    value: function getValue() {
+      return this._input.value;
+    }
+  }, {
+    key: "getView",
+    value: function getView(value) {
+      return value;
+    }
+  }, {
+    key: "validationValue",
+    value: function validationValue(value) {
+      return value;
+    }
+  }, {
+    key: "addPrefix",
+    value: function addPrefix() {
+      return null;
+    }
+  }, {
+    key: "addSuffix",
+    value: function addSuffix() {
+      return null;
+    }
+  }, {
+    key: "setValue",
+    value: function setValue(value) {
+      this._input.value = value;
+    }
+  }, {
+    key: "defaultSettings",
+    get: function get() {
+      return {};
+    }
+  }, {
+    key: "disabled",
+    set: function set(disabled) {
+      if (disabled) {
+        this._input.setAttribute('disabled', 'disabled');
+      } else {
+        this._input.removeAttribute('disabled');
+      }
+    }
+  }, {
+    key: "input",
+    get: function get() {
+      return this._input;
+    }
+  }, {
+    key: "defaultValue",
+    get: function get() {
+      return '';
+    }
+  }]);
+
+  return InputWidget;
+}(_Component2.default);
+
+exports.default = InputWidget;
+
+/***/ }),
+
+/***/ "./node_modules/formiojs/lib/widgets/index.js":
+/*!****************************************************!*\
+  !*** ./node_modules/formiojs/lib/widgets/index.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _InputWidget = _interopRequireDefault(__webpack_require__(/*! ./InputWidget */ "./node_modules/formiojs/lib/widgets/InputWidget.js"));
+
+var _CalendarWidget = _interopRequireDefault(__webpack_require__(/*! ./CalendarWidget */ "./node_modules/formiojs/lib/widgets/CalendarWidget.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var _default = {
+  input: _InputWidget.default,
+  calendar: _CalendarWidget.default
+};
+exports.default = _default;
 
 /***/ }),
 
@@ -67883,2720 +73077,6 @@ function trim(string, chars, guard) {
 
 module.exports = trim;
 
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/pdf.image.js":
-/*!********************************************!*\
-  !*** ./node_modules/formiojs/pdf.image.js ***!
-  \********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAPoAAAD6CAMAAAC/MqoPAAAAA3NCSVQICAjb4U/gAAAC9FBMVEX' + '///+HiYuGhomCg4aCgIF6eX12eHokJCQkICAgICAjHSOOj5KJi46DhYd1dnltb3EkICAgICAjHSOVl5qTlZeOj5KHiYt6eX0kICAjH' + 'SOZmp2Vl5qGhokkICDOz9G+vsCztbapq66cnqGbnZ6ZmZmTlZckICCbnZ6Zmp2Vl5qTlZeOj5KMioqGhomCg4aCgIGZmp2TlZeCgIG' + 'mqauho6aen6KcnqGmqaucnqGbnZ66u76cnqGZmp2Vl5rKISjS0dLR0NHOz9HMzMzHycrHxsfFxMXCwsPCw8W+vsCen6KbnZ7GISjCw' + 'sO+v8K+vsCpq66kpqmeoaObnZ7////7+/v5+vr39/j09fXz8/P88PHx8fL37+/u7+/r7O3r6+zp6uvn5+jj5+fz4+P44eLw4eHj5OX' + 'i4+Th4uPf4OLf3+Dc3t/b3N7a29z109TY2tvv1NXv0tPX2NrW19jU1tfS09XP0dLOz9Hrx8jxxMbnxsfMzMzkxMXHycrGx8nDxcfqu' + 'bvCw8XCwsPkuLrutbe/wcO+v8Lftre+vsC7vb+6u763ubu1t7riqqzeqquztbbqpqmxs7bZqKmvsbOtr7Kqra+pq67bnJ7gm56mqav' + 'XnJ3nl5ulp6qkpqmjpaeho6aeoaPbj5Gen6KcnqHXjpGbnZ7jiYzfio7SjpDdiYyZmp3LjI6ZmZnahoqVl5rXgoaTlZeSk5bSgIOPk' + 'ZPOf4Lgen6Oj5LLf4KLjY+Ji46HiYvVcnaGhonNcnWDhYfKcXSCg4bca3DFcXTBcHJ+gIJ9foHRZWl6fH7MZmbOZWnGZGd6eX12eHr' + 'BY2bZXGF1dnlydHa4YWNwcXTOV1vKVlvIVlrCVlnPUFW+VVnOTlS3VFe1VFbKS1HGSE3BR0y/R0y7R0zEREq2R0rSP0WzRkmtRUjBO' + 'kC4OT6zOD3OMDaqNzrBLTO2KzCzKzCuKi/KISiqKi6lKS2+ICa6HyW7Hya2HySuHiOyHiSrHiKnHSGiHCCeHB+aGx/MBOLyAAAA/HR' + 'STlMAERERERERERERESIiIiIiIiIiMzMzMzMzM0RERERVVVVVVVVVVVVmZmZmZmZmZmZ3d3eIiIiImZmZqqqqqrvMzMzMzMzMzMzMz' + 'MzM3d3d3e7u7v/////////////////////////////////////////////////////////////////////////////////////////' + '//////////////////////////////////////////////////////////////////////////////////////////////////////' + '/////////////////////////////////8PeNL3AAAACXBIWXMAAC37AAAt+wH8h0rnAAAAHHRFWHRTb2Z0d2FyZQBBZG9iZSBGaXJ' + 'ld29ya3MgQ1M26LyyjAAAFydJREFUeJzt3Xl8FNd9AHD31K56LfSIaOumTY80aeK06R23TXq5xXV8ZIRhzWEkgkAHKICQZCwpQpZsS' + 'SsWRQdeR2hlCWEsXFkHyELmtMEkGBvnMKZ2iV1jW2COGAOSwPzT33tv5s2bY3fn+O2slg8//DFikeT97u94b2Zn5FtuuRk342bcjJt' + 'xM8zCl5nhaWRm+lJNJuHP8Psy/H6/z7uA/1oG/CvVfL+P/vJS7qP/uQx4wVOJh9f/93q6u6LRzs0dHZH29ra21taWluZwOBRqbGxsq' + 'K+vr6urra2trq6qqqqsrKyoqFhHo5TEWiFKtKE8TD6NfgF8ZUUlfJNq+G519Q2NoVA4/Lek2lJI931algO8HeCqvKGBwOsIvFqBV+j' + 'hJXHCFF+9Huj1hN7Scs/vQvZTJ/f9Ppe3mcjVlGsyrsv1mpI1mtDo6QtVyvHV1WBvDIWbW1pb2//G58tMjRwaLvAHXE7hIA9RuVzsc' + 'sqNGedsHquFf6t+rqd2kndOb2ttn/2p1OQ9w58ZCHxWlbeYyUnKNXAh4cxqEuwFMLVXVpFmh3pvbYP/Zvu9n/Olot+h3AOBzwtyqHX' + 'tgNOmXN/ignuVJmQ/56s9D98J0v5YQ2O4pa090gH2jtt/LQV2WNUCgT8Tqp3KhT7n802bcrXSGXqlPrif4tfwzFM7tHsdo3ds7oR+7' + '5j9W97LM3wzA1lfUOXNOvn6anFJ0zY5r3UTucznuVfLXrbXQrO3tEU6o13RFrDf9zmv6Zl+fyCQ9cWIblGLKdc2uVLnDFoEUUj/YcH' + '0K9XUq3hS8nUNlN7V0xMh9ujtHtMzCH3WbcqEExY1bbWLcqHS1XxTbKE2OF/Wi3aa9ua2SLS7t6+vmdpn/4rHdGj1rNuM8jrDhGO1b' + 'tbiWnUBDc4vLOJ6mnm54ysqIe3h1ki0p69/IBoi9s77ftNTuo/0+pc0s12zkREHnJpxNeGCusAYYvJXqZmneYe0h1ragT4wOBwO07x' + '3ednwQJ8RyPpyG5/tYpvHk2vhGm8+/DLo2cwX7CTtUPGbu58ZHB7tbpTt/+ApHQr+yyabVy6vUOVrqZzPNgM8XwiNvUi2r+ajvpSkv' + 'SHUGunqGxzZNdbYGGomNd915y84lPyT7fgvGv9H4qQY/2sS/6OLN+wE+5JtHE/skPb2aN/A6NjuzfXMHu2685ed0X863WMHdPwaJe+' + 'V1fWh1s6egZGx/WNkT89q/hvOhl2qZQljiEw71vAs7S2Rrn6gHwrV1Ss1/40/vkHprOPXMPv6hlBbtG8Y6J3Vtbzmez9/Q9KL2DIn2' + '6tqG1s6egZ37T88CgOf13zvX9yI9MJChqf2dRXV9c3tXf2j+w8fq2B2VvO9/3gD0gvYIs+mHaS9DgbdMyN7Dx8LgV2oedv2VMsSxhB' + 'd6Cke8r62tKIaBl3v8NihY22lFZqat2tPtSxhDOWzTQ7YSd4h7fXh9u6BXQePRdfK9rBi/7mk0rc+Ur5CglhS/t0D6oPl5UHyYPkjO' + '8+onyqJ8apT+rPL8xme2km314Zao/2jB48Okz9o7Hfastt9JiJnyQHjg8Gt6PTly/OVoqdpr25o6ewb2f/y6MrVJbrE3/mzHtElaaf' + 'JgyvOmH2qc/qy5QwPRb+SYKHimzt6h/ceHi2kf3Rsd0eXDpg8qNix6Iq9AGp+1Zq16yrrQpGewd2HDy8vFPKuHMz8TJLpK1hvQ30LD' + '5YrD34XlZ6Xl8cTDyVfUgrN3tY1MHbotWVGO+Tdcr87o8MHW4WSVx48s5F9dEr41FdZnIn3TePSly4V7atK1lasb4Q5N3bw2NJl+WL' + 'Nh2wewDum/5QxH9E+WE4/2qj7VDcBdNUOaYeKr25o7ezfdfDo4qUmee/s+vuk019lpa998JShDTDoon11Ccw5GPGj+4/maezqxs6i3' + 'Tld+FB4cIXa2Yh0Yif4goKiVWtKK+ubN5PVrfTBxeY1b82OTWcjYCsiPScnh9pJ4iHtK9eUVtSFI72wiy9d+GCMmv9zL+hB3YMHzCa' + 'AK/rixYtzeNHnFxStXltRG470wMK+doHOXsvtf5pUOmvrch3yVdNHXcR/E7pqLyhcvXZdbai9G+glDzB7vibv9AR91+8kk75VHeYik' + 'n64BJcuJ57Y8wtXlayrhoUd9jRr5j2gz7tc85HO+34jefQzS+hHB0zp+gnghv6gal8K9oKVQG8E+tih1XONdl7z9yXc2jilH1gRYxn' + 'T0yW1AxzSH2R4Nu2WFxSVlFbBnga2c6vu5/Z846ybncjujM5jpyd0NfF5y/OLYHVrIPSDRXPuN8k7r/lEb8S6o2/Uc5NAX7RokWAHI' + '4z4hpYobOeKskV7gaHm/y6J9I2aB4WPg/pPdUFfuJDYmT6HVPyqtRWwnesf3V8gZcfLe0fnZ5NFL39V+yD98A1VikN/eiGxL2J2kva' + 'CVSUVcMTeN7J3sRTDLuc9cu+v49PLyzdufUP/IP2QreuIW5qnFywkwe15+TDiyXZueDf59vFr/r6fR6fHfhB9I/v0Ao0d6EUl6+gR+' + '6hksBtqfraH9Efoh4bV3hWd4VnD5yyFOVdaRU7PbZYW5+eva2wMhRvAG2N9/2vv6OxEzRlk+gI179DsMOKh4rueGd61e//BQ4cOv/z' + 'y0WPHXvvhyGCkapVhT/uHXtF3qq2OSudFvzgnj+3nWjq6+gaGR3eN7d67d//Bg/ACHAX+D/f3hrQ1f+8veUM/w5Ju3Oi4pjM7r/iKO' + 'nJVTXdf/8DA4PDICH0FCJ/ojw2ExZqP2e6o9FNsd7skzqfapz+wYIGqJ/ZlkPbSitqGMNmyRbu6unt64SUYhAqgfEj+a0ej1WrN/1X' + 'y6extGYmffcWii/ZFpNthVwP26rpGcrlwa1s7bF6iXeAfGByh3Q/6Y0f7annN/3bS6UrsjPepTug6e07ecjhyJVeX0Fsj6A0C8ALAQ' + 'XpPX/+wrIfoq5Nr/p5f9Ii+M+6nOqKrerKpJfaCIjLMyDWUleT2EHJzCHv/hehHx0APsT9ay/JufiCDTd94Kv6nOqVzO6zfMOrgKLV' + 'oNb3OQrmAtpZcON3cGuns6u0nF5fthdg90sLsn0kanb37GoTd7alEn2o7np6no9PjOHL0St+Iki80KSV8qm9t3xzt6YehNwaxa6T7M' + 'Wr/VQS65/HUPAgBv5DNupyl7CxlAXkDFl4A+bq6Wnb1NL2YdGR0dHRksC9M7Leb3DiQalnCoHSG16xx9KxNHjs5Xyjr5WuIQ80UD6k' + 'fHhzo72sl9s8Y7amWJQwjfYG8r5NPWcnn54meXGvD8C1tHWzD09/f19MKQ7DFeMNIqmUJQ6aLNS93/IPCiVpa+iq+Xu75Poje7q52s' + 'H/FcGNgqmUJ46m584x5V+0MT96Vkt9/ZxdV1taHwjDto909PT3d0U5S83+kt6daljCemivaxYbX4vkb8DKetDzJfLQrGt0caWlovMe' + 'ns6daljCArtrnae2LBDt5eyJfGHhV6x8jN0hFNnd2bu5ob2tuaPxLnT3VsoRB6IqdpT5G3hV7kTLs6ayHHW4kEmlvaw3VN37Kn5mZd' + 'nSrdrnoKZ50/GNkO9NG77RuDtXf7ctwdVOkfBcEvZMhn7zfvywvj7wnlJNDT5WTs0iLFpFjaz6SaIvypz6Xxf3GmKP5TQ1b9uVC0bN' + '1Ltwi33raWP8VPwodXz5njvCbni7oE9g1Oxx6X2A4zG7Sabgr4PO7uAdapVM50OllD0y+2JWcoOXfyAcGvB27fFUpuTGQ3vNPb9G5I' + '+DLdJF2mZ4UOQ/2Z9GuKXtrNc8anh3VN9B7EO+YGYB2d01n1e5ezsucRHa27hWI0fFx1neh5ql9HT2gZfH1QMDnottlukmfO5SDcA6' + 'Xy3blJTD0vL1+Vw5pyA89gFh/dyCQmeGajjThNEnOzpbt/CVwmvd8rZ2cy6mqrqq6Owsq3nXBY8p5qmU7fwlwap7/5IPKu7MCM100u' + '0h3PeHEMs/WB1rNK7fAVwA94He+vHE6ptw85siDwHnNF9E7ghX8uq/j0DFmu1H+rW83NZXlavPu0L5csJew+8AJ3efPcElfhjLbtfL' + '5z5/9mMbz87md+W3bNXsbbr+L9LrPLR1twgkZl+EQJ+cLjzvOO5vz8m1ixA70Ge7p+PL5H3ysxrP6nndR8yv5DcF3kYLHoFuUz7Umz' + '37yYzFyXduFmlfseHTU2T7/rIb+uGHWm9vjnbPS13wJFh15tjdp5B+fzM6WYust4tWDGXo3dMl/4tCR5dkvaekfZ0tSHLudzU0+a3i' + 'w49BRJxwJeVlrkuv+cpmU2G48iNWfpVbshdR+BwodW17GxJLECv/y5SYJ345Hx5rtEBKb7z8C7VlGf1JKYI/Z74tinKxciUtH2rdLA' + 'v1HVK7QDXYLg97EzmYdGh1TLrEp9zyjg/zyjyXn9lhzHouO1+eSnGtzehy73TmPRMeVy3RS8Cep/JJKT2S3Puv+A4WOLBfoTC7SJR3' + 'dsR2LjjXb9XQm19Dj2G3N+X/HoVP5grhykwEXSy6POVjXy8zoSHYcOt5sZyEftwWlJibX0Z3YjTWPREfsc4FeJj3P5JeelKzarc95H' + 'DqyXHpcPlaVzsagY8y6f8OiY8oltoe//FITg5vQEexYdKzZzqKY0c+eVeiPG+juZx0SHW22y8F27pcV+aUyI921HYeON9vlOGmB7nb' + 'O49Ix+pzGS1r5paAZ3eWcR6WjyaUntfJLpnKXsw6TjieXvq2VfxCD7sr+r3h0lNkuxxKNXL+ZM6fbnXV4dKTZLscHovzS92PR3djR6' + 'BblengMufSShm7c0biys5rHoiP2OY3HRfmVptj0ePb4cx6Jji2XikX5FdNl3ao91qzDoaPLodkF+RXzZd2lHY+ONNuVeFakx5Vr6dZ' + 'nHRodbbbLUSzIX49Pdzjn/wWJjjfblTjJ5Vdir21u7Eh03D6n0cTlV+KsbRbsseY8Dj0Jcil4VpHHXdus2o2zDpeOKJek5znd5EQFg' + 'h2TjjTblchV5FfOxV/cTOhW+h2RjjXbeZy8ooSFZtfjE9vx6HizXYkfc7qltNu99ACNji+XrlyxmXbrcx6TngR5riqfPJeLY58rpB2' + 'JngS5VCbQJ/dY/CIbdhy6dblluCQ9KcgnJ52kPWa/00mHSceVS98X5ZNHrH6ZZTsi3Qh3JZc+EOWTk3GP2a3b1SmPR0ftc4igVj553' + 'PJXxu93bkejY8uVKafIJydq3Ns1qzsWHV0uTzlVPjFu/Wtj2eeKdiQ68oQj8bpOPjFh5QDOhG6wo9KTIJf0SZ+YsLidNeLN845PR5j' + 'tJMoM8omJLTa+PrH9n5NDd9nnEmt1qn6dyycmLO5rTO336+3odCQ5bXVKD57j8gmr21kTu7i+MTs2HUsuKfKfSFsm1LC8r9HbDXv5u' + 'dh0nD6XaKuzLh+SpHGVbn1fo6WbHcfg0tHk0OrygIMVrUmlT1lf4ET8HLNjOEw60myn8bpCJ5PtbS6fOm9jgVPtc8zsiHRMuaTI6Ra' + 'uTKVP2Vng4tu/hkzHmHAEqyzobKYfV+AQdha4uHY8OqZcGlLom+gfcwX6CZvfKma/o9Exq12SfqLs4orZn7dw+dSUrQVOHfOGvGPRc' + 'eVBJennlAfGuXzqtCO50Y5Ex5VLNUrS+WmpGpU+tc2R3GDHoSPLpT3KQYu6jB9X6RcsTzrdM9La8ehYE47EuHK4piJzz6t2i5PO8Iy' + '0djQ6pjxXkYsnZjap9Clr56qMdM2cx6IjwkGpHKJrjtTUkr962tKeLiZ9DiYdVS59T6Frspt7gdOvWpx0ce04dFy5xM/LaJO7icuvX' + 'i12b08K3aW8RpHrD1FPcPnVdy1+rzj2ZNBdyukultI36f4ieEGRWy75WPYkZd0tfVw5GWeo6jIuv3r1Ief27CT1ulu4VKzITd5z2KH' + 'SP3L03msy6a7lZGlj9CGTvzzB6Zbb3YhPzoR3L1fPyZgdogUvqPbnHNqT0+sI8lzl3PN5078uVunXNjiyJ2fCI8jVk5AxTrpv4PJrH' + '1lc3Y23BxH79KMfUeixNuo7OP3aR2TPU1yz7YU333zz4idvvvXWi9sffXi+RftXEekYcCk4EbfeSbygyK9de++F966x+ESN97/jNR1' + 'FnrDeIYLvcroaAv2T6++bZN6Ax6PjyNV6j3MKDuzX4smvX3/f5Kv0djQ6kpzXe+xrKHI3vPJR3JyT2J7YjkVHkqv1brafgVemZsdpk' + '2q/ppdf/zABPRuNjiVX691km5r7xAl1uMdP+vXr34ovB/s0o+cq8nf0fxPc8K66l9HLL8K69pYIv3794QRyLDqWXNqk0LXvqAY3vHJ' + 'VCGPOn4ORPv/FeHS9PDt7mtGV/bvmDdWyfReumskvCtV+8Qn4xPdV+XXd8maUT7OsFyvvqO7jD+VuOz111Sh/77maYPAVsdE/3P7N7' + 'ar8rYTyaUYfUujK5nzDiakpg/yjFzbIQ3Cb+YiDeDShfJrRz8vvqLKTcrk7Lqgn4/hR+nPiMctDF83lLyaWTy96k3IBARlyNSeEE7C' + 'K+wn9mhd8xUz+lqbTzeXTi65cQTAuBbecntLLX9lg+sbDQx8a6NqtnFE+/ej8AoIj+4Q3mZj7hLmbxnc+1MB/8M1E8ulX8EMKXQ831' + 'rkuHn3xokL/gW5BN5VPuzF33igH+ukdlk69PvzEdohH9UerMeTTbHFrMpPvs34DgFnElE+vLc3bBvnpTfaukrMjn070Mr18n73rhWz' + 'Kp88ePnePttxdJzyhfJpkncFV+RHXCU8snxZ0Ga7IL1gb6W7l04AeVK53x6v0xPLpQA9uOTch0neguK3IU01v4nAmv4CTcivy1NLLh' + 'PsbWLnrr6NIihz13RdHzy/3+IRebuvyV5fy1NGDQ5MGuc2Lnt3JU0ZvEm7hOr9Hplu+R92FPNX04uPqbXvntwT3yAu6B+u58D8BxXl' + '/3d6TCw6p92oCXMqVy93mbS0u5UiXFth6cmXjXE7gkrQHccZZhaNdUGLjuQW/p96fS+FSGeKMsyH3nF5zjsuPs9YOjk+h7ePsyD2my' + 'ymnl7orp1+G5HJH2MdZ73PP6XLKQX6Oj7QavHK3J/eUzm9emzjClzHlvo4dnsu9pO/hd3AJpxrfYXLD2+nY8jkGuXf0oHLX3uTbws5' + 'Ffq/hguVr//Dk3tFf53Jhnm2RG93yFZ+Ics/oe8zkTcq51yTLjX3uIb2J97lQ7Yr8HdfrmhO5R/TgOYUu7NOVu3jcN7ojuUd0Xu7qN' + 'WHK4drUVJLlpn3uGV1N+oTyUNn4FNaIcyj3hl7D5TKdnHlPtdwb+hYuJzftBWuOTHglj9XnXtPJ4drbx8eFk3EXkvyOYjy5pwUvnIZ' + 'k9HfcTrgE8Lhyjyb8uE4un4VM8noep8+9oxefM+b8fEp2r2og/YSShE+yeFwv35f0988TyL2ii28rkh+ntA/hvLObPveSDtF0hF0HO' + 'r6vCeNNRbdyL+kkysrcH5lbgVuQe01HC1d9zn7oWprSXcnlH+6N80PX0lGennT3fZ6udBx5GtITwC3L049uGZ5IfqPRLU44xB+mmo7' + 'ydKNj9Tnez4xOR3la0RPAbcrTiW4Zbk1+49BtTTgk+gyP6NhyQp/hjj4zkPWllMvt9rlMn+mG7icFf1s6ylnB+13Q/YHArKTTE8Ady' + 'ed9bVYg4HdOzyT0rC+mVm57tsv0LELPdEr3ZZBe/0JK6Q4mHP0fHX2V9HqGzyn9Fh9t9ltvvfVP0ivgGdNWdy6/xU8W9lnEnk548nS' + 'zZpFl3e+cnuHPDEDaqT2tIguSHsh0PuVI1jMg7ZD3tNLDs4WcB+C5u8j6LX5a8iTxhJ8eMYumnJS7G7lqT7twLQe6PyOT7GcDgZkzU' + 's2xEDPoM/X5MmE75pJO+p3+guynSfjlZ+wWTuywlSevYapJFoPUKWzeMeQ0oIDSJzI1O5n/B5/xAXbXPcU5AAAAAElFTkSuQmCC';
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/providers/index.js":
-/*!**************************************************!*\
-  !*** ./node_modules/formiojs/providers/index.js ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "storage", {
-  enumerable: true,
-  get: function get() {
-    return _storage2.default;
-  }
-});
-
-var _storage2 = _interopRequireDefault(__webpack_require__(/*! ./storage */ "./node_modules/formiojs/providers/storage/index.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/providers/storage/base64.js":
-/*!***********************************************************!*\
-  !*** ./node_modules/formiojs/providers/storage/base64.js ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/core-js/modules/es6.regexp.replace.js");
-
-var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var base64 = function base64() {
-  return {
-    title: 'Base64',
-    name: 'base64',
-    uploadFile: function uploadFile(file, fileName) {
-      var _this = this;
-
-      var reader = new FileReader();
-      return new _nativePromiseOnly.default(function (resolve, reject) {
-        reader.onload = function (event) {
-          var url = event.target.result;
-          resolve({
-            storage: 'base64',
-            name: fileName,
-            url: url,
-            size: file.size,
-            type: file.type,
-            data: url.replace("data:".concat(file.type, ";base64,"), '')
-          });
-        };
-
-        reader.onerror = function () {
-          return reject(_this);
-        };
-
-        reader.readAsDataURL(file);
-      });
-    },
-    downloadFile: function downloadFile(file) {
-      // Return the original as there is nothing to do.
-      return _nativePromiseOnly.default.resolve(file);
-    }
-  };
-};
-
-base64.title = 'Base64';
-var _default = base64;
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/providers/storage/dropbox.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/providers/storage/dropbox.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var dropbox = function dropbox(formio) {
-  return {
-    uploadFile: function uploadFile(file, fileName, dir, progressCallback) {
-      return new _nativePromiseOnly.default(function (resolve, reject) {
-        // Send the file with data.
-        var xhr = new XMLHttpRequest();
-
-        if (typeof progressCallback === 'function') {
-          xhr.upload.onprogress = progressCallback;
-        }
-
-        var fd = new FormData();
-        fd.append('name', fileName);
-        fd.append('dir', dir);
-        fd.append('file', file); // Fire on network error.
-
-        xhr.onerror = function (err) {
-          err.networkError = true;
-          reject(err);
-        };
-
-        xhr.onload = function () {
-          if (xhr.status >= 200 && xhr.status < 300) {
-            var response = JSON.parse(xhr.response);
-            response.storage = 'dropbox';
-            response.size = file.size;
-            response.type = file.type;
-            response.url = response.path_lower;
-            resolve(response);
-          } else {
-            reject(xhr.response || 'Unable to upload file');
-          }
-        };
-
-        xhr.onabort = reject;
-        xhr.open('POST', "".concat(formio.formUrl, "/storage/dropbox"));
-        var token = formio.getToken();
-
-        if (token) {
-          xhr.setRequestHeader('x-jwt-token', token);
-        }
-
-        xhr.send(fd);
-      });
-    },
-    downloadFile: function downloadFile(file) {
-      var token = formio.getToken();
-      file.url = "".concat(formio.formUrl, "/storage/dropbox?path_lower=").concat(file.path_lower).concat(token ? "&x-jwt-token=".concat(token) : '');
-      return _nativePromiseOnly.default.resolve(file);
-    }
-  };
-};
-
-dropbox.title = 'Dropbox';
-var _default = dropbox;
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/providers/storage/index.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/formiojs/providers/storage/index.js ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _base = _interopRequireDefault(__webpack_require__(/*! ./base64 */ "./node_modules/formiojs/providers/storage/base64.js"));
-
-var _dropbox = _interopRequireDefault(__webpack_require__(/*! ./dropbox */ "./node_modules/formiojs/providers/storage/dropbox.js"));
-
-var _s = _interopRequireDefault(__webpack_require__(/*! ./s3 */ "./node_modules/formiojs/providers/storage/s3.js"));
-
-var _url = _interopRequireDefault(__webpack_require__(/*! ./url */ "./node_modules/formiojs/providers/storage/url.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _default = {
-  base64: _base.default,
-  dropbox: _dropbox.default,
-  s3: _s.default,
-  url: _url.default
-};
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/providers/storage/s3.js":
-/*!*******************************************************!*\
-  !*** ./node_modules/formiojs/providers/storage/s3.js ***!
-  \*******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
-
-var _trim2 = _interopRequireDefault(__webpack_require__(/*! lodash/trim */ "./node_modules/formiojs/node_modules/lodash/trim.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var trim = function trim(text) {
-  return (0, _trim2.default)(text, '/');
-};
-
-var path = function path(items) {
-  return items.filter(function (item) {
-    return !!item;
-  }).map(trim).join('/');
-};
-
-var s3 = function s3(formio) {
-  return {
-    uploadFile: function uploadFile(file, fileName, dir, progressCallback) {
-      return new _nativePromiseOnly.default(function (resolve, reject) {
-        // Send the pre response to sign the upload.
-        var pre = new XMLHttpRequest(); // This only fires on a network error.
-
-        pre.onerror = function (err) {
-          err.networkError = true;
-          reject(err);
-        };
-
-        pre.onabort = reject;
-
-        pre.onload = function () {
-          if (pre.status >= 200 && pre.status < 300) {
-            var response = JSON.parse(pre.response); // Send the file with data.
-
-            var xhr = new XMLHttpRequest();
-
-            if (typeof progressCallback === 'function') {
-              xhr.upload.onprogress = progressCallback;
-            }
-
-            response.data.fileName = fileName;
-            response.data.key = path([response.data.key, dir, fileName]); // Fire on network error.
-
-            xhr.onerror = function (err) {
-              err.networkError = true;
-              reject(err);
-            };
-
-            xhr.onload = function () {
-              if (xhr.status >= 200 && xhr.status < 300) {
-                resolve({
-                  storage: 's3',
-                  name: fileName,
-                  bucket: response.bucket,
-                  key: response.data.key,
-                  url: path([response.url, response.data.key]),
-                  acl: response.data.acl,
-                  size: file.size,
-                  type: file.type
-                });
-              } else {
-                reject(xhr.response || 'Unable to upload file');
-              }
-            };
-
-            xhr.onabort = reject;
-
-            if (response.signed) {
-              xhr.open('PUT', response.signed);
-              xhr.setRequestHeader('Content-Type', file.type);
-              xhr.send(file);
-            } else {
-              var fd = new FormData();
-
-              for (var key in response.data) {
-                fd.append(key, response.data[key]);
-              }
-
-              fd.append('file', file);
-              xhr.open('POST', response.url);
-              xhr.send(fd);
-            }
-          } else {
-            reject(pre.response || 'Unable to sign file');
-          }
-        };
-
-        pre.open('POST', "".concat(formio.formUrl, "/storage/s3"));
-        pre.setRequestHeader('Accept', 'application/json');
-        pre.setRequestHeader('Content-Type', 'application/json; charset=UTF-8');
-        var token = formio.getToken();
-
-        if (token) {
-          pre.setRequestHeader('x-jwt-token', token);
-        }
-
-        pre.send(JSON.stringify({
-          name: path([dir, fileName]),
-          size: file.size,
-          type: file.type
-        }));
-      });
-    },
-    downloadFile: function downloadFile(file) {
-      if (file.acl !== 'public-read') {
-        return formio.makeRequest('file', "".concat(formio.formUrl, "/storage/s3?bucket=").concat(trim(file.bucket), "&key=").concat(trim(file.key)), 'GET');
-      } else {
-        return _nativePromiseOnly.default.resolve(file);
-      }
-    }
-  };
-};
-
-s3.title = 'S3';
-var _default = s3;
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/providers/storage/url.js":
-/*!********************************************************!*\
-  !*** ./node_modules/formiojs/providers/storage/url.js ***!
-  \********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-__webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/core-js/modules/es6.function.name.js");
-
-var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var url = function url(formio) {
-  var xhrRequest = function xhrRequest(url, name, query, data, onprogress) {
-    return new _nativePromiseOnly.default(function (resolve, reject) {
-      var xhr = new XMLHttpRequest();
-      var json = typeof data === 'string';
-      var fd = new FormData();
-
-      if (typeof onprogress === 'function') {
-        xhr.upload.onprogress = onprogress;
-      }
-
-      if (!json) {
-        for (var key in data) {
-          fd.append(key, data[key]);
-        }
-      }
-
-      xhr.onload = function () {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          // Need to test if xhr.response is decoded or not.
-          var respData = {};
-
-          try {
-            respData = typeof xhr.response === 'string' ? JSON.parse(xhr.response) : {};
-            respData = respData && respData.data ? respData.data : respData;
-          } catch (err) {
-            respData = {};
-          } // Get the url of the file.
-
-
-          var respUrl = respData.hasOwnProperty('url') ? respData.url : "".concat(xhr.responseURL, "/").concat(name); // If they provide relative url, then prepend the url.
-
-          if (respUrl && respUrl[0] === '/') {
-            respUrl = "".concat(url).concat(respUrl);
-          }
-
-          resolve({
-            url: respUrl,
-            data: respData
-          });
-        } else {
-          reject(xhr.response || 'Unable to upload file');
-        }
-      };
-
-      xhr.onerror = function () {
-        return reject(xhr);
-      };
-
-      xhr.onabort = function () {
-        return reject(xhr);
-      };
-
-      var requestUrl = "".concat(url, "?");
-
-      for (var _key in query) {
-        requestUrl += "".concat(_key, "=").concat(query[_key], "&");
-      }
-
-      if (requestUrl[requestUrl.length - 1] === '&') {
-        requestUrl = requestUrl.substr(0, requestUrl.length - 1);
-      }
-
-      xhr.open('POST', requestUrl);
-
-      if (json) {
-        xhr.setRequestHeader('Content-Type', 'application/json');
-      }
-
-      var token = formio.getToken();
-
-      if (token) {
-        xhr.setRequestHeader('x-jwt-token', token);
-      }
-
-      xhr.send(json ? data : fd);
-    });
-  };
-
-  return {
-    title: 'Url',
-    name: 'url',
-    uploadFile: function uploadFile(file, name, dir, progressCallback, url) {
-      var uploadRequest = function uploadRequest(form) {
-        return xhrRequest(url, name, {
-          baseUrl: encodeURIComponent(formio.projectUrl),
-          project: form ? form.project : '',
-          form: form ? form._id : ''
-        }, {
-          file: file,
-          name: name,
-          dir: dir
-        }, progressCallback).then(function (response) {
-          // Store the project and form url along with the metadata.
-          response.data = response.data || {};
-          response.data.baseUrl = formio.projectUrl;
-          response.data.project = form ? form.project : '';
-          response.data.form = form ? form._id : '';
-          return {
-            storage: 'url',
-            name: name,
-            url: response.url,
-            size: file.size,
-            type: file.type,
-            data: response.data
-          };
-        });
-      };
-
-      if (file.private && formio.formId) {
-        return formio.loadForm().then(function (form) {
-          return uploadRequest(form);
-        });
-      } else {
-        return uploadRequest();
-      }
-    },
-    downloadFile: function downloadFile(file) {
-      if (file.private) {
-        if (formio.submissionId && file.data) {
-          file.data.submission = formio.submissionId;
-        }
-
-        return xhrRequest(file.url, file.name, {}, JSON.stringify(file)).then(function (response) {
-          return response.data;
-        });
-      } // Return the original as there is nothing to do.
-
-
-      return _nativePromiseOnly.default.resolve(file);
-    }
-  };
-};
-
-url.title = 'Url';
-var _default = url;
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/utils/builder.js":
-/*!************************************************!*\
-  !*** ./node_modules/formiojs/utils/builder.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-__webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
-
-__webpack_require__(/*! core-js/modules/es6.array.iterator */ "./node_modules/core-js/modules/es6.array.iterator.js");
-
-var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
-
-var _utils = __webpack_require__(/*! ./utils */ "./node_modules/formiojs/utils/utils.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _default = {
-  /**
-   * Appends a number to a component.key to keep it unique
-   *
-   * @param {Object} form
-   *   The components parent form.
-   * @param {Object} component
-   *   The component to uniquify
-   */
-  uniquify: function uniquify(form, component) {
-    var changed = false;
-    var formKeys = {};
-    (0, _utils.eachComponent)(form.components, function (comp) {
-      formKeys[comp.key] = true;
-    }); // Recurse into all child components.
-
-    (0, _utils.eachComponent)([component], function (component) {
-      // Skip key uniquification if this component doesn't have a key.
-      if (!component.key) {
-        return;
-      }
-
-      var newKey = (0, _utils.uniqueKey)(formKeys, component.key);
-
-      if (newKey !== component.key) {
-        component.key = newKey;
-        changed = true;
-      }
-    }, true);
-    return changed;
-  },
-  additionalShortcuts: {
-    button: ['Enter', 'Esc']
-  },
-  getAlphaShortcuts: function getAlphaShortcuts() {
-    return _lodash.default.range('A'.charCodeAt(), 'Z'.charCodeAt() + 1).map(function (charCode) {
-      return String.fromCharCode(charCode);
-    });
-  },
-  getAdditionalShortcuts: function getAdditionalShortcuts(type) {
-    return this.additionalShortcuts[type] || [];
-  },
-  getBindedShortcuts: function getBindedShortcuts(components, input) {
-    var result = [];
-    (0, _utils.eachComponent)(components, function (component) {
-      if (component === input) {
-        return;
-      }
-
-      if (component.shortcut) {
-        result.push(component.shortcut);
-      }
-
-      if (component.values) {
-        component.values.forEach(function (value) {
-          if (value.shortcut) {
-            result.push(value.shortcut);
-          }
-        });
-      }
-    }, true);
-    return result;
-  },
-  getAvailableShortcuts: function getAvailableShortcuts(form, component) {
-    if (!component) {
-      return [];
-    }
-
-    return [''].concat(_lodash.default.difference(this.getAlphaShortcuts().concat(this.getAdditionalShortcuts(component.type)), this.getBindedShortcuts(form.components, component)));
-  }
-};
-exports.default = _default;
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/utils/formUtils.js":
-/*!**************************************************!*\
-  !*** ./node_modules/formiojs/utils/formUtils.js ***!
-  \**************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.isLayoutComponent = isLayoutComponent;
-exports.eachComponent = eachComponent;
-exports.matchComponent = matchComponent;
-exports.getComponent = getComponent;
-exports.findComponents = findComponents;
-exports.flattenComponents = flattenComponents;
-exports.hasCondition = hasCondition;
-exports.parseFloatExt = parseFloatExt;
-exports.formatAsCurrency = formatAsCurrency;
-exports.escapeRegExCharacters = escapeRegExCharacters;
-exports.getValue = getValue;
-
-__webpack_require__(/*! core-js/modules/es6.string.iterator */ "./node_modules/core-js/modules/es6.string.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es6.array.from */ "./node_modules/core-js/modules/es6.array.from.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.to-string */ "./node_modules/core-js/modules/es6.regexp.to-string.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.split */ "./node_modules/core-js/modules/es6.regexp.split.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/core-js/modules/es6.regexp.replace.js");
-
-__webpack_require__(/*! core-js/modules/es7.array.includes */ "./node_modules/core-js/modules/es7.array.includes.js");
-
-__webpack_require__(/*! core-js/modules/es6.string.includes */ "./node_modules/core-js/modules/es6.string.includes.js");
-
-__webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
-
-var _get = _interopRequireDefault(__webpack_require__(/*! lodash/get */ "./node_modules/formiojs/node_modules/lodash/get.js"));
-
-var _has = _interopRequireDefault(__webpack_require__(/*! lodash/has */ "./node_modules/formiojs/node_modules/lodash/has.js"));
-
-var _clone = _interopRequireDefault(__webpack_require__(/*! lodash/clone */ "./node_modules/formiojs/node_modules/lodash/clone.js"));
-
-var _forOwn = _interopRequireDefault(__webpack_require__(/*! lodash/forOwn */ "./node_modules/formiojs/node_modules/lodash/forOwn.js"));
-
-var _isString = _interopRequireDefault(__webpack_require__(/*! lodash/isString */ "./node_modules/formiojs/node_modules/lodash/isString.js"));
-
-var _isNaN = _interopRequireDefault(__webpack_require__(/*! lodash/isNaN */ "./node_modules/formiojs/node_modules/lodash/isNaN.js"));
-
-var _isNil = _interopRequireDefault(__webpack_require__(/*! lodash/isNil */ "./node_modules/formiojs/node_modules/lodash/isNil.js"));
-
-var _isPlainObject = _interopRequireDefault(__webpack_require__(/*! lodash/isPlainObject */ "./node_modules/formiojs/node_modules/lodash/isPlainObject.js"));
-
-var _round = _interopRequireDefault(__webpack_require__(/*! lodash/round */ "./node_modules/formiojs/node_modules/lodash/round.js"));
-
-var _chunk = _interopRequireDefault(__webpack_require__(/*! lodash/chunk */ "./node_modules/formiojs/node_modules/lodash/chunk.js"));
-
-var _pad = _interopRequireDefault(__webpack_require__(/*! lodash/pad */ "./node_modules/formiojs/node_modules/lodash/pad.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * Determine if a component is a layout component or not.
- *
- * @param {Object} component
- *   The component to check.
- *
- * @returns {Boolean}
- *   Whether or not the component is a layout component.
- */
-function isLayoutComponent(component) {
-  return Boolean(component.columns && Array.isArray(component.columns) || component.rows && Array.isArray(component.rows) || component.components && Array.isArray(component.components));
-}
-/**
- * Iterate through each component within a form.
- *
- * @param {Object} components
- *   The components to iterate.
- * @param {Function} fn
- *   The iteration function to invoke for each component.
- * @param {Boolean} includeAll
- *   Whether or not to include layout components.
- * @param {String} path
- *   The current data path of the element. Example: data.user.firstName
- * @param {Object} parent
- *   The parent object.
- */
-
-
-function eachComponent(components, fn, includeAll, path, parent) {
-  if (!components) return;
-  path = path || '';
-  components.forEach(function (component) {
-    if (!component) {
-      return;
-    }
-
-    var hasColumns = component.columns && Array.isArray(component.columns);
-    var hasRows = component.rows && Array.isArray(component.rows);
-    var hasComps = component.components && Array.isArray(component.components);
-    var noRecurse = false;
-    var newPath = component.key ? path ? "".concat(path, ".").concat(component.key) : component.key : ''; // Keep track of parent references.
-
-    if (parent) {
-      // Ensure we don't create infinite JSON structures.
-      component.parent = (0, _clone.default)(parent);
-      delete component.parent.components;
-      delete component.parent.componentMap;
-      delete component.parent.columns;
-      delete component.parent.rows;
-    }
-
-    if (includeAll || component.tree || !hasColumns && !hasRows && !hasComps) {
-      noRecurse = fn(component, newPath);
-    }
-
-    var subPath = function subPath() {
-      if (component.key && !['panel', 'table', 'well', 'columns', 'fieldset', 'tabs', 'form'].includes(component.type) && (['datagrid', 'container', 'editgrid'].includes(component.type) || component.tree)) {
-        return newPath;
-      } else if (component.key && component.type === 'form') {
-        return "".concat(newPath, ".data");
-      }
-
-      return path;
-    };
-
-    if (!noRecurse) {
-      if (hasColumns) {
-        component.columns.forEach(function (column) {
-          return eachComponent(column.components, fn, includeAll, subPath(), parent ? component : null);
-        });
-      } else if (hasRows) {
-        component.rows.forEach(function (row) {
-          if (Array.isArray(row)) {
-            row.forEach(function (column) {
-              return eachComponent(column.components, fn, includeAll, subPath(), parent ? component : null);
-            });
-          }
-        });
-      } else if (hasComps) {
-        eachComponent(component.components, fn, includeAll, subPath(), parent ? component : null);
-      }
-    }
-  });
-}
-/**
- * Matches if a component matches the query.
- *
- * @param component
- * @param query
- * @return {boolean}
- */
-
-
-function matchComponent(component, query) {
-  if ((0, _isString.default)(query)) {
-    return component.key === query;
-  } else {
-    var matches = false;
-    (0, _forOwn.default)(query, function (value, key) {
-      matches = (0, _get.default)(component, key) === value;
-
-      if (!matches) {
-        return false;
-      }
-    });
-    return matches;
-  }
-}
-/**
- * Get a component by its key
- *
- * @param {Object} components
- *   The components to iterate.
- * @param {String|Object} key
- *   The key of the component to get, or a query of the component to search.
- *
- * @returns {Object}
- *   The component that matches the given key, or undefined if not found.
- */
-
-
-function getComponent(components, key, includeAll) {
-  var result;
-  eachComponent(components, function (component, path) {
-    if (path === key) {
-      component.path = path;
-      result = component;
-      return true;
-    }
-  }, includeAll);
-  return result;
-}
-/**
- * Finds a component provided a query of properties of that component.
- *
- * @param components
- * @param query
- * @return {*}
- */
-
-
-function findComponents(components, query) {
-  var results = [];
-  eachComponent(components, function (component, path) {
-    if (matchComponent(component, query)) {
-      component.path = path;
-      results.push(component);
-    }
-  }, true);
-  return results;
-}
-/**
- * Flatten the form components for data manipulation.
- *
- * @param {Object} components
- *   The components to iterate.
- * @param {Boolean} includeAll
- *   Whether or not to include layout components.
- *
- * @returns {Object}
- *   The flattened components map.
- */
-
-
-function flattenComponents(components, includeAll) {
-  var flattened = {};
-  eachComponent(components, function (component, path) {
-    flattened[path] = component;
-  }, includeAll);
-  return flattened;
-}
-/**
- * Returns if this component has a conditional statement.
- *
- * @param component - The component JSON schema.
- *
- * @returns {boolean} - TRUE - This component has a conditional, FALSE - No conditional provided.
- */
-
-
-function hasCondition(component) {
-  return Boolean(component.customConditional || component.conditional && component.conditional.when || component.conditional && component.conditional.json);
-}
-/**
- * Extension of standard #parseFloat(value) function, that also clears input string.
- *
- * @param {any} value
- *   The value to parse.
- *
- * @returns {Number}
- *   Parsed value.
- */
-
-
-function parseFloatExt(value) {
-  return parseFloat((0, _isString.default)(value) ? value.replace(/[^\de.+-]/gi, '') : value);
-}
-/**
- * Formats provided value in way how Currency component uses it.
- *
- * @param {any} value
- *   The value to format.
- *
- * @returns {String}
- *   Value formatted for Currency component.
- */
-
-
-function formatAsCurrency(value) {
-  var parsedValue = parseFloatExt(value);
-
-  if ((0, _isNaN.default)(parsedValue)) {
-    return '';
-  }
-
-  var parts = (0, _round.default)(parsedValue, 2).toString().split('.');
-  parts[0] = (0, _chunk.default)(Array.from(parts[0]).reverse(), 3).reverse().map(function (part) {
-    return part.reverse().join('');
-  }).join(',');
-  parts[1] = (0, _pad.default)(parts[1], 2, '0');
-  return parts.join('.');
-}
-/**
- * Escapes RegEx characters in provided String value.
- *
- * @param {String} value
- *   String for escaping RegEx characters.
- * @returns {string}
- *   String with escaped RegEx characters.
- */
-
-
-function escapeRegExCharacters(value) {
-  return value.replace(/[-[\]/{}()*+?.\\^$|]/g, '\\$&');
-}
-/**
- * Get the value for a component key, in the given submission.
- *
- * @param {Object} submission
- *   A submission object to search.
- * @param {String} key
- *   A for components API key to search for.
- */
-
-
-function getValue(submission, key) {
-  var search = function search(data) {
-    if ((0, _isPlainObject.default)(data)) {
-      if ((0, _has.default)(data, key)) {
-        return data[key];
-      }
-
-      var value = null;
-      (0, _forOwn.default)(data, function (prop) {
-        var result = search(prop);
-
-        if (!(0, _isNil.default)(result)) {
-          value = result;
-          return false;
-        }
-      });
-      return value;
-    } else {
-      return null;
-    }
-  };
-
-  return search(submission.data);
-}
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/utils/index.js":
-/*!**********************************************!*\
-  !*** ./node_modules/formiojs/utils/index.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(global) {
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-__webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_modules/core-js/modules/es7.symbol.async-iterator.js");
-
-__webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
-
-var FormioUtils = _interopRequireWildcard(__webpack_require__(/*! ./utils */ "./node_modules/formiojs/utils/utils.js"));
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = Object.defineProperty && Object.getOwnPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : {}; if (desc.get || desc.set) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } } newObj.default = obj; return newObj; } }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-if ((typeof global === "undefined" ? "undefined" : _typeof(global)) === 'object') {
-  global.FormioUtils = FormioUtils;
-}
-
-var _default = FormioUtils;
-exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../webpack/buildin/global.js */ "./node_modules/webpack/buildin/global.js")))
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/utils/jsonlogic/operators.js":
-/*!************************************************************!*\
-  !*** ./node_modules/formiojs/utils/jsonlogic/operators.js ***!
-  \************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.lodashOperators = void 0;
-// Use only immutable useful functions from Lodash.
-// Visit https://lodash.com/docs for more info.
-var lodashOperators = [// Array
-'chunk', 'compact', 'concat', 'difference', 'differenceBy', 'differenceWith', 'drop', 'dropRight', 'dropRightWhile', 'dropWhile', 'findIndex', 'findLastIndex', 'first', 'flatten', 'flattenDeep', 'flattenDepth', 'fromPairs', 'head', 'indexOf', 'initial', 'intersection', 'intersectionBy', 'intersectionWith', 'join', 'last', 'lastIndexOf', 'nth', 'slice', 'sortedIndex', 'sortedIndexBy', 'sortedIndexOf', 'sortedLastIndex', 'sortedLastIndexBy', 'sortedLastIndexOf', 'sortedUniq', 'sortedUniqBy', 'tail', 'take', 'takeRight', 'takeRightWhile', 'takeWhile', 'union', 'unionBy', 'unionWith', 'uniq', 'uniqBy', 'uniqWith', 'unzip', 'unzipWith', 'without', 'xor', 'xorBy', 'xorWith', 'zip', 'zipObject', 'zipObjectDeep', 'zipWith', // Collection
-'countBy', 'every', 'filter', 'find', 'findLast', 'flatMap', 'flatMapDeep', 'flatMapDepth', 'groupBy', 'includes', 'invokeMap', 'keyBy', 'map', 'orderBy', 'partition', 'reduce', 'reduceRight', 'reject', 'sample', 'sampleSize', 'shuffle', 'size', 'some', 'sortBy', // Date
-'now', // Function
-'flip', 'negate', 'overArgs', 'partial', 'partialRight', 'rearg', 'rest', 'spread', // Lang
-'castArray', 'clone', 'cloneDeep', 'cloneDeepWith', 'cloneDeep', 'conformsTo', 'eq', 'gt', 'gte', 'isArguments', 'isArray', 'isArrayBuffer', 'isArrayLike', 'isArrayLikeObject', 'isBoolean', 'isBuffer', 'isDate', 'isElement', 'isEmpty', 'isEqual', 'isEqualWith', 'isError', 'isFinite', 'isFunction', 'isInteger', 'isLength', 'isMap', 'isMatch', 'isMatchWith', 'isNaN', 'isNative', 'isNil', 'isNull', 'isNumber', 'isObject', 'isObjectLike', 'isPlainObject', 'isRegExp', 'isSafeInteger', 'isSet', 'isString', 'isSymbol', 'isTypedArray', 'isUndefined', 'isWeakMap', 'isWeakSet', 'lt', 'lte', 'toArray', 'toFinite', 'toInteger', 'toLength', 'toNumber', 'toPlainObject', 'toSafeInteger', 'toString', // Math
-'add', 'ceil', 'divide', 'floor', 'max', 'maxBy', 'mean', 'meanBy', 'min', 'minBy', 'multiply', 'round', 'subtract', 'sum', 'sumBy', // Number
-'clamp', 'inRange', 'random', // Object
-'at', 'entries', 'entriesIn', 'findKey', 'findLastKey', 'functions', 'functionsIn', 'get', 'has', 'hasIn', 'invert', 'invertBy', 'invoke', 'keys', 'keysIn', 'mapKeys', 'mapValues', 'omit', 'omitBy', 'pick', 'pickBy', 'result', 'toPairs', 'toPairsIn', 'transform', 'values', 'valuesIn', // String
-'camelCase', 'capitalize', 'deburr', 'endsWith', 'escape', 'escapeRegExp', 'kebabCase', 'lowerCase', 'lowerFirst', 'pad', 'padEnd', 'padStart', 'parseInt', 'repeat', 'replace', 'snakeCase', 'split', 'startCase', 'startsWith', 'toLower', 'toUpper', 'trim', 'trimEnd', 'trimStart', 'truncate', 'unescape', 'upperCase', 'upperFirst', 'words', // Util
-'cond', 'conforms', 'constant', 'defaultTo', 'flow', 'flowRight', 'identity', 'iteratee', 'matches', 'matchesProperty', 'method', 'methodOf', 'nthArg', 'over', 'overEvery', 'overSome', 'property', 'propertyOf', 'range', 'rangeRight', 'stubArray', 'stubFalse', 'stubObject', 'stubString', 'stubTrue', 'times', 'toPath', 'uniqueId'];
-exports.lodashOperators = lodashOperators;
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/utils/utils.js":
-/*!**********************************************!*\
-  !*** ./node_modules/formiojs/utils/utils.js ***!
-  \**********************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function($) {
-
-__webpack_require__(/*! core-js/modules/es6.object.keys */ "./node_modules/core-js/modules/es6.object.keys.js");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-var _exportNames = {
-  evaluate: true,
-  getRandomComponentId: true,
-  getPropertyValue: true,
-  getElementRect: true,
-  boolValue: true,
-  isMongoId: true,
-  checkCalculated: true,
-  checkSimpleConditional: true,
-  checkCustomConditional: true,
-  checkJsonConditional: true,
-  checkCondition: true,
-  checkTrigger: true,
-  setActionProperty: true,
-  interpolate: true,
-  uniqueName: true,
-  guid: true,
-  getDateSetting: true,
-  isValidDate: true,
-  currentTimezone: true,
-  offsetDate: true,
-  zonesLoaded: true,
-  shouldLoadZones: true,
-  loadZones: true,
-  momentDate: true,
-  formatDate: true,
-  formatOffset: true,
-  getLocaleDateFormatInfo: true,
-  convertFormatToFlatpickr: true,
-  convertFormatToMoment: true,
-  convertFormatToMask: true,
-  getInputMask: true,
-  matchInputMask: true,
-  getNumberSeparators: true,
-  getNumberDecimalLimit: true,
-  getCurrencyAffixes: true,
-  fieldData: true,
-  delay: true,
-  iterateKey: true,
-  uniqueKey: true,
-  bootstrapVersion: true,
-  jsonLogic: true,
-  moment: true
-};
-exports.evaluate = evaluate;
-exports.getRandomComponentId = getRandomComponentId;
-exports.getPropertyValue = getPropertyValue;
-exports.getElementRect = getElementRect;
-exports.boolValue = boolValue;
-exports.isMongoId = isMongoId;
-exports.checkCalculated = checkCalculated;
-exports.checkSimpleConditional = checkSimpleConditional;
-exports.checkCustomConditional = checkCustomConditional;
-exports.checkJsonConditional = checkJsonConditional;
-exports.checkCondition = checkCondition;
-exports.checkTrigger = checkTrigger;
-exports.setActionProperty = setActionProperty;
-exports.interpolate = interpolate;
-exports.uniqueName = uniqueName;
-exports.guid = guid;
-exports.getDateSetting = getDateSetting;
-exports.isValidDate = isValidDate;
-exports.currentTimezone = currentTimezone;
-exports.offsetDate = offsetDate;
-exports.zonesLoaded = zonesLoaded;
-exports.shouldLoadZones = shouldLoadZones;
-exports.loadZones = loadZones;
-exports.momentDate = momentDate;
-exports.formatDate = formatDate;
-exports.formatOffset = formatOffset;
-exports.getLocaleDateFormatInfo = getLocaleDateFormatInfo;
-exports.convertFormatToFlatpickr = convertFormatToFlatpickr;
-exports.convertFormatToMoment = convertFormatToMoment;
-exports.convertFormatToMask = convertFormatToMask;
-exports.getInputMask = getInputMask;
-exports.matchInputMask = matchInputMask;
-exports.getNumberSeparators = getNumberSeparators;
-exports.getNumberDecimalLimit = getNumberDecimalLimit;
-exports.getCurrencyAffixes = getCurrencyAffixes;
-exports.fieldData = fieldData;
-exports.delay = delay;
-exports.iterateKey = iterateKey;
-exports.uniqueKey = uniqueKey;
-exports.bootstrapVersion = bootstrapVersion;
-Object.defineProperty(exports, "jsonLogic", {
-  enumerable: true,
-  get: function get() {
-    return _jsonLogicJs.default;
-  }
-});
-Object.defineProperty(exports, "moment", {
-  enumerable: true,
-  get: function get() {
-    return _momentTimezone.default;
-  }
-});
-
-__webpack_require__(/*! core-js/modules/es6.reflect.construct */ "./node_modules/core-js/modules/es6.reflect.construct.js");
-
-__webpack_require__(/*! core-js/modules/es6.string.iterator */ "./node_modules/core-js/modules/es6.string.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es6.array.from */ "./node_modules/core-js/modules/es6.array.from.js");
-
-__webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_modules/core-js/modules/es7.symbol.async-iterator.js");
-
-__webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
-
-__webpack_require__(/*! core-js/modules/es6.number.constructor */ "./node_modules/core-js/modules/es6.number.constructor.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.constructor */ "./node_modules/core-js/modules/es6.regexp.constructor.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.split */ "./node_modules/core-js/modules/es6.regexp.split.js");
-
-__webpack_require__(/*! core-js/modules/es7.array.includes */ "./node_modules/core-js/modules/es7.array.includes.js");
-
-__webpack_require__(/*! core-js/modules/es6.string.includes */ "./node_modules/core-js/modules/es6.string.includes.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.match */ "./node_modules/core-js/modules/es6.regexp.match.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.to-string */ "./node_modules/core-js/modules/es6.regexp.to-string.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/core-js/modules/es6.regexp.replace.js");
-
-__webpack_require__(/*! core-js/modules/es6.array.iterator */ "./node_modules/core-js/modules/es6.array.iterator.js");
-
-__webpack_require__(/*! core-js/modules/es6.function.name */ "./node_modules/core-js/modules/es6.function.name.js");
-
-__webpack_require__(/*! core-js/modules/web.dom.iterable */ "./node_modules/core-js/modules/web.dom.iterable.js");
-
-var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
-
-__webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
-
-var _jsonLogicJs = _interopRequireDefault(__webpack_require__(/*! json-logic-js */ "./node_modules/json-logic-js/logic.js"));
-
-var _momentTimezone = _interopRequireDefault(__webpack_require__(/*! moment-timezone/moment-timezone */ "./node_modules/moment-timezone/moment-timezone.js"));
-
-var _jstimezonedetect = _interopRequireDefault(__webpack_require__(/*! jstimezonedetect */ "./node_modules/jstimezonedetect/dist/jstz.js"));
-
-var _operators = __webpack_require__(/*! ./jsonlogic/operators */ "./node_modules/formiojs/utils/jsonlogic/operators.js");
-
-var _nativePromiseOnly = _interopRequireDefault(__webpack_require__(/*! native-promise-only */ "./node_modules/native-promise-only/lib/npo.src.js"));
-
-var _formUtils = __webpack_require__(/*! ./formUtils */ "./node_modules/formiojs/utils/formUtils.js");
-
-Object.keys(_formUtils).forEach(function (key) {
-  if (key === "default" || key === "__esModule") return;
-  if (Object.prototype.hasOwnProperty.call(_exportNames, key)) return;
-  Object.defineProperty(exports, key, {
-    enumerable: true,
-    get: function get() {
-      return _formUtils[key];
-    }
-  });
-});
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
-
-function _construct(Parent, args, Class) { if (isNativeReflectConstruct()) { _construct = Reflect.construct; } else { _construct = function _construct(Parent, args, Class) { var a = [null]; a.push.apply(a, args); var Constructor = Function.bind.apply(Parent, a); var instance = new Constructor(); if (Class) _setPrototypeOf(instance, Class.prototype); return instance; }; } return _construct.apply(null, arguments); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-// Configure JsonLogic
-_operators.lodashOperators.forEach(function (name) {
-  return _jsonLogicJs.default.add_operation("_".concat(name), _lodash.default[name]);
-}); // Retrieve Any Date
-
-
-_jsonLogicJs.default.add_operation('getDate', function (date) {
-  return (0, _momentTimezone.default)(date).toISOString();
-}); // Set Relative Minimum Date
-
-
-_jsonLogicJs.default.add_operation('relativeMinDate', function (relativeMinDate) {
-  return (0, _momentTimezone.default)().subtract(relativeMinDate, 'days').toISOString();
-}); // Set Relative Maximum Date
-
-
-_jsonLogicJs.default.add_operation('relativeMaxDate', function (relativeMaxDate) {
-  return (0, _momentTimezone.default)().add(relativeMaxDate, 'days').toISOString();
-});
-
-/**
- * Evaluate a method.
- *
- * @param func
- * @param args
- * @return {*}
- */
-function evaluate(func, args, ret, tokenize) {
-  var returnVal = null;
-  var component = args.component ? args.component : {
-    key: 'unknown'
-  };
-
-  if (!args.form && args.instance) {
-    args.form = _lodash.default.get(args.instance, 'root._form', {});
-  }
-
-  if (typeof func === 'string') {
-    if (ret) {
-      func += ";return ".concat(ret);
-    }
-
-    var params = _lodash.default.keys(args);
-
-    if (tokenize) {
-      // Replace all {{ }} references with actual data.
-      func = func.replace(/({{\s+(.*)\s+}})/, function (match, $1, $2) {
-        if ($2.indexOf('data.') === 0) {
-          return _lodash.default.get(args.data, $2.replace('data.', ''));
-        } else if ($2.indexOf('row.') === 0) {
-          return _lodash.default.get(args.row, $2.replace('row.', ''));
-        } // Support legacy...
-
-
-        return _lodash.default.get(args.data, $2);
-      });
-    }
-
-    try {
-      func = _construct(Function, _toConsumableArray(params).concat([func]));
-      args = _lodash.default.values(args);
-    } catch (err) {
-      console.warn("An error occured within the custom function for ".concat(component.key), err);
-      returnVal = null;
-      func = false;
-    }
-  }
-
-  if (typeof func === 'function') {
-    try {
-      returnVal = Array.isArray(args) ? func.apply(void 0, _toConsumableArray(args)) : func(args);
-    } catch (err) {
-      returnVal = null;
-      console.warn("An error occured within custom function for ".concat(component.key), err);
-    }
-  } else if (_typeof(func) === 'object') {
-    try {
-      returnVal = _jsonLogicJs.default.apply(func, args);
-    } catch (err) {
-      returnVal = null;
-      console.warn("An error occured within custom function for ".concat(component.key), err);
-    }
-  } else if (func) {
-    console.warn("Unknown function type for ".concat(component.key));
-  }
-
-  return returnVal;
-}
-
-function getRandomComponentId() {
-  return "e".concat(Math.random().toString(36).substring(7));
-}
-/**
- * Get a property value of an element.
- *
- * @param style
- * @param prop
- * @return {number}
- */
-
-
-function getPropertyValue(style, prop) {
-  var value = style.getPropertyValue(prop);
-  value = value ? value.replace(/[^0-9.]/g, '') : '0';
-  return parseFloat(value);
-}
-/**
- * Get an elements bounding rectagle.
- *
- * @param element
- * @return {{x: string, y: string, width: string, height: string}}
- */
-
-
-function getElementRect(element) {
-  var style = window.getComputedStyle(element, null);
-  return {
-    x: getPropertyValue(style, 'left'),
-    y: getPropertyValue(style, 'top'),
-    width: getPropertyValue(style, 'width'),
-    height: getPropertyValue(style, 'height')
-  };
-}
-/**
- * Determines the boolean value of a setting.
- *
- * @param value
- * @return {boolean}
- */
-
-
-function boolValue(value) {
-  if (_lodash.default.isBoolean(value)) {
-    return value;
-  } else if (_lodash.default.isString(value)) {
-    return value.toLowerCase() === 'true';
-  } else {
-    return !!value;
-  }
-}
-/**
- * Check to see if an ID is a mongoID.
- * @param text
- * @return {Array|{index: number, input: string}|Boolean|*}
- */
-
-
-function isMongoId(text) {
-  return text.toString().match(/^[0-9a-fA-F]{24}$/);
-}
-/**
- * Checks the calculated value for a provided component and data.
- *
- * @param {Object} component
- *   The component to check for the calculated value.
- * @param {Object} submission
- *   A submission object.
- * @param data
- *   The full submission data.
- */
-
-
-function checkCalculated(component, submission, rowData) {
-  // Process calculated value stuff if present.
-  if (component.calculateValue) {
-    _lodash.default.set(rowData, component.key, evaluate(component.calculateValue, {
-      value: undefined,
-      data: submission ? submission.data : rowData,
-      row: rowData,
-      util: this,
-      component: component
-    }, 'value'));
-  }
-}
-/**
- * Check if a simple conditional evaluates to true.
- *
- * @param condition
- * @param condition
- * @param row
- * @param data
- * @returns {boolean}
- */
-
-
-function checkSimpleConditional(component, condition, row, data) {
-  var value = null;
-
-  if (row) {
-    value = (0, _formUtils.getValue)({
-      data: row
-    }, condition.when);
-  }
-
-  if (data && _lodash.default.isNil(value)) {
-    value = (0, _formUtils.getValue)({
-      data: data
-    }, condition.when);
-  } // FOR-400 - Fix issue where falsey values were being evaluated as show=true
-
-
-  if (_lodash.default.isNil(value)) {
-    value = '';
-  }
-
-  var eq = String(condition.eq);
-  var show = String(condition.show); // Special check for selectboxes component.
-
-  if (_lodash.default.isObject(value) && _lodash.default.has(value, condition.eq)) {
-    return String(value[condition.eq]) === show;
-  } // FOR-179 - Check for multiple values.
-
-
-  if (Array.isArray(value) && value.map(String).includes(eq)) {
-    return show === 'true';
-  }
-
-  return String(value) === eq === (show === 'true');
-}
-/**
- * Check custom javascript conditional.
- *
- * @param component
- * @param custom
- * @param row
- * @param data
- * @returns {*}
- */
-
-
-function checkCustomConditional(component, custom, row, data, form, variable, onError, instance) {
-  if (typeof custom === 'string') {
-    custom = "var ".concat(variable, " = true; ").concat(custom, "; return ").concat(variable, ";");
-  }
-
-  var value = instance && instance.evaluate ? instance.evaluate(custom) : evaluate(custom, {
-    row: row,
-    data: data,
-    form: form
-  });
-
-  if (value === null) {
-    return onError;
-  }
-
-  return value;
-}
-
-function checkJsonConditional(component, json, row, data, form, onError) {
-  try {
-    return _jsonLogicJs.default.apply(json, {
-      data: data,
-      row: row,
-      form: form,
-      _: _lodash.default
-    });
-  } catch (err) {
-    console.warn("An error occurred in jsonLogic advanced condition for ".concat(component.key), err);
-    return onError;
-  }
-}
-/**
- * Checks the conditions for a provided component and data.
- *
- * @param component
- *   The component to check for the condition.
- * @param row
- *   The data within a row
- * @param data
- *   The full submission data.
- *
- * @returns {boolean}
- */
-
-
-function checkCondition(component, row, data, form, instance) {
-  if (component.customConditional) {
-    return checkCustomConditional(component, component.customConditional, row, data, form, 'show', true, instance);
-  } else if (component.conditional && component.conditional.when) {
-    return checkSimpleConditional(component, component.conditional, row, data, true);
-  } else if (component.conditional && component.conditional.json) {
-    return checkJsonConditional(component, component.conditional.json, row, data, form, instance);
-  } // Default to show.
-
-
-  return true;
-}
-/**
- * Test a trigger on a component.
- *
- * @param component
- * @param action
- * @param data
- * @param row
- * @returns {mixed}
- */
-
-
-function checkTrigger(component, trigger, row, data, form, instance) {
-  switch (trigger.type) {
-    case 'simple':
-      return checkSimpleConditional(component, trigger.simple, row, data);
-
-    case 'javascript':
-      return checkCustomConditional(component, trigger.javascript, row, data, form, 'result', false, instance);
-
-    case 'json':
-      return checkJsonConditional(component, trigger.json, row, data, form, false);
-  } // If none of the types matched, don't fire the trigger.
-
-
-  return false;
-}
-
-function setActionProperty(component, action, row, data, result, instance) {
-  switch (action.property.type) {
-    case 'boolean':
-      if (_lodash.default.get(component, action.property.value, false).toString() !== action.state.toString()) {
-        _lodash.default.set(component, action.property.value, action.state.toString() === 'true');
-      }
-
-      break;
-
-    case 'string':
-      {
-        var evalData = {
-          data: data,
-          row: row,
-          component: component,
-          result: result
-        };
-        var textValue = action.property.component ? action[action.property.component] : action.text;
-        var newValue = instance && instance.interpolate ? instance.interpolate(textValue, evalData) : interpolate(textValue, evalData);
-
-        if (newValue !== _lodash.default.get(component, action.property.value, '')) {
-          _lodash.default.set(component, action.property.value, newValue);
-        }
-
-        break;
-      }
-  }
-
-  return component;
-}
-/**
- * Interpolate a string and add data replacements.
- *
- * @param string
- * @param data
- * @returns {XML|string|*|void}
- */
-
-
-function interpolate(string, data) {
-  var templateSettings = {
-    evaluate: /\{%(.+?)%\}/g,
-    interpolate: /\{\{(.+?)\}\}/g,
-    escape: /\{\{\{(.+?)\}\}\}/g
-  };
-
-  try {
-    return _lodash.default.template(string, templateSettings)(data);
-  } catch (err) {
-    console.warn('Error interpolating template', err, string, data);
-  }
-}
-/**
- * Make a filename guaranteed to be unique.
- * @param name
- * @returns {string}
- */
-
-
-function uniqueName(name) {
-  var parts = name.toLowerCase().replace(/[^0-9a-z.]/g, '').split('.');
-  var fileName = parts[0];
-  var ext = parts.length > 1 ? ".".concat(_lodash.default.last(parts)) : '';
-  return "".concat(fileName.substr(0, 10), "-").concat(guid()).concat(ext);
-}
-
-function guid() {
-  return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
-    var r = Math.random() * 16 | 0;
-    var v = c === 'x' ? r : r & 0x3 | 0x8;
-    return v.toString(16);
-  });
-}
-/**
- * Return a translated date setting.
- *
- * @param date
- * @return {(null|Date)}
- */
-
-
-function getDateSetting(date) {
-  if (_lodash.default.isNil(date) || _lodash.default.isNaN(date) || date === '') {
-    return null;
-  }
-
-  if (date instanceof Date) {
-    return date;
-  } else if (typeof date.toDate === 'function') {
-    return date.isValid() ? date.toDate() : null;
-  }
-
-  var dateSetting = typeof date !== 'string' || date.indexOf('moment(') === -1 ? (0, _momentTimezone.default)(date) : null;
-
-  if (dateSetting && dateSetting.isValid()) {
-    return dateSetting.toDate();
-  }
-
-  dateSetting = null;
-
-  try {
-    var value = new Function('moment', "return ".concat(date, ";"))(_momentTimezone.default);
-
-    if (typeof value === 'string') {
-      dateSetting = (0, _momentTimezone.default)(value);
-    } else if (typeof value.toDate === 'function') {
-      dateSetting = (0, _momentTimezone.default)(value.toDate().toUTCString());
-    } else if (value instanceof Date) {
-      dateSetting = (0, _momentTimezone.default)(value);
-    }
-  } catch (e) {
-    return null;
-  }
-
-  if (!dateSetting) {
-    return null;
-  } // Ensure this is a date.
-
-
-  if (!dateSetting.isValid()) {
-    return null;
-  }
-
-  return dateSetting.toDate();
-}
-
-function isValidDate(date) {
-  return _lodash.default.isDate(date) && !_lodash.default.isNaN(date.getDate());
-}
-/**
- * Get the current timezone string.
- *
- * @return {string}
- */
-
-
-function currentTimezone() {
-  if (_momentTimezone.default.currentTimezone) {
-    return _momentTimezone.default.currentTimezone;
-  }
-
-  _momentTimezone.default.currentTimezone = _jstimezonedetect.default.determine().name();
-  return _momentTimezone.default.currentTimezone;
-}
-/**
- * Get an offset date provided a date object and timezone object.
- *
- * @param date
- * @param timezone
- * @return {Date}
- */
-
-
-function offsetDate(date, timezone) {
-  if (timezone === 'UTC') {
-    return {
-      date: new Date(date.getTime() + date.getTimezoneOffset() * 60000),
-      abbr: 'UTC'
-    };
-  }
-
-  var dateMoment = (0, _momentTimezone.default)(date).tz(timezone);
-  return {
-    date: new Date(date.getTime() + (dateMoment.utcOffset() + date.getTimezoneOffset()) * 60000),
-    abbr: dateMoment.format('z')
-  };
-}
-/**
- * Returns if the zones are loaded.
- *
- * @return {boolean}
- */
-
-
-function zonesLoaded() {
-  return _momentTimezone.default.zonesLoaded;
-}
-/**
- * Returns if we should load the zones.
- *
- * @param timezone
- * @return {boolean}
- */
-
-
-function shouldLoadZones(timezone) {
-  if (timezone === currentTimezone() || timezone === 'UTC') {
-    return false;
-  }
-
-  return true;
-}
-/**
- * Externally load the timezone data.
- *
- * @return {Promise<any> | *}
- */
-
-
-function loadZones(timezone) {
-  if (timezone && !shouldLoadZones(timezone)) {
-    // Return non-resolving promise.
-    return new _nativePromiseOnly.default(_lodash.default.noop);
-  }
-
-  if (_momentTimezone.default.zonesPromise) {
-    return _momentTimezone.default.zonesPromise;
-  }
-
-  return _momentTimezone.default.zonesPromise = fetch('https://formio.github.io/formio.js/resources/latest.json').then(function (resp) {
-    return resp.json().then(function (zones) {
-      _momentTimezone.default.tz.load(zones);
-
-      _momentTimezone.default.zonesLoaded = true; // Trigger a global event that the timezones have finished loading.
-
-      if (document && document.createEvent && document.body && document.body.dispatchEvent) {
-        var event = document.createEvent('Event');
-        event.initEvent('zonesLoaded', true, true);
-        document.body.dispatchEvent(event);
-      }
-    });
-  });
-}
-/**
- * Get the moment date object for translating dates with timezones.
- *
- * @param value
- * @param format
- * @param timezone
- * @return {*}
- */
-
-
-function momentDate(value, format, timezone) {
-  var momentDate = (0, _momentTimezone.default)(value);
-
-  if (timezone === 'UTC') {
-    timezone = 'Etc/UTC';
-  }
-
-  if ((timezone !== currentTimezone() || format && format.match(/\s(z$|z\s)/)) && _momentTimezone.default.zonesLoaded) {
-    return momentDate.tz(timezone);
-  }
-
-  return momentDate;
-}
-/**
- * Format a date provided a value, format, and timezone object.
- *
- * @param value
- * @param format
- * @param timezone
- * @return {string}
- */
-
-
-function formatDate(value, format, timezone) {
-  var momentDate = (0, _momentTimezone.default)(value);
-
-  if (timezone === currentTimezone()) {
-    // See if our format contains a "z" timezone character.
-    if (format.match(/\s(z$|z\s)/)) {
-      loadZones();
-
-      if (_momentTimezone.default.zonesLoaded) {
-        return momentDate.tz(timezone).format(convertFormatToMoment(format));
-      } else {
-        return momentDate.format(convertFormatToMoment(format.replace(/\s(z$|z\s)/, '')));
-      }
-    } // Return the standard format.
-
-
-    return momentDate.format(convertFormatToMoment(format));
-  }
-
-  if (timezone === 'UTC') {
-    var offset = offsetDate(momentDate.toDate(), 'UTC');
-    return "".concat((0, _momentTimezone.default)(offset.date).format(convertFormatToMoment(format)), " UTC");
-  } // Load the zones since we need timezone information.
-
-
-  loadZones();
-
-  if (_momentTimezone.default.zonesLoaded) {
-    return momentDate.tz(timezone).format("".concat(convertFormatToMoment(format), " z"));
-  } else {
-    return momentDate.format(convertFormatToMoment(format));
-  }
-}
-/**
- * Pass a format function to format within a timezone.
- *
- * @param formatFn
- * @param date
- * @param format
- * @param timezone
- * @return {string}
- */
-
-
-function formatOffset(formatFn, date, format, timezone) {
-  if (timezone === currentTimezone()) {
-    return formatFn(date, format);
-  }
-
-  if (timezone === 'UTC') {
-    return "".concat(formatFn(offsetDate(date, 'UTC').date, format), " UTC");
-  } // Load the zones since we need timezone information.
-
-
-  loadZones();
-
-  if (_momentTimezone.default.zonesLoaded) {
-    var offset = offsetDate(date, timezone);
-    return "".concat(formatFn(offset.date, format), " ").concat(offset.abbr);
-  } else {
-    return formatFn(date, format);
-  }
-}
-
-function getLocaleDateFormatInfo(locale) {
-  var formatInfo = {};
-  var day = 21;
-  var exampleDate = new Date(2017, 11, day);
-  var localDateString = exampleDate.toLocaleDateString(locale);
-  formatInfo.dayFirst = localDateString.slice(0, 2) === day.toString();
-  return formatInfo;
-}
-/**
- * Convert the format from the angular-datepicker module to flatpickr format.
- * @param format
- * @return {string}
- */
-
-
-function convertFormatToFlatpickr(format) {
-  return format // Remove the Z timezone offset, not supported by flatpickr.
-  .replace(/Z/g, '') // Year conversion.
-  .replace(/y/g, 'Y').replace('YYYY', 'Y').replace('YY', 'y') // Month conversion.
-  .replace('MMMM', 'F').replace(/M/g, 'n').replace('nnn', 'M').replace('nn', 'm') // Day in month.
-  .replace(/d/g, 'j').replace(/jj/g, 'd') // Day in week.
-  .replace('EEEE', 'l').replace('EEE', 'D') // Hours, minutes, seconds
-  .replace('HH', 'H').replace('hh', 'h').replace('mm', 'i').replace('ss', 'S').replace(/a/g, 'K');
-}
-/**
- * Convert the format from the angular-datepicker module to moment format.
- * @param format
- * @return {string}
- */
-
-
-function convertFormatToMoment(format) {
-  return format // Year conversion.
-  .replace(/y/g, 'Y') // Day in month.
-  .replace(/d/g, 'D') // Day in week.
-  .replace(/E/g, 'd') // AM/PM marker
-  .replace(/a/g, 'A');
-}
-
-function convertFormatToMask(format) {
-  return format // Short and long month replacement.
-  .replace(/(MMM|MMMM)/g, 'MM') // Year conversion
-  .replace(/[ydhmsHM]/g, '9') // AM/PM conversion
-  .replace(/a/g, 'AA');
-}
-/**
- * Returns an input mask that is compatible with the input mask library.
- * @param {string} mask - The Form.io input mask.
- * @returns {Array} - The input mask for the mask library.
- */
-
-
-function getInputMask(mask) {
-  if (mask instanceof Array) {
-    return mask;
-  }
-
-  var maskArray = [];
-  maskArray.numeric = true;
-
-  for (var i = 0; i < mask.length; i++) {
-    switch (mask[i]) {
-      case '9':
-        maskArray.push(/\d/);
-        break;
-
-      case 'A':
-        maskArray.numeric = false;
-        maskArray.push(/[a-zA-Z]/);
-        break;
-
-      case 'a':
-        maskArray.numeric = false;
-        maskArray.push(/[a-z]/);
-        break;
-
-      case '*':
-        maskArray.numeric = false;
-        maskArray.push(/[a-zA-Z0-9]/);
-        break;
-
-      default:
-        maskArray.push(mask[i]);
-        break;
-    }
-  }
-
-  return maskArray;
-}
-
-function matchInputMask(value, inputMask) {
-  if (!inputMask) {
-    return true;
-  }
-
-  for (var i = 0; i < inputMask.length; i++) {
-    var char = value[i];
-    var charPart = inputMask[i];
-
-    if (!(_lodash.default.isRegExp(charPart) && charPart.test(char) || charPart === char)) {
-      return false;
-    }
-  }
-
-  return true;
-}
-
-function getNumberSeparators() {
-  var lang = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 'en';
-  var formattedNumberString = 12345.6789.toLocaleString(lang);
-  var delimeters = formattedNumberString.match(/..(.)...(.)../);
-
-  if (!delimeters) {
-    return {
-      delimiter: ',',
-      decimalSeparator: '.'
-    };
-  }
-
-  return {
-    delimiter: delimeters.length > 1 ? delimeters[1] : ',',
-    decimalSeparator: delimeters.length > 2 ? delimeters[2] : '.'
-  };
-}
-
-function getNumberDecimalLimit(component) {
-  // Determine the decimal limit. Defaults to 20 but can be overridden by validate.step or decimalLimit settings.
-  var decimalLimit = 20;
-
-  var step = _lodash.default.get(component, 'validate.step', 'any');
-
-  if (step !== 'any') {
-    var parts = step.toString().split('.');
-
-    if (parts.length > 1) {
-      decimalLimit = parts[1].length;
-    }
-  }
-
-  return decimalLimit;
-}
-
-function getCurrencyAffixes(_ref) {
-  var _ref$currency = _ref.currency,
-      currency = _ref$currency === void 0 ? 'USD' : _ref$currency,
-      decimalLimit = _ref.decimalLimit,
-      decimalSeparator = _ref.decimalSeparator,
-      lang = _ref.lang;
-  // Get the prefix and suffix from the localized string.
-  var regex = '(.*)?100';
-
-  if (decimalLimit) {
-    regex += "".concat(decimalSeparator === '.' ? '\\.' : decimalSeparator, "0{").concat(decimalLimit, "}");
-  }
-
-  regex += '(.*)?';
-  var parts = 100 .toLocaleString(lang, {
-    style: 'currency',
-    currency: currency,
-    useGrouping: true,
-    maximumFractionDigits: decimalLimit,
-    minimumFractionDigits: decimalLimit
-  }).replace('.', decimalSeparator).match(new RegExp(regex));
-  return {
-    prefix: parts[1] || '',
-    suffix: parts[2] || ''
-  };
-}
-/**
- * Fetch the field data provided a component.
- *
- * @param data
- * @param component
- * @return {*}
- */
-
-
-function fieldData(data, component) {
-  if (!data) {
-    return '';
-  }
-
-  if (!component || !component.key) {
-    return data;
-  }
-
-  if (component.key.includes('.')) {
-    var value = data;
-    var parts = component.key.split('.');
-    var key = '';
-
-    for (var i = 0; i < parts.length; i++) {
-      key = parts[i]; // Handle nested resources
-
-      if (value.hasOwnProperty('_id')) {
-        value = value.data;
-      } // Return if the key is not found on the value.
-
-
-      if (!value.hasOwnProperty(key)) {
-        return;
-      } // Convert old single field data in submissions to multiple
-
-
-      if (key === parts[parts.length - 1] && component.multiple && !Array.isArray(value[key])) {
-        value[key] = [value[key]];
-      } // Set the value of this key.
-
-
-      value = value[key];
-    }
-
-    return value;
-  } else {
-    // Convert old single field data in submissions to multiple
-    if (component.multiple && !Array.isArray(data[component.key])) {
-      data[component.key] = [data[component.key]];
-    }
-
-    return data[component.key];
-  }
-}
-/**
- * Delays function execution with possibility to execute function synchronously or cancel it.
- *
- * @param fn Function to delay
- * @param delay Delay time
- * @return {*}
- */
-
-
-function delay(fn) {
-  var delay = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 0;
-
-  for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
-    args[_key - 2] = arguments[_key];
-  }
-
-  var timer = setTimeout.apply(void 0, [fn, delay].concat(args));
-
-  function cancel() {
-    clearTimeout(timer);
-  }
-
-  function earlyCall() {
-    cancel();
-    return fn.apply(void 0, args);
-  }
-
-  earlyCall.timer = timer;
-  earlyCall.cancel = cancel;
-  return earlyCall;
-}
-/**
- * Iterate the given key to make it unique.
- *
- * @param {String} key
- *   Modify the component key to be unique.
- *
- * @returns {String}
- *   The new component key.
- */
-
-
-function iterateKey(key) {
-  if (!key.match(/(\d+)$/)) {
-    return "".concat(key, "2");
-  }
-
-  return key.replace(/(\d+)$/, function (suffix) {
-    return Number(suffix) + 1;
-  });
-}
-/**
- * Determines a unique key within a map provided the base key.
- *
- * @param map
- * @param base
- * @return {*}
- */
-
-
-function uniqueKey(map, base) {
-  var newKey = base;
-
-  while (map.hasOwnProperty(newKey)) {
-    newKey = iterateKey(newKey);
-  }
-
-  return newKey;
-}
-/**
- * Determines the major version number of bootstrap.
- *
- * @return {number}
- */
-
-
-function bootstrapVersion() {
-  if (typeof $ === 'function' && typeof $().collapse === 'function') {
-    return parseInt($.fn.collapse.Constructor.VERSION.split('.')[0], 10);
-  }
-
-  return 0;
-}
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! jquery */ "jquery")))
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/widgets/CalendarWidget.js":
-/*!*********************************************************!*\
-  !*** ./node_modules/formiojs/widgets/CalendarWidget.js ***!
-  \*********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-__webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_modules/core-js/modules/es7.symbol.async-iterator.js");
-
-__webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
-
-__webpack_require__(/*! core-js/modules/es6.reflect.set */ "./node_modules/core-js/modules/es6.reflect.set.js");
-
-__webpack_require__(/*! core-js/modules/es6.reflect.get */ "./node_modules/core-js/modules/es6.reflect.get.js");
-
-__webpack_require__(/*! core-js/modules/es6.regexp.replace */ "./node_modules/core-js/modules/es6.regexp.replace.js");
-
-var _flatpickr = _interopRequireDefault(__webpack_require__(/*! flatpickr */ "./node_modules/flatpickr/dist/flatpickr.js"));
-
-var _InputWidget2 = _interopRequireDefault(__webpack_require__(/*! ./InputWidget */ "./node_modules/formiojs/widgets/InputWidget.js"));
-
-var _utils = __webpack_require__(/*! ../utils/utils */ "./node_modules/formiojs/utils/utils.js");
-
-var _moment = _interopRequireDefault(__webpack_require__(/*! moment */ "./node_modules/moment/moment.js"));
-
-var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function set(target, property, value, receiver) { if (typeof Reflect !== "undefined" && Reflect.set) { set = Reflect.set; } else { set = function set(target, property, value, receiver) { var base = _superPropBase(target, property); var desc; if (base) { desc = Object.getOwnPropertyDescriptor(base, property); if (desc.set) { desc.set.call(receiver, value); return true; } else if (!desc.writable) { return false; } } desc = Object.getOwnPropertyDescriptor(receiver, property); if (desc) { if (!desc.writable) { return false; } desc.value = value; Object.defineProperty(receiver, property, desc); } else { _defineProperty(receiver, property, value); } return true; }; } return set(target, property, value, receiver); }
-
-function _set(target, property, value, receiver, isStrict) { var s = set(target, property, value, receiver || target); if (!s && isStrict) { throw new Error('failed to set property'); } return value; }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _get(target, property, receiver) { if (typeof Reflect !== "undefined" && Reflect.get) { _get = Reflect.get; } else { _get = function _get(target, property, receiver) { var base = _superPropBase(target, property); if (!base) return; var desc = Object.getOwnPropertyDescriptor(base, property); if (desc.get) { return desc.get.call(receiver); } return desc.value; }; } return _get(target, property, receiver || target); }
-
-function _superPropBase(object, property) { while (!Object.prototype.hasOwnProperty.call(object, property)) { object = _getPrototypeOf(object); if (object === null) break; } return object; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var DEFAULT_FORMAT = 'yyyy-MM-dd hh:mm a';
-var ISO_8601_FORMAT = 'yyyy-MM-ddTHH:mm:ssZ';
-
-var CalendarWidget =
-/*#__PURE__*/
-function (_InputWidget) {
-  _inherits(CalendarWidget, _InputWidget);
-
-  _createClass(CalendarWidget, null, [{
-    key: "defaultSettings",
-
-    /* eslint-disable camelcase */
-    get: function get() {
-      return {
-        type: 'calendar',
-        altInput: true,
-        allowInput: true,
-        clickOpens: true,
-        enableDate: true,
-        enableTime: true,
-        mode: 'single',
-        noCalendar: false,
-        format: DEFAULT_FORMAT,
-        dateFormat: ISO_8601_FORMAT,
-        useLocaleSettings: false,
-        language: 'us-en',
-        defaultDate: null,
-        hourIncrement: 1,
-        minuteIncrement: 5,
-        time_24hr: false,
-        saveAs: 'date',
-        displayInTimezone: '',
-        timezone: '',
-        minDate: '',
-        maxDate: ''
-      };
-    }
-    /* eslint-enable camelcase */
-
-  }]);
-
-  function CalendarWidget(settings, component) {
-    var _this;
-
-    _classCallCheck(this, CalendarWidget);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(CalendarWidget).call(this, settings, component)); // Change the format to map to the settings.
-
-    if (_this.settings.noCalendar) {
-      _this.settings.format = _this.settings.format.replace(/yyyy-MM-dd /g, '');
-    }
-
-    if (!_this.settings.enableTime) {
-      _this.settings.format = _this.settings.format.replace(/ hh:mm a$/g, '');
-    } else if (_this.settings.time_24hr) {
-      _this.settings.format = _this.settings.format.replace(/hh:mm a$/g, 'HH:mm');
-    }
-
-    _this.component.suffix = true;
-    return _this;
-  }
-  /**
-   * Load the timezones.
-   *
-   * @return {boolean} TRUE if the zones are loading, FALSE otherwise.
-   */
-
-
-  _createClass(CalendarWidget, [{
-    key: "loadZones",
-    value: function loadZones() {
-      var _this2 = this;
-
-      var timezone = this.timezone;
-
-      if (!(0, _utils.zonesLoaded)() && (0, _utils.shouldLoadZones)(timezone)) {
-        (0, _utils.loadZones)(timezone).then(function () {
-          return _this2.emit('redraw');
-        }); // Return zones are loading.
-
-        return true;
-      } // Zones are already loaded.
-
-
-      return false;
-    }
-  }, {
-    key: "attach",
-    value: function attach(input) {
-      var _this3 = this;
-
-      _get(_getPrototypeOf(CalendarWidget.prototype), "attach", this).call(this, input);
-
-      if (input && !input.getAttribute('placeholder')) {
-        input.setAttribute('placeholder', this.settings.format);
-      }
-
-      var dateFormatInfo = (0, _utils.getLocaleDateFormatInfo)(this.settings.language);
-      this.defaultFormat = {
-        date: dateFormatInfo.dayFirst ? 'd/m/Y ' : 'm/d/Y ',
-        time: 'h:i K'
-      };
-      this.closedOn = 0;
-      this.valueFormat = this.settings.dateFormat || ISO_8601_FORMAT;
-      this.valueMomentFormat = (0, _utils.convertFormatToMoment)(this.valueFormat);
-      this.settings.minDate = (0, _utils.getDateSetting)(this.settings.minDate);
-      this.settings.maxDate = (0, _utils.getDateSetting)(this.settings.maxDate);
-      this.settings.defaultDate = (0, _utils.getDateSetting)(this.settings.defaultDate);
-      this.settings.altFormat = (0, _utils.convertFormatToFlatpickr)(this.settings.format);
-      this.settings.dateFormat = (0, _utils.convertFormatToFlatpickr)(this.settings.dateFormat);
-
-      this.settings.onChange = function () {
-        return _this3.emit('update');
-      };
-
-      this.settings.onClose = function () {
-        return _this3.closedOn = Date.now();
-      };
-
-      this.settings.formatDate = function (date, format) {
-        // Only format this if this is the altFormat and the form is readOnly.
-        if (_this3.settings.readOnly && format === _this3.settings.altFormat) {
-          if (_this3.settings.saveAs === 'text' || _this3.loadZones()) {
-            return _flatpickr.default.formatDate(date, format);
-          }
-
-          return (0, _utils.formatOffset)(_flatpickr.default.formatDate.bind(_flatpickr.default), date, format, _this3.timezone);
-        }
-
-        return _flatpickr.default.formatDate(date, format);
-      };
-
-      if (this._input) {
-        // Create a new flatpickr.
-        this.calendar = new _flatpickr.default(this._input, this.settings); // Enforce the input mask of the format.
-
-        this.setInputMask(this.calendar._input, (0, _utils.convertFormatToMask)(this.settings.format)); // Make sure we commit the value after a blur event occurs.
-
-        this.addEventListener(this.calendar._input, 'blur', function () {
-          return _this3.calendar.setDate(_this3.calendar._input.value, true, _this3.settings.altFormat);
-        });
-      }
-    }
-  }, {
-    key: "addSuffix",
-    value: function addSuffix(container) {
-      var _this4 = this;
-
-      var suffix = this.ce('span', {
-        class: 'input-group-addon',
-        style: 'cursor: pointer'
-      });
-      suffix.appendChild(this.getIcon(this.settings.enableDate ? 'calendar' : 'time'));
-      this.addEventListener(suffix, 'click', function () {
-        if (_this4.calendar && !_this4.calendar.isOpen && Date.now() - _this4.closedOn > 200) {
-          _this4.calendar.open();
-        }
-      });
-      container.appendChild(suffix);
-      return suffix;
-    }
-  }, {
-    key: "getDateValue",
-
-    /**
-     * Return the date value.
-     *
-     * @param date
-     * @param format
-     * @return {string}
-     */
-    value: function getDateValue(date, format) {
-      return (0, _moment.default)(date).format((0, _utils.convertFormatToMoment)(format));
-    }
-    /**
-     * Return the value of the selected date.
-     *
-     * @return {*}
-     */
-
-  }, {
-    key: "getValue",
-    value: function getValue() {
-      // Standard output format.
-      if (!this.calendar) {
-        return _get(_getPrototypeOf(CalendarWidget.prototype), "getValue", this).call(this);
-      } // Get the selected dates from the calendar widget.
-
-
-      var dates = this.calendar.selectedDates;
-
-      if (!dates || !dates.length) {
-        return _get(_getPrototypeOf(CalendarWidget.prototype), "getValue", this).call(this);
-      }
-
-      if (!(dates[0] instanceof Date)) {
-        return 'Invalid Date';
-      }
-
-      return this.getDateValue(dates[0], this.valueFormat);
-    }
-    /**
-     * Set the selected date value.
-     *
-     * @param value
-     */
-
-  }, {
-    key: "setValue",
-    value: function setValue(value) {
-      if (!this.calendar) {
-        return _get(_getPrototypeOf(CalendarWidget.prototype), "setValue", this).call(this, value);
-      }
-
-      if (value) {
-        if (this.settings.saveAs !== 'text' && this.settings.readOnly && !this.loadZones()) {
-          this.calendar.setDate((0, _utils.momentDate)(value, this.valueFormat, this.timezone).toDate(), false);
-        } else {
-          this.calendar.setDate((0, _moment.default)(value, this.valueMomentFormat).toDate(), false);
-        }
-      } else {
-        this.calendar.clear(false);
-      }
-    }
-  }, {
-    key: "getView",
-    value: function getView(value, format) {
-      format = format || this.dateFormat;
-
-      if (this.settings.saveAs === 'text') {
-        return this.getDateValue(value, format);
-      }
-
-      return (0, _utils.formatDate)(value, format, this.timezone);
-    }
-  }, {
-    key: "validationValue",
-    value: function validationValue(value) {
-      if (typeof value === 'string') {
-        return new Date(value);
-      }
-
-      return value.map(function (val) {
-        return new Date(val);
-      });
-    }
-  }, {
-    key: "destroy",
-    value: function destroy() {
-      _get(_getPrototypeOf(CalendarWidget.prototype), "destroy", this).call(this);
-
-      this.calendar.destroy();
-    }
-  }, {
-    key: "timezone",
-    get: function get() {
-      if (this.settings.timezone) {
-        return this.settings.timezone;
-      }
-
-      if (this.settings.displayInTimezone === 'submission' && this.settings.submissionTimezone) {
-        return this.settings.submissionTimezone;
-      }
-
-      if (this.settings.displayInTimezone === 'utc') {
-        return 'UTC';
-      } // Return current timezone if none are provided.
-
-
-      return (0, _utils.currentTimezone)();
-    }
-  }, {
-    key: "defaultSettings",
-    get: function get() {
-      return CalendarWidget.defaultSettings;
-    }
-  }, {
-    key: "disabled",
-    set: function set(disabled) {
-      _set(_getPrototypeOf(CalendarWidget.prototype), "disabled", disabled, this, true);
-
-      if (this.calendar) {
-        if (disabled) {
-          this.calendar._input.setAttribute('disabled', 'disabled');
-        } else {
-          this.calendar._input.removeAttribute('disabled');
-        }
-
-        this.calendar.close();
-        this.calendar.redraw();
-      }
-    }
-  }, {
-    key: "input",
-    get: function get() {
-      return this.calendar ? this.calendar.altInput : null;
-    }
-  }, {
-    key: "localeFormat",
-    get: function get() {
-      var format = '';
-
-      if (this.settings.enableDate) {
-        format += this.defaultFormat.date;
-      }
-
-      if (this.settings.enableTime) {
-        format += this.defaultFormat.time;
-      }
-
-      return format;
-    }
-  }, {
-    key: "dateTimeFormat",
-    get: function get() {
-      return this.settings.useLocaleSettings ? this.localeFormat : (0, _utils.convertFormatToFlatpickr)(this.dateFormat);
-    }
-  }, {
-    key: "dateFormat",
-    get: function get() {
-      return _lodash.default.get(this.settings, 'format', DEFAULT_FORMAT);
-    }
-    /**
-     * Get the default date for the calendar.
-     * @return {*}
-     */
-
-  }, {
-    key: "defaultDate",
-    get: function get() {
-      return (0, _utils.getDateSetting)(this.settings.defaultDate);
-    }
-  }, {
-    key: "defaultValue",
-    get: function get() {
-      var defaultDate = this.defaultDate;
-      return defaultDate ? defaultDate.toISOString() : '';
-    }
-  }]);
-
-  return CalendarWidget;
-}(_InputWidget2.default);
-
-exports.default = CalendarWidget;
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/widgets/InputWidget.js":
-/*!******************************************************!*\
-  !*** ./node_modules/formiojs/widgets/InputWidget.js ***!
-  \******************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-__webpack_require__(/*! core-js/modules/es7.symbol.async-iterator */ "./node_modules/core-js/modules/es7.symbol.async-iterator.js");
-
-__webpack_require__(/*! core-js/modules/es6.symbol */ "./node_modules/core-js/modules/es6.symbol.js");
-
-var _lodash = _interopRequireDefault(__webpack_require__(/*! lodash */ "./node_modules/formiojs/node_modules/lodash/lodash.js"));
-
-var _Component2 = _interopRequireDefault(__webpack_require__(/*! ../Component */ "./node_modules/formiojs/Component.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-var InputWidget =
-/*#__PURE__*/
-function (_Component) {
-  _inherits(InputWidget, _Component);
-
-  function InputWidget(settings, component) {
-    var _this;
-
-    _classCallCheck(this, InputWidget);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(InputWidget).call(this, settings));
-    _this.namespace = 'formio.widget';
-    _this.component = component || {};
-    _this.settings = _lodash.default.merge({}, _this.defaultSettings, settings || {});
-    return _this;
-  }
-
-  _createClass(InputWidget, [{
-    key: "attach",
-    value: function attach(input) {
-      this._input = input;
-    }
-  }, {
-    key: "getValue",
-    value: function getValue() {
-      return this._input.value;
-    }
-  }, {
-    key: "getView",
-    value: function getView(value) {
-      return value;
-    }
-  }, {
-    key: "validationValue",
-    value: function validationValue(value) {
-      return value;
-    }
-  }, {
-    key: "addPrefix",
-    value: function addPrefix() {
-      return null;
-    }
-  }, {
-    key: "addSuffix",
-    value: function addSuffix() {
-      return null;
-    }
-  }, {
-    key: "setValue",
-    value: function setValue(value) {
-      this._input.value = value;
-    }
-  }, {
-    key: "defaultSettings",
-    get: function get() {
-      return {};
-    }
-  }, {
-    key: "disabled",
-    set: function set(disabled) {
-      if (disabled) {
-        this._input.setAttribute('disabled', 'disabled');
-      } else {
-        this._input.removeAttribute('disabled');
-      }
-    }
-  }, {
-    key: "input",
-    get: function get() {
-      return this._input;
-    }
-  }, {
-    key: "defaultValue",
-    get: function get() {
-      return '';
-    }
-  }]);
-
-  return InputWidget;
-}(_Component2.default);
-
-exports.default = InputWidget;
-
-/***/ }),
-
-/***/ "./node_modules/formiojs/widgets/index.js":
-/*!************************************************!*\
-  !*** ./node_modules/formiojs/widgets/index.js ***!
-  \************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _InputWidget = _interopRequireDefault(__webpack_require__(/*! ./InputWidget */ "./node_modules/formiojs/widgets/InputWidget.js"));
-
-var _CalendarWidget = _interopRequireDefault(__webpack_require__(/*! ./CalendarWidget */ "./node_modules/formiojs/widgets/CalendarWidget.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var _default = {
-  input: _InputWidget.default,
-  calendar: _CalendarWidget.default
-};
-exports.default = _default;
 
 /***/ }),
 
